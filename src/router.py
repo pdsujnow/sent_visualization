@@ -6,9 +6,11 @@ from flask import request
 import json
 
 from classifier_controler import ClassifierControler
+from app_logger import AppLogger
 
 app = Flask(__name__)
 cc = ClassifierControler()
+logger = AppLogger()
 
 def request2json(data):
     return json.loads(data.decode('utf8'))
@@ -21,6 +23,12 @@ def list_model():
 def predict():
     data = request2json(request.data)
     return json.dumps(cc.predict(data['model'], data['text']))
+
+@app.route('/log', methods=['POST'])
+def log():
+    data = request2json(request.data)
+    return json.dumps(logger.log(data))
+
 
 
 if __name__ == "__main__":

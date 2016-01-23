@@ -8,10 +8,18 @@ import json
 
 #res = requests.post("http://doraemon.iis.sinica.edu.tw/mimansa/test", data=d)
 
-url = 'http://doraemon.iis.sinica.edu.tw/mimansa/'
-#url = 'http://penguin.iis.sinica.edu.tw:5126/'
+#url = 'http://doraemon.iis.sinica.edu.tw/mimansa/'
+url = 'http://penguin.iis.sinica.edu.tw:5126/'
+
+
+predict_d = json.dumps({'model':'sanders_bow', 'text':'I am very sad'})
+uid='test'
+response_time=100
+log_d = json.dumps({'uid':uid,'response_time':response_time})
 
 model_list = requests.get(url+'listmodel')
-d = json.dumps({'model':'sanders_bow', 'text':'I am very sad'})
-prob = requests.get(url+'predict', data=d)
-print prob.text
+prob = requests.get(url+'predict', data=predict_d)
+requests.post(url+'log', data=log_d)
+
+#print model_list.text
+#print prob.text
