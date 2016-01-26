@@ -5,7 +5,6 @@ import requests
 import json
 
 #url = 'https://doraemon.iis.sinica.edu.tw/mimansa/'
-#url = 'http://penguin.iis.sinica.edu.tw:5126/'
 url = 'http://penguin.iis.sinica.edu.tw:5126/'
 
 

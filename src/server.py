@@ -34,8 +34,6 @@ def test():
     text = request.args.get('text')
     return json.dumps(cc.predict(model, text))
 
-
-
 @app.route('/log', methods=['POST'])
 def log():
     data = request2json(request.data)

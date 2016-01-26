@@ -15,30 +15,47 @@ TRAINED_DIR = '../model/'
 class Classifier(object):
 
     def __init__(self):
-        self.name="Unknown"
-        self.emotions=None
-        self.clfs=None
+        self.init()
 
     def load_from_file(self, file_name):
-        self.name = os.path.basename(file_name)
 
         assert os.path.isfile(file_name), "{} not found".format(file_name)
         with open(file_name) as f:
-            model = pickle.load(f)
-        self.emotions = model['emotions']
-        self.clfs = model['clfs']
-        return self
+            clf = pickle.load(f)
+        clf.init() #Some variables might be too big and not dumped into the file, initial those variables in this functtion
+
+        return clf
+
+    def dump_to_file(self, dump_file):
+        self.un_init() #delete varaibles initialized in 'init()' function
+        self.name = os.path.basename(dump_file)
+        with open(dump_file, 'w') as f:
+            pickle.dump(self, f)
 
     def predict(self, text):
         feature = self.text2vec(preprocess(text))
-        return [self.predict_prob(clf, feature)[0] for clf in self.clfs]
+        return [self.predict_prob(clf, feature)[0] for clf in self.child_clfs]
+
 
     def train(self, corpus, dump_file, **kwargs):
         sentences, y, emotions = load_data_and_labels(corpus)
-        clfs = self.fit(sentences, y, **kwargs)
-        model = {'emotions': emotions, 'clfs': clfs, 'type':type(self)}
-        with open(dump_file, 'w') as f:
-            pickle.dump(model, f)
+        child_clfs = self.fit(sentences, y, **kwargs)
+        self.emotions = emotions
+        self.child_clfs = child_clfs
+
+        self.dump_to_file(dump_file)
+
+    def init(self):
+        """
+        If the sub class has some variables that is too large and do not want to be dumped.
+        Override this function and initialize those variables in it 
+        Also, delete those variables in the 'un_init' function to prevent them from being dumpped. 
+        """
+        pass
+
+    def un_init(self):
+        """Please refer to init"""
+        pass
 
     def fit(self, sentences, y, **kwargs):
         raise NotImplementedError 
@@ -56,11 +73,8 @@ def install_all_model(models, dirname, fnames):
     for fname in fnames:
         path = os.path.join(dirname,fname)
         if os.path.isfile(path):
-            with open(path) as f:
-                model = pickle.load(f)
-            c = model['type']()
-            c.load_from_file(path)
-            models[c.name] = c
+            clf = Classifier().load_from_file(path)
+            models[clf.name] = clf
 
 class ClassifierControler():
     def __init__(self): 
