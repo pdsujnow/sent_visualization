@@ -1,6 +1,5 @@
 import numpy as np
 import re
-import itertools
 from collections import Counter
 from sklearn.preprocessing import MultiLabelBinarizer
 import csv
@@ -23,6 +22,7 @@ replacement_patterns = [
         (r"\'d", " \'d"),
         (r"\'ll", " \'ll"),
         (r",", " , "),
+        (r"([a-zA-Z0-9]+)(\.+)", "\g<1> \g<2> "),
         (r"!", " ! "),
         (r"\(", " ( "),
         (r"\)", " ) "),
@@ -58,23 +58,4 @@ def preprocess(text):
     res=text.lower().strip()
     return res
 
-def load_data_and_labels(file_name, exclude_labels=['irrelevant'], col_label_name='Sentiment', col_sentence_name='sentence'):
-    with open(file_name) as f:
-        reader = csv.DictReader(f)
-        data = [row for row in reader]
-
-    literal_labels = list(set([row[col_label_name] for row in data]).difference(set(exclude_labels)))
-
-    sentences = []
-    labels = []
-    for row in data:
-        e = row[col_label_name]
-        if e not in literal_labels:
-            continue
-        sentences.append(preprocess(row[col_sentence_name]))
-        labels.append([literal_labels.index(e)])
-
-    sentences = [d.split(" ") for d in sentences]
-    labels=MultiLabelBinarizer().fit_transform(labels)
-    return [sentences, labels, literal_labels]
 

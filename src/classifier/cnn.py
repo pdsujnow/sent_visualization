@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function
-import numpy as np
 import sys
-np.random.seed(1337)  # for reproducibility
+import numpy as np
+import itertools
+from collections import Counter
+from classifier import Classifier
+
 
 from keras.preprocessing import sequence
 from keras.models import Sequential, Graph
@@ -14,7 +16,7 @@ from keras.layers.convolutional import Convolution1D, MaxPooling1D
 from keras.datasets import imdb
 from keras.layers import containers
 
-class CNN(object):
+class CNN(Classifier):
 
     def text2vec(self, text):
         X_train = sequence.pad_sequences(X_train, maxlen=maxlen)
@@ -27,25 +29,31 @@ class CNN(object):
         return X
 
 
-    def fit(self, sentences, y, n_folds=5, random_state=0):
+    def fit(self, sentences, y, batch_size=32, nb_epoch=4, random_state=0):
+        sentences_padded = pad_sentences(sentences)
+        print (sentences_padded)
+        sys.exit(-1)
+        vocabulary, vocabulary_inv = self.build_vocab(sentences_padded)
 
-        sentences = sequence.pad_sequences(sentences, maxlen=maxlen)
-        X = np.array([self.text2vec(s) for s in sentences])
+
+        self.maxlen = maxlen
+        self.vocabulary = vocabulary
+        self.vocabulary_inv = vocabulary_inv
+
+        X = np.array([[vocabulary[word] for word in sentence] for sentence in sentences])
         nb_class = y.shape[1]
 
-        np.random.seed(random_state)
-
-
         # set parameters:
-        vocab_size = 5000
-        maxlen = 100
-        batch_size = 32
+        vocab_size = len(vocabulary)
+        maxlen = len(sentences_padded[0])
+
         embedding_dims = 100
         nb_filter = 250
         filter_length = [3,4]
         hidden_dims = 250
-        nb_epoch = 4
         drop_out_prob = 0.25
+
+        np.random.seed(random_state)
 
         model = Sequential()
         model.add(Embedding(vocab_size, embedding_dims, input_length=maxlen))
@@ -69,7 +77,7 @@ class CNN(object):
     def predict_prob(self, clf, feature):
         return clf.predict_prob(feature)
 
-    def pad_sentences(sentences, padding_word="<PAD/>"):
+    def pad_sentences(self, sentences, padding_word="<PAD/>"):
         """
         Pads all sentences to the same length. The length is defined by the longest sentence.
         Returns padded sentences.

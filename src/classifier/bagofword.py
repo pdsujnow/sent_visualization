@@ -1,12 +1,11 @@
 import sys
-sys.path.append('..')
-from classifier_controler import Classifier
+from classifier import Classifier
 import numpy as np
 from sklearn import svm
 from sklearn.cross_validation import StratifiedKFold
 from sklearn import grid_search
 from word2vec.globvemongo import Globve
-
+import warnings
 
 class BagofWord(Classifier):
     def init(self):
@@ -32,13 +31,17 @@ class BagofWord(Classifier):
         parameters = dict(C = np.logspace(-5,1, 8))
         clfs = []
         for i in range(y.shape[1]):
-            yy = y[:, i]
-            cv = StratifiedKFold(yy, n_folds=n_folds)
+            yy = y[:,i]
+            cv = StratifiedKFold(yy, n_folds=n_folds, shuffle=True)
             clf = grid_search.GridSearchCV(svmclf, parameters, scoring='f1', n_jobs=-1, cv=cv)
-            clf.fit(X, yy)
+            with warnings.catch_warnings(): 
+                warnings.simplefilter("ignore")
+                clf.fit(X, yy)
+            print clf.best_params_, clf.best_score_
             clfs.append(clf.best_estimator_)
 
         return clfs
 
     def predict_prob(self, clf, feature):
         return clf.decision_function(feature)
+        #return clf.predict(feature)

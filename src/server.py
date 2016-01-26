@@ -8,31 +8,29 @@ from flask import Flask
 from flask import request
 import json
 
-from classifier_controler import ClassifierControler
+from controler import Controler
 from app_logger import AppLogger
 
 app = Flask(__name__)
-cc = ClassifierControler()
-logger = AppLogger()
 
 def request2json(data):
     return json.loads(data.decode('utf8'))
 
 @app.route('/listmodel', methods=['GET'])
 def list_model():
-    return json.dumps(cc.list_model())
+    return json.dumps(controler.list_model())
 
 #@app.route('/predict', methods=['GET', 'POST'])
 #def predict():
 #    print request.data
 #    data = request2json(request.data)
-#    return json.dumps(cc.predict(data['model'], data['text']))
+#    return json.dumps(controler.predict(data['model'], data['text']))
 
 @app.route('/predict', methods=['GET', 'POST'])
 def test():
     model = request.args.get('model')
     text = request.args.get('text')
-    return json.dumps(cc.predict(model, text))
+    return json.dumps(controler.predict(model, text))
 
 @app.route('/log', methods=['POST'])
 def log():
@@ -50,7 +48,8 @@ def parse_arg(argv):
 
 if __name__ == "__main__":
     args = parse_arg(sys.argv)
-    cc = ClassifierControler()
+    controler = Controler()
+    logger = AppLogger()
 
     if args.debug:
         args.port+=1
