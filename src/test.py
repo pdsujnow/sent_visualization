@@ -4,11 +4,8 @@
 import requests
 import json
 
-
-
-#res = requests.post("http://doraemon.iis.sinica.edu.tw/mimansa/test", data=d)
-
-#url = 'http://doraemon.iis.sinica.edu.tw/mimansa/'
+#url = 'https://doraemon.iis.sinica.edu.tw/mimansa/'
+#url = 'http://penguin.iis.sinica.edu.tw:5126/'
 url = 'http://penguin.iis.sinica.edu.tw:5126/'
 
 
@@ -21,5 +18,5 @@ model_list = requests.get(url+'listmodel')
 prob = requests.get(url+'predict', data=predict_d)
 requests.post(url+'log', data=log_d)
 
-#print model_list.text
-#print prob.text
+print model_list.text
+print prob.text

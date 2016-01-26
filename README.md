@@ -9,5 +9,5 @@
 
 # Run Server
 - For releasing, execute src/server.py
-- For debugging, execute src/router.py
+- For debugging, execute src/server.py -d
 - The connection settings (url and port) are differnt for releasing and degbugging, please reger to src/test.py

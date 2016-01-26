@@ -9,9 +9,8 @@ from word2vec.globvemongo import Globve
 
 
 class BagofWord(Classifier):
-    def __init__(self, file_name):
+    def __init__(self):
         self.globve = Globve()#wordvector model
-        super(BagofWord, self).__init__(file_name)
 
     def text2vec(self, text):
         X = np.zeros(self.globve.dimension)
