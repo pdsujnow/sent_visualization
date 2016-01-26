@@ -15,7 +15,8 @@ response_time=100
 log_d = json.dumps({'uid':uid,'response_time':response_time})
 
 model_list = requests.get(url+'listmodel')
-prob = requests.get(url+'predict', data=predict_d)
+#prob = requests.get(url+'predict', data=predict_d)
+prob = requests.get(url+'predict', params={'model':'sanders_bow', 'text':'I am very sad'})
 requests.post(url+'log', data=log_d)
 
 print model_list.text

@@ -22,10 +22,19 @@ def request2json(data):
 def list_model():
     return json.dumps(cc.list_model())
 
-@app.route('/predict', methods=['GET'])
-def predict():
-    data = request2json(request.data)
-    return json.dumps(cc.predict(data['model'], data['text']))
+#@app.route('/predict', methods=['GET', 'POST'])
+#def predict():
+#    print request.data
+#    data = request2json(request.data)
+#    return json.dumps(cc.predict(data['model'], data['text']))
+
+@app.route('/predict', methods=['GET', 'POST'])
+def test():
+    model = request.args.get('model')
+    text = request.args.get('text')
+    return json.dumps(cc.predict(model, text))
+
+
 
 @app.route('/log', methods=['POST'])
 def log():
