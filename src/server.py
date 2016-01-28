@@ -8,10 +8,13 @@ from flask import Flask
 from flask import request
 import json
 
+from flask.ext.cors import cross_origin
 from controler import Controler
 from app_logger import AppLogger
 
 app = Flask(__name__)
+#app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 def request2json(data):
     return json.loads(data.decode('utf8'))
@@ -20,19 +23,21 @@ def request2json(data):
 def list_model():
     return json.dumps(controler.list_model())
 
-#@app.route('/predict', methods=['GET', 'POST'])
-#def predict():
-#    print request.data
-#    data = request2json(request.data)
-#    return json.dumps(controler.predict(data['model'], data['text']))
-
 @app.route('/predict', methods=['GET', 'POST'])
-def test():
+def predict():
     model = request.args.get('model')
     text = request.args.get('text')
+    print model, text
     return json.dumps(controler.predict(model, text))
 
+@app.route('/test', methods=['POST'])
+@cross_origin()
+def test():
+    data = request2json(request.data)
+    return json.dumps(controler.predict(data['model'], data['text']))
+
 @app.route('/log', methods=['POST'])
+@cross_origin(origin='*',headers=['Content- Type','Authorization'])
 def log():
     data = request2json(request.data)
     return json.dumps(logger.log(data))
@@ -53,7 +58,7 @@ if __name__ == "__main__":
 
     if args.debug:
         args.port+=1
-        app.run(args.address, args.port, debug='true')
+        app.run(args.address, args.port, debug='true', threaded=True, use_reloader=False)
     else:
         print "* Running on http://{}:{}/".format(args.address, args.port)
         WSGIServer(app, multithreaded=True, bindAddress=(args.address, args.port)).run()

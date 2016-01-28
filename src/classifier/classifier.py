@@ -24,18 +24,19 @@ class Classifier(object):
             pickle.dump(self, f)
 
     def predict(self, text):
+        text = text.split()
         feature = self.text2vec(text)
-        return [self.predict_prob(clf, feature)[0] for clf in self.child_clfs]
+        return self.predict_prob(feature)
 
 
     def train(self, sentences, labels, **kwargs):
         literal_labels = list(set(itertools.chain(*labels)))
         y = [[literal_labels.index(l) for l in row] for row in labels]
         y=MultiLabelBinarizer().fit_transform(y)
-        child_clfs = self.fit(sentences, y, **kwargs)
+        sentences = [d.split(" ") for d in sentences]
+        self.fit(sentences, y, **kwargs)
 
         self.emotions = literal_labels
-        self.child_clfs = child_clfs
 
     def init(self):
         """
@@ -55,6 +56,6 @@ class Classifier(object):
     def text2vec(self, text):
         raise NotImplementedError 
 
-    def predict_prob(self, clf, feature):
+    def predict_prob(self, feature):
         raise NotImplementedError 
 

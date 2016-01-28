@@ -10,5 +10,10 @@ class AppLogger(object):
         self.collection=db[collection_name]
 
     def log(self, data):
-        self.collection.insert_one(data)
+        try:
+            self.collection.insert_one(data)
+        except e:
+            print e
+            return "Failed"
+        return "Success"
 

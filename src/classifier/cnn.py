@@ -10,6 +10,7 @@ from classifier import Classifier
 
 from keras.preprocessing import sequence
 from keras.models import Sequential, Graph
+from keras.models import model_from_json
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.embeddings import Embedding
 from keras.layers.convolutional import Convolution1D, MaxPooling1D
@@ -18,96 +19,72 @@ from keras.layers import containers
 
 class CNN(Classifier):
 
+    def init(self):
+        if 'arch_file' not in self.__dict__:
+            return
+        with open(self.arch_file) as f:
+            self.model = model_from_json(f.read())
+        self.model.load_weights(self.weight_file)
+
+    def un_init(self):
+        del self.model
+
+    def dump_to_file(self, dump_file):
+        self.arch_file = dump_file+'_arch.json'
+        self.weight_file = dump_file+'_weights.h5'
+        with open(self.arch_file, 'w') as f:
+            f.write(self.model.to_json())
+        self.model.save_weights(self.weight_file)
+        super(CNN, self).dump_to_file(dump_file)
+
     def text2vec(self, text):
-        X_train = sequence.pad_sequences(X_train, maxlen=maxlen)
-        X_test = sequence.pad_sequences(X_test, maxlen=maxlen)
+        if type(text[0]) is unicode:
+            text = [t.encode('utf8') for t in text]
+        text = self.to_given_length(text, self.maxlen)
 
-        X = np.zeros(self.globve.dimension)
-        for word in [w.decode('utf8') for w in text]:
-            if word in self.globve:
-                X = X+self.globve[word] 
-        return X
+        res = np.zeros((1,self.maxlen))
+        for i, word in enumerate(text):
+            if word in self.vocabulary:
+                print word
+                res[0][i] = self.vocabulary[word]
+            else:
+                res[0][i] = self.vocabulary['<PAD/>']
+        return  np.array(res)
 
+    def fit(self, sentences, y, batch_size=32, nb_epoch=4, random_state=0, validation_split=0.1,
+            embedding_dims=128, nb_filter=250, filter_length=[3,4], hidden_dims=250, drop_out_prob=0.25):
 
-    def fit(self, sentences, y, batch_size=32, nb_epoch=4, random_state=0):
-        sentences_padded = pad_sentences(sentences)
-        print (sentences_padded)
-        sys.exit(-1)
-        vocabulary, vocabulary_inv = self.build_vocab(sentences_padded)
+        self.maxlen = max(len(x) for x in sentences)
+        sentences = [self.to_given_length(s, self.maxlen) for s in sentences]
+        self.vocabulary, self.vocabulary_inv = self.build_vocab(sentences)
 
-
-        self.maxlen = maxlen
-        self.vocabulary = vocabulary
-        self.vocabulary_inv = vocabulary_inv
-
-        X = np.array([[vocabulary[word] for word in sentence] for sentence in sentences])
+        X = np.concatenate([self.text2vec(s) for s in sentences])
         nb_class = y.shape[1]
-
-        # set parameters:
-        vocab_size = len(vocabulary)
-        maxlen = len(sentences_padded[0])
-
-        embedding_dims = 100
-        nb_filter = 250
-        filter_length = [3,4]
-        hidden_dims = 250
-        drop_out_prob = 0.25
 
         np.random.seed(random_state)
 
-        model = Sequential()
-        model.add(Embedding(vocab_size, embedding_dims, input_length=maxlen))
-        model.add(Dropout(drop_out_prob))
-        model.add(convLayer(filter_length))
-        model.add(Dense(hidden_dims))
-        model.add(Dropout(drop_out_prob))
-        model.add(Activation('relu'))
-        model.add(Dense(num_class))
-        model.add(Activation('sigmoid'))
+        self.model = Sequential()
+        self.model.add(Embedding(len(self.vocabulary), embedding_dims, input_length=self.maxlen))
+        self.model.add(Dropout(drop_out_prob))
+        self.model.add(self.convLayer(self.maxlen, embedding_dims, nb_filter, filter_length))
+        self.model.add(Dense(hidden_dims))
+        self.model.add(Dropout(drop_out_prob))
+        self.model.add(Activation('relu'))
+        self.model.add(Dense(y.shape[1]))
+        self.model.add(Activation('sigmoid'))
 
-        model.compile(loss='crossentropy',
-                     optimizer='rmsprop')
+        self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
 
-        model.fit(X, y, batch_size=batch_size,
-                  nb_epoch=nb_epoch, show_accuracy=True,
-                  validation_data=(X_test, y_test))
-
-        return [model]
-
-    def predict_prob(self, clf, feature):
-        return clf.predict_prob(feature)
-
-    def pad_sentences(self, sentences, padding_word="<PAD/>"):
-        """
-        Pads all sentences to the same length. The length is defined by the longest sentence.
-        Returns padded sentences.
-        """
-        sequence_length = max(len(x) for x in sentences)
-        padded_sentences = []
-        for i in range(len(sentences)):
-            sentence = sentences[i]
-            num_padding = sequence_length - len(sentence)
-            new_sentence = sentence + [padding_word] * num_padding
-            padded_sentences.append(new_sentence)
-        return padded_sentences
+        self.model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, validation_split=validation_split)
 
 
-    def build_vocab(sentences):
-        """
-        Builds a vocabulary mapping from word to index based on the sentences.
-        Returns vocabulary mapping and inverse vocabulary mapping.
-        """
-        # Build vocabulary
-        word_counts = Counter(itertools.chain(*sentences))
-        # Mapping from index to word
-        vocabulary_inv = [x[0] for x in word_counts.most_common()]
-        # Mapping from word to index
-        vocabulary = {x: i for i, x in enumerate(vocabulary_inv)}
-        return [vocabulary, vocabulary_inv]
+    def predict_prob(self, feature):
+        return self.model.predict(feature).tolist()
 
-    def convLayer(self, filter_length=[2]):
+
+    def convLayer(self, inp_dim, embedding_dims, nb_filter, filter_length=[2]):
         c = containers.Graph()
-        c.add_input(name='input', input_shape=(maxlen, embedding_dims))
+        c.add_input(name='input', input_shape=(inp_dim, embedding_dims))
         for i in filter_length:
             c.add_node(Convolution1D(nb_filter=nb_filter, filter_length=i, border_mode='valid', activation='relu',subsample_length=1),
                                     name='_Conv{}'.format(i), input='input')
@@ -122,4 +99,24 @@ class CNN(Classifier):
             c.add_output('output', inputs=inps)
 
         return c
+
+
+
+    def to_given_length(self, sentence, length, padding_word="<PAD/>"):
+        sentence = sentence[:length]
+        return sentence + [padding_word] * (length - len(sentence))
+
+
+    def build_vocab(self, sentences, mincount=5):
+        """
+        Builds a vocabulary mapping from word to index based on the sentences.
+        Returns vocabulary mapping and inverse vocabulary mapping.
+        """
+        # Build vocabulary
+        word_counts = Counter(itertools.chain(*sentences))
+        # Mapping from index to word
+        vocabulary_inv = [x[0] for x in word_counts.most_common() if x[1]>mincount]
+        # Mapping from word to index
+        vocabulary = {x: i for i, x in enumerate(vocabulary_inv)}
+        return [vocabulary, vocabulary_inv]
 

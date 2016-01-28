@@ -29,7 +29,7 @@ class BagofWord(Classifier):
 
         svmclf = svm.LinearSVC(dual=False)
         parameters = dict(C = np.logspace(-5,1, 8))
-        clfs = []
+        self.clfs = []
         for i in range(y.shape[1]):
             yy = y[:,i]
             cv = StratifiedKFold(yy, n_folds=n_folds, shuffle=True)
@@ -38,10 +38,8 @@ class BagofWord(Classifier):
                 warnings.simplefilter("ignore")
                 clf.fit(X, yy)
             print clf.best_params_, clf.best_score_
-            clfs.append(clf.best_estimator_)
+            self.clfs.append(clf.best_estimator_)
 
-        return clfs
 
-    def predict_prob(self, clf, feature):
-        return clf.decision_function(feature)
-        #return clf.predict(feature)
+    def predict_prob(self, feature):
+        return [clf.decision_function(feature)[0] for clf in self.clfs]
