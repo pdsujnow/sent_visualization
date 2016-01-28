@@ -31,6 +31,7 @@ class Classifier(object):
 
     def train(self, sentences, labels, **kwargs):
         literal_labels = list(set(itertools.chain(*labels)))
+        print "Labels:{}".format(literal_labels)
         y = [[literal_labels.index(l) for l in row] for row in labels]
         y=MultiLabelBinarizer().fit_transform(y)
         sentences = [d.split(" ") for d in sentences]

@@ -7,6 +7,8 @@ from sklearn import grid_search
 from word2vec.globvemongo import Globve
 import warnings
 
+import csv
+
 class BagofWord(Classifier):
     def init(self):
         self.globve = Globve()#wordvector model
@@ -16,9 +18,13 @@ class BagofWord(Classifier):
 
     def text2vec(self, text):
         X = np.zeros(self.globve.dimension)
+        i=0
         for word in [w.decode('utf8') for w in text]:
             if word in self.globve:
+                i+=1
                 X = X+self.globve[word] 
+        if i>0:
+            X=X/i
         return X
 
     def fit(self, sentences, y, n_folds=5, random_state=0):

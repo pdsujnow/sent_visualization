@@ -60,17 +60,25 @@ if __name__ == "__main__":
 
     from classifier.bagofword import BagofWord
     from classifier.cnn import CNN
-    corpus = 'sanders'
-
+    corpus = 'LJ40k'
     corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    sentences, labels = load_data_and_labels(corpus_f)
-    clf = CNN()
-    clf.train(sentences, labels, random_state=0) 
-    clf.dump_to_file(TRAINED_DIR+corpus+'_cnn')
+    #corpus_f = CORPUS_DIR+corpus+'/reduced_parsed.csv'
+    sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
 
+    #corpus = 'sanders'
     #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    #sentences, labels = load_data_and_labels(corpus_f)
+    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='Sentiment')
+    
+    #clf = CNN()
+    #clf.train(sentences, labels, random_state=0) 
+    #clf.dump_to_file(TRAINED_DIR+corpus+'_cnn')
+
     #clf = BagofWord()
     #clf.train(sentences, labels, n_folds=5, random_state=0) 
     #clf.dump_to_file(TRAINED_DIR+corpus+'_bow')
+
+    clf = BagofWord()
+    clf.train(sentences, labels, n_folds=5, random_state=0) 
+    clf.dump_to_file(TRAINED_DIR+corpus+'full_bow')
+
 

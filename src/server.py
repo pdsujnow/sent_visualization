@@ -23,21 +23,21 @@ def request2json(data):
 def list_model():
     return json.dumps(controler.list_model())
 
-@app.route('/predict', methods=['GET', 'POST'])
-def predict():
-    model = request.args.get('model')
-    text = request.args.get('text')
-    print model, text
-    return json.dumps(controler.predict(model, text))
+#@app.route('/predict', methods=['GET', 'POST'])
+#def predict():
+#    model = request.args.get('model')
+#    text = request.args.get('text')
+#    print model, text
+#    return json.dumps(controler.predict(model, text))
 
-@app.route('/test', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 @cross_origin()
 def test():
     data = request2json(request.data)
     return json.dumps(controler.predict(data['model'], data['text']))
 
 @app.route('/log', methods=['POST'])
-@cross_origin(origin='*',headers=['Content- Type','Authorization'])
+@cross_origin()
 def log():
     data = request2json(request.data)
     return json.dumps(logger.log(data))
