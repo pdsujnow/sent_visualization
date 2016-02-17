@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from textblob import TextBlob
 import sys
 from flup.server.fcgi import WSGIServer
 import argparse
 from flask import Flask
 from flask import request
 import json
+import datetime
+import math
 
 from flask.ext.cors import cross_origin
 from controler import Controler
@@ -19,22 +22,40 @@ app = Flask(__name__)
 def request2json(data):
     return json.loads(data.decode('utf8'))
 
+render = True
+def setRender(diff):
+    global render
+    if math.floor(diff.seconds/1800.0) % 2 ==0:
+        newRender = True
+    else:
+        newRender = False
+    if newRender != render:
+        print "Render is now:{}".format(newRender)
+    render=newRender
+
 @app.route('/listmodel', methods=['GET'])
 def list_model():
     return json.dumps(controler.list_model())
 
-#@app.route('/predict', methods=['GET', 'POST'])
-#def predict():
-#    model = request.args.get('model')
-#    text = request.args.get('text')
-#    print model, text
-#    return json.dumps(controler.predict(model, text))
-
 @app.route('/predict', methods=['POST'])
 @cross_origin()
-def test():
+def predict():
     data = request2json(request.data)
-    return json.dumps(controler.predict(data['model'], data['text']))
+    text = data['text']
+    try:
+        text = str(TextBlob(text).translate(to='en'))
+#        print "{} translated to {}".format(data['text'], text)
+    except Exception as e:
+#        print "It's English, No translate!"
+        text = data['text']
+
+    res = controler.predict(data['model'], text)
+    if sum(res)==0:
+        return json.dumps({'render':render, 'res':res, 'log':False})
+    curTime = datetime.datetime.now()
+    diff = curTime - startTime
+    #setRender(diff)
+    return json.dumps({'render':render, 'res':res, 'log':True})
 
 @app.route('/log', methods=['POST'])
 @cross_origin()
@@ -55,6 +76,7 @@ if __name__ == "__main__":
     args = parse_arg(sys.argv)
     controler = Controler()
     logger = AppLogger()
+    startTime = datetime.datetime.now()
 
     if args.debug:
         args.port+=1

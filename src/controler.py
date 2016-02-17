@@ -37,6 +37,7 @@ def install_all_model(models, dirname, fnames):
         if '.' in os.path.basename(path):
             continue
         if os.path.isfile(path):
+            print "Loading model {} ...".format(os.path.basename(path))
             clf = Classifier().load_from_file(path)
             models[clf.name] = clf
 
@@ -45,7 +46,6 @@ class Controler():
         self.models={}
         root_dir = os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
         self.TRAINED_DIR = os.path.join(root_dir, TRAINED_DIR)
-        print "Loading models..."
         os.path.walk(self.TRAINED_DIR, install_all_model, self.models)
         print "All models loaded"
 
@@ -60,25 +60,29 @@ if __name__ == "__main__":
 
     from classifier.bagofword import BagofWord
     from classifier.cnn import CNN
-    corpus = 'LJ40k'
-    corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    #corpus_f = CORPUS_DIR+corpus+'/reduced_parsed.csv'
-    sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
 
-    #corpus = 'sanders'
+    #corpus = 'LJ40k'
     #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='Sentiment')
+    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
+
+    #corpus = 'LJ40k'
+    #corpus_f = CORPUS_DIR+corpus+'/reduced_parsed.csv'
+    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
+
+    corpus = 'sanders'
+    corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
+    sentences, labels = load_data_and_labels(corpus_f, col_label_name='Sentiment')
+
+    #corpus = 'semeval2003'
+    #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
+    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
     
     #clf = CNN()
     #clf.train(sentences, labels, random_state=0) 
     #clf.dump_to_file(TRAINED_DIR+corpus+'_cnn')
 
-    #clf = BagofWord()
-    #clf.train(sentences, labels, n_folds=5, random_state=0) 
-    #clf.dump_to_file(TRAINED_DIR+corpus+'_bow')
-
     clf = BagofWord()
     clf.train(sentences, labels, n_folds=5, random_state=0) 
-    clf.dump_to_file(TRAINED_DIR+corpus+'full_bow')
+    clf.dump_to_file(TRAINED_DIR+corpus+'_bow')
 
 

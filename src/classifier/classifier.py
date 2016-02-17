@@ -5,15 +5,15 @@ import pickle
 
 class Classifier(object):
 
-    def __init__(self):
-        self.init()
+    def __init__(self, **kwargs):
+        self.init(from_file=False, **kwargs)
 
     def load_from_file(self, file_name):
 
         assert os.path.isfile(file_name), "{} not found".format(file_name)
         with open(file_name) as f:
             clf = pickle.load(f)
-        clf.init() #Some variables might be too big and not dumped into the file, initial those variables in this functtion
+        clf.init(from_file=True) #Some variables might be too big and not dumped into the file, initial those variables in this functtion
 
         return clf
 
@@ -28,7 +28,6 @@ class Classifier(object):
         feature = self.text2vec(text)
         return self.predict_prob(feature)
 
-
     def train(self, sentences, labels, **kwargs):
         literal_labels = list(set(itertools.chain(*labels)))
         print "Labels:{}".format(literal_labels)
@@ -39,7 +38,7 @@ class Classifier(object):
 
         self.emotions = literal_labels
 
-    def init(self):
+    def init(self, from_file):
         """
         If the sub class has some variables that is too large and do not want to be dumped.
         Override this function and initialize those variables in it 
