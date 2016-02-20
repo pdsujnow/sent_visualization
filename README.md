@@ -1,13 +1,16 @@
 # Process
 - Build Classifiers
 - Run Server
+- Test Client& Server connection
 
 # Build Classifiers
-- Folders: src/classifier
-- Write new classifier that inherits src/classifier_controler.Classifier and implement necessary function (see src/classifier/bagofword.py)
-- Train the classifier and store it in model/ (see if __main__ in src/classifier_controler.py)
+- Write new classifier that is scikit-learn compatible in src/classifier.
+- Train the classifier with src/train_models.py and store it in model/
 
 # Run Server
 - For releasing, execute src/server.py
 - For debugging, execute src/server.py -d
-- The connection settings (url and port) are differnt for releasing and degbugging, please reger to src/test.py
+
+# Test Client& Server connection
+- For releasing, execute src/client_test.py
+- For releasing, execute src/client_test.py -d
