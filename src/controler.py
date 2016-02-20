@@ -4,29 +4,8 @@
 import sys
 import os
 import csv
-from preprocessor import preprocess
-from classifier.classifier import Classifier
-
-MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
-CORPUS_DIR = os.path.join(MODULE_DIR, '../corpus/')
-TRAINED_DIR = os.path.join(MODULE_DIR, '../model/')
-
-def load_data_and_labels(file_name, exclude_labels=['irrelevant'], col_label_name='Sentiment', col_sentence_name='sentence'):
-    with open(file_name) as f:
-        reader = csv.DictReader(f)
-        data = [row for row in reader]
-
-    sentences = []
-    labels = []
-
-    for row in data:
-        e = row[col_label_name]
-        if e in exclude_labels:
-            continue
-        sentences.append(preprocess(row[col_sentence_name]))
-        labels.append([e])
-
-    return [sentences, labels]
+from model import Model
+from pymongo import MongoClient
 
 
 def install_all_model(models, dirname, fnames):
@@ -37,52 +16,36 @@ def install_all_model(models, dirname, fnames):
         if '.' in os.path.basename(path):
             continue
         if os.path.isfile(path):
-            print "Loading model {} ...".format(os.path.basename(path))
-            clf = Classifier().load_from_file(path)
-            models[clf.name] = clf
+            name = os.path.basename(path)
+            print "Loading model {} ...".format(name)
+            model = Model.load_from_file(path)
+            models[name] = model
 
 class Controler():
-    def __init__(self): 
+    def __init__(self, model_dir): 
         self.models={}
-        root_dir = os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
-        self.TRAINED_DIR = os.path.join(root_dir, TRAINED_DIR)
-        os.path.walk(self.TRAINED_DIR, install_all_model, self.models)
+        os.path.walk(model_dir, install_all_model, self.models)
         print "All models loaded"
 
     def list_model(self):
-        return {m.name: m.emotions for m in self.models.values()}
+        return {name: model.emotion_labels for name, model in self.models.items()}
 
     def predict(self, model_name, text):
-        return self.models[model_name].predict(preprocess(text))
+        return self.models[model_name].predict(text)
 
-if __name__ == "__main__": 
-    #Train classifiers
+class Logger(object):
 
-    from classifier.bagofword import BagofWord
-    from classifier.cnn import CNN
+    def __init__(self, address="doraemon.iis.sinica.edu.tw", dbname="emotion_visualiztion", collection_name='log'):
+        
+        client = MongoClient(address)
+        db = client[dbname]
+        self.collection=db[collection_name]
 
-    #corpus = 'LJ40k'
-    #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
-
-    #corpus = 'LJ40k'
-    #corpus_f = CORPUS_DIR+corpus+'/reduced_parsed.csv'
-    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
-
-    corpus = 'sanders'
-    corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    sentences, labels = load_data_and_labels(corpus_f, col_label_name='Sentiment')
-
-    #corpus = 'semeval2003'
-    #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
-    #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
-    
-    #clf = CNN()
-    #clf.train(sentences, labels, random_state=0) 
-    #clf.dump_to_file(TRAINED_DIR+corpus+'_cnn')
-
-    clf = BagofWord()
-    clf.train(sentences, labels, n_folds=5, random_state=0) 
-    clf.dump_to_file(TRAINED_DIR+corpus+'_bow')
-
+    def log(self, data):
+        try:
+            self.collection.insert_one(data)
+        except e:
+            print e
+            return "Failed"
+        return "Success"
 

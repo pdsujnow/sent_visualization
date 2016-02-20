@@ -1,5 +1,4 @@
 lexicon
 corpus
-model
 *.pkl
 *.pyc

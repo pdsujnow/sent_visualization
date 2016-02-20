@@ -9,9 +9,9 @@ import numpy as np
 from singleton import Singleton
 
 module_path = os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
-cache_path = os.path.join(module_path, 'globve_cache')
+cache_path = os.path.join(module_path, '../../model', 'globve')
 class Globve(object):
-    __metaclass__ = Singleton
+    #__metaclass__ = Singleton
 
     def __init__(self, address="doraemon.iis.sinica.edu.tw", dbname="vocabulary_corpus", dimension=300):
         

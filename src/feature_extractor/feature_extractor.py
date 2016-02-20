@@ -18,7 +18,8 @@ class W2VExtractor(FeatureExtractor):
         #self.model = Word2Vec()#wordvector model
 
     def del_too_large(self):
-        self.model.update_cache()
+        if 'update_cache' in self.model.__dict__:
+            self.model.update_cache()
         del self.model
 
     def extract(self, text):

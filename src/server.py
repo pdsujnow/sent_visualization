@@ -10,10 +10,10 @@ from flask import request
 import json
 import datetime
 import math
+import os
 
 from flask.ext.cors import cross_origin
-from controler import Controler
-from app_logger import AppLogger
+from controler import Controler, Logger
 
 app = Flask(__name__)
 #app.config['CORS_HEADERS'] = 'Content-Type'
@@ -44,9 +44,7 @@ def predict():
     text = data['text']
     try:
         text = str(TextBlob(text).translate(to='en'))
-#        print "{} translated to {}".format(data['text'], text)
     except Exception as e:
-#        print "It's English, No translate!"
         text = data['text']
 
     res = controler.predict(data['model'], text)
@@ -74,8 +72,8 @@ def parse_arg(argv):
 
 if __name__ == "__main__":
     args = parse_arg(sys.argv)
-    controler = Controler()
-    logger = AppLogger()
+    controler = Controler(os.path.abspath('../model'))
+    logger = Logger()
     startTime = datetime.datetime.now()
 
     if args.debug:
