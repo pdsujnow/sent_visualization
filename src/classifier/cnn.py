@@ -20,23 +20,23 @@ from keras.layers import containers
 
 class CNN(Classifier):
 
-    def init(self):
-        if 'arch_file' not in self.__dict__:
-            return
-        with open(self.arch_file) as f:
-            self.model = model_from_json(f.read())
-        self.model.load_weights(self.weight_file)
+    #def init(self):
+    #    if 'arch_file' not in self.__dict__:
+    #        return
+    #    with open(self.arch_file) as f:
+    #        self.model = model_from_json(f.read())
+    #    self.model.load_weights(self.weight_file)
 
-    def un_init(self):
-        del self.model
+    #def un_init(self):
+    #    del self.model
 
-    def dump_to_file(self, dump_file):
-        self.arch_file = dump_file+'_arch.json'
-        self.weight_file = dump_file+'_weights.h5'
-        with open(self.arch_file, 'w') as f:
-            f.write(self.model.to_json())
-        self.model.save_weights(self.weight_file)
-        super(CNN, self).dump_to_file(dump_file)
+    #def dump_to_file(self, dump_file):
+    #    self.arch_file = dump_file+'_arch.json'
+    #    self.weight_file = dump_file+'_weights.h5'
+    #    with open(self.arch_file, 'w') as f:
+    #        f.write(self.model.to_json())
+    #    self.model.save_weights(self.weight_file)
+    #    super(CNN, self).dump_to_file(dump_file)
 
     def text2vec(self, text):
         if type(text[0]) is unicode:
@@ -110,25 +110,3 @@ class CNN(Classifier):
             c.add_output('output', inputs=inps)
 
         return c
-
-
-
-    def to_given_length(self, sentence, length, padding_word="<PAD/>"):
-        sentence = sentence[:length]
-        return sentence + [padding_word] * (length - len(sentence))
-
-
-    def build_vocab(self, sentences, mincount=5):
-        """
-        Builds a vocabulary mapping from word to index based on the sentences.
-        Returns vocabulary mapping and inverse vocabulary mapping.
-        """
-        # Build vocabulary
-        word_counts = Counter(itertools.chain(*sentences))
-        # Mapping from index to word
-        vocabulary_inv = [x[0] for x in word_counts.most_common() if x[1]>mincount]
-        assert vocabulary_inv[0]=='<PAD/>'
-        # Mapping from word to index
-        vocabulary = {x: i for i, x in enumerate(vocabulary_inv)}
-        return vocabulary
-

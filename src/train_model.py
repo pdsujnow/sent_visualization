@@ -60,16 +60,17 @@ if __name__ == "__main__":
     corpus_f = os.path.join(CORPUS_DIR, corpus, 'parsed.csv')
     sentences, labels = load_data_and_labels(corpus_f)
 
-    clf = LinearSVC()
-    feature_extractors = select_feature(SVM_FEATURE_EXTRACTOR)
-    parameters = dict(C = np.logspace(-5,1, 8))
-    OVO = True #one_vs_one
-    dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
-    #clf = CNN()
-    #feature_extractors = select_feature(CNN_FEATURE_EXTRACTOR)
+    #clf = LinearSVC()
+    #feature_extractors = select_feature(SVM_FEATURE_EXTRACTOR)
     #parameters = dict(C = np.logspace(-5,1, 8))
-    #OVO = False
-    #dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
+    #OVO = True #one_vs_one
+    #dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
+
+    clf = CNN()
+    feature_extractors = select_feature(CNN_FEATURE_EXTRACTOR)
+    parameters = dict()
+    OVO = False
+    dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
 
     model = Model(clf, feature_extractors)
     model.grid_search(sentences, labels, OVO=OVO, parameters=parameters)
