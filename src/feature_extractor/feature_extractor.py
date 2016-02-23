@@ -1,28 +1,75 @@
+import itertools
 import numpy as np
+from collections import Counter
 from word2vec.globvemongo import Globve
 from word2vec.word2vec import Word2Vec
+import copy
+from preprocessor import preprocess
+from functools import reduce
+import sys
+
+def feature_fuse(feature_extractors, sentences, labels=None):
+    Xs=[]
+
+    if labels is not None:
+        ys = []
+        for fe in feature_extractors:
+            X, y = fe.extract_train(sentences, labels)
+            Xs.append(X)
+            ys.append(np.array(y))
+        if len(ys)>1:
+            assert(reduce(lambda a,b: (a==b).all, [y for y in ys]))
+        X = Xs[0] if len(Xs)==1 else np.concatenate(Xs, axis=1)
+        return X, y
+    else:
+        for fe in feature_extractors:
+            Xs.append(fe.extract(sentences))
+        return Xs[0] if len(Xs)==1 else np.concatenate(Xs, axis=1)
 
 class FeatureExtractor(object):
-    def extract(self, text):
-        raise NotImplementedError
-    def pre_calculate(self, sentences):
-        pass
-    def init_too_large(self):
-        pass
+
+    def extract_train(self, sentences, labels):
+        literal_labels = list(set(itertools.chain(*labels)))
+        print "Labels: ", literal_labels
+        y = [[literal_labels.index(l) for l in row] for row in labels]
+
+        sentences = [preprocess(s) for s in sentences]
+        self.pre_calculate(sentences)
+
+        Xs = []
+        X = np.array([self._extract(s) for s in sentences])
+
+        self.literal_labels = literal_labels
+        return X, y
+
     def del_too_large(self):
         pass
 
+    def init_too_large(self):
+        pass
+
+    def extract(self, text):
+        return self._extract(preprocess(text))
+
+    def pre_calculate(self, sentences):
+        pass
+
+    def _extract(self, text):
+        raise NotImplementedError
+
+
 class W2VExtractor(FeatureExtractor):
+    def __init__(self):
+        self.init_too_large()
+
+    def del_too_large(self):
+        del self.model
+
     def init_too_large(self):
         self.model = Globve()#wordvector model
         #self.model = Word2Vec()#wordvector model
 
-    def del_too_large(self):
-        if 'update_cache' in self.model.__dict__:
-            self.model.update_cache()
-        del self.model
-
-    def extract(self, text):
+    def _extract(self, text):
         X = np.zeros(300)
         i=0
         for word in [w.decode('utf8') for w in text]:
@@ -31,27 +78,33 @@ class W2VExtractor(FeatureExtractor):
                 X = X+self.model[word] 
         if i>0:
             X=X/i
-        if float(i)/len(text)<0.6:
-            X = np.zeros_like(X)
+        # if float(i)/len(text)<0.6:
+        #     X = np.zeros_like(X)
 
         return X
 
 class CNNExtractor(FeatureExtractor):
-    def __init__(self):
+    def __init__(self, mincount=5):
         self.padding_word = "<PAD/>"
+        self.mincount = mincount
 
-    def pre_calculate(self, sentences, mincount=5):
+    @property
+    def vocabulary_size(self):
+        return len(self.vocabulary)
+
+    def pre_calculate(self, sentences):
         self.maxlen = max(len(x) for x in sentences)
-        word_counts = Counter(itertools.chain(*sentences))
+        pad_sentences = [self.to_given_length(s, self.maxlen) for s in sentences]
+        word_counts = Counter(itertools.chain(*pad_sentences))
         #ind -> word
-        vocabulary_inv = [x[0] for x in word_counts.most_common() if x[1]>mincount]
+        vocabulary_inv = [x[0] for x in word_counts.most_common() if x[1]>self.mincount]
         assert vocabulary_inv[0]==self.padding_word # padding should be the most frequent one
         #word -> ind
         self.vocabulary = {x: i for i, x in enumerate(vocabulary_inv)}
 
-    def text2vec(self, text):
-        if type(text[0]) is unicode:
-            text = [t.encode('utf8') for t in text]
+    def _extract(self, text):
+        #if type(text[0]) is unicode:
+        #    text = [t.encode('utf8') for t in text]
         text = self.to_given_length(text, self.maxlen)
 
         res = np.zeros((1,self.maxlen))

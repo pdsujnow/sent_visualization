@@ -5,8 +5,8 @@ import sys
 import numpy as np
 import itertools
 from collections import Counter
-from classifier import Classifier
 
+import inspect
 
 from keras.preprocessing import sequence
 from keras.models import Sequential, Graph
@@ -18,7 +18,99 @@ from keras.layers.convolutional import Convolution1D, MaxPooling1D
 from keras.datasets import imdb
 from keras.layers import containers
 
-class CNN(Classifier):
+class BaseWrapper(object):
+    def __init__(self, **model_params):
+        optimizer='adam' if 'optimizer' not in model_params else model_params['optimizer']
+        loss_fn='categorical_crossentropy' if 'loss_fn' not in model_params else model_params['loss_fn']
+        self.optimizer = optimizer
+        self.loss_fn = loss_fn
+        model_params.update(self.get_default_params())
+        self.model_params = model_params
+        for name, value in model_params.items():
+            setattr(self, name, value)
+
+
+    def get_params(self, deep=True):
+        res = {}
+        arg_name = ['optimizer', 'loss_fn']
+        res = {name: getattr(self, name) for name in arg_name}
+
+        for (name, value) in self.model_params.items():
+            res.update({name: value})
+        return res
+
+    def set_params(self, **params):
+        for name, value in params.items():
+            setattr(self, name, value)
+        self.construct()
+        self.compile(self.optimizer, self.loss_fn)
+        return self
+
+
+    def get_default_params(self):
+        raise NotImplementedError
+
+    def construct(self):
+        raise NotImplementedError
+
+class SequentialWrapper(BaseWrapper):
+
+    def fit(self, X, y):
+        assert(type(self.model)==Sequential)
+
+        fit_params = {}
+        fit_params_name = inspect.getargspec(Sequential.fit)
+        for name,value in self.model_params.items():
+            if name in fit_params_name:
+                fit_params.update({name: value})
+
+        return self.model.fit(X, y, **fit_params)
+
+class CNN(SequentialWrapper):
+    def get_default_params(self):
+        return dict(
+        maxlen = 100,
+        vocabulary_size = None,
+        drop_out_prob = 0.2,
+        embedding_dims = 100,
+        nb_filter = 250,
+        hidden_dims = 100,
+        filter_length = [2,3,4]
+        )
+
+
+    def construct(self):
+        
+        #np.random.seed(random_state)
+
+        self.model = Sequential()
+        self.model.add(Embedding(self.vocabulary_size, self.embedding_dims, input_length=self.maxlen))
+        #self.model.add(Dropout(drop_out_prob))
+        self.model.add(self.convLayer(self.maxlen, self.embedding_dims, self.nb_filter, self.filter_length))
+        self.model.add(Dense(hidden_dims))
+        #self.model.add(Dropout(drop_out_prob))
+        self.model.add(Activation('relu'))
+        self.model.add(Dense(y.shape[1]))
+        self.model.add(Activation('sigmoid'))
+
+    def convLayer(self, inp_dim, embedding_dims, nb_filter, filter_length):
+        c = containers.Graph()
+        c.add_input(name='input', input_shape=(inp_dim, embedding_dims))
+        inps=[]
+        for i in filter_length:
+            c.add_node(containers.Sequential([
+                                Convolution1D(nb_filter=nb_filter, filter_length=i, border_mode='valid', activation='relu',subsample_length=1, input_shape=(inp_dim, embedding_dims)),
+                                MaxPooling1D(pool_length=2),
+                                Flatten()]),
+                                name='Conv{}'.format(i), input='input')
+            inps.append('Conv{}'.format(i))
+
+        if len(inps)==1:
+            c.add_output('output', input=inps[0])
+        else:
+            c.add_output('output', inputs=inps)
+
+        return c
 
     #def init(self):
     #    if 'arch_file' not in self.__dict__:
@@ -37,76 +129,3 @@ class CNN(Classifier):
     #        f.write(self.model.to_json())
     #    self.model.save_weights(self.weight_file)
     #    super(CNN, self).dump_to_file(dump_file)
-
-    def text2vec(self, text):
-        if type(text[0]) is unicode:
-            text = [t.encode('utf8') for t in text]
-        text = self.to_given_length(text, self.maxlen)
-
-        res = np.zeros((1,self.maxlen))
-        for i, word in enumerate(text):
-            if word in self.vocabulary:
-                res[0][i] = self.vocabulary[word]
-            else:
-                res[0][i] = self.vocabulary['<PAD/>']
-        return  np.array(res)
-
-    def fit(self, sentences, y, batch_size=32, nb_epoch=4, random_state=0, validation_split=0.1,
-            embedding_dims=128, nb_filter=250, filter_length=[3,4], hidden_dims=250, drop_out_prob=0.25):
-
-        self.maxlen = max(len(x) for x in sentences)
-        sentences = [self.to_given_length(s, self.maxlen) for s in sentences]
-        self.vocabulary = self.build_vocab(sentences)
-
-        X = np.concatenate([self.text2vec(s) for s in sentences])
-        nb_class = y.shape[1]
-
-        np.random.seed(random_state)
-
-        self.model = Sequential()
-        self.model.add(Masking(mask_value=0))
-        self.model.add(Embedding(len(self.vocabulary), embedding_dims, input_length=self.maxlen))
-
-        #self.model.add(LSTM(embedding_dims))
-        #self.model.add(Dropout(0.5))
-        #self.model.add(Dense(hidden_dims))
-        #self.model.add(Dropout(drop_out_prob))
-        #self.model.add(Activation('relu'))
-        #self.model.add(Dense(y.shape[1]))
-        #self.model.add(Activation('sigmoid'))
-
-        self.model.add(Dropout(drop_out_prob))
-        self.model.add(self.convLayer(self.maxlen, embedding_dims, nb_filter, filter_length))
-        self.model.add(Dense(hidden_dims))
-        self.model.add(Dropout(drop_out_prob))
-        self.model.add(Activation('relu'))
-        self.model.add(Dense(y.shape[1]))
-        self.model.add(Activation('sigmoid'))
-
-        self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
-
-        self.model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch, show_accuracy=True, validation_split=validation_split)
-
-
-    def predict_prob(self, feature):
-        return self.model.predict(feature).tolist()
-
-
-    def convLayer(self, inp_dim, embedding_dims, nb_filter, filter_length=[2]):
-        c = containers.Graph()
-        c.add_input(name='input', input_shape=(inp_dim, embedding_dims))
-        inps=[]
-        for i in filter_length:
-            c.add_node(containers.Sequential([
-                                Convolution1D(nb_filter=nb_filter, filter_length=i, border_mode='valid', activation='relu',subsample_length=1, input_shape=(inp_dim, embedding_dims)),
-                                MaxPooling1D(pool_length=2),
-                                Flatten()]),
-                                name='Conv{}'.format(i), input='input')
-            inps.append('Conv{}'.format(i))
-
-        if len(inps)==1:
-            c.add_output('output', input=inps[0])
-        else:
-            c.add_output('output', inputs=inps)
-
-        return c

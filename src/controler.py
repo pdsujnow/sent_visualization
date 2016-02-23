@@ -6,6 +6,7 @@ import os
 import csv
 from model import Model
 from pymongo import MongoClient
+from textblob import TextBlob
 
 
 def install_all_model(models, dirname, fnames):
@@ -28,10 +29,20 @@ class Controler():
         print "All models loaded"
 
     def list_model(self):
-        return {name: model.emotion_labels for name, model in self.models.items()}
+        return {name: model.labels for name, model in self.models.items()}
 
     def predict(self, model_name, text):
-        return self.models[model_name].predict(text)
+        try:
+            text = str(TextBlob(text).translate(to='en'))
+        except Exception as e:
+            pass
+
+        pred = self.models[model_name].predict(text)
+        if sum(pred)==0:
+            return {'res':pred}
+        else:
+            return {'res':pred}
+        return 
 
 class Logger(object):
 

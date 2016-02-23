@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from textblob import TextBlob
 import sys
 from flup.server.fcgi import WSGIServer
 import argparse
 from flask import Flask
 from flask import request
 import json
-import datetime
-import math
 import os
 
 from flask.ext.cors import cross_origin
@@ -22,17 +19,6 @@ app = Flask(__name__)
 def request2json(data):
     return json.loads(data.decode('utf8'))
 
-render = True
-def setRender(diff):
-    global render
-    if math.floor(diff.seconds/1800.0) % 2 ==0:
-        newRender = True
-    else:
-        newRender = False
-    if newRender != render:
-        print "Render is now:{}".format(newRender)
-    render=newRender
-
 @app.route('/listmodel', methods=['GET'])
 def list_model():
     return json.dumps(controler.list_model())
@@ -41,19 +27,8 @@ def list_model():
 @cross_origin()
 def predict():
     data = request2json(request.data)
-    text = data['text']
-    try:
-        text = str(TextBlob(text).translate(to='en'))
-    except Exception as e:
-        text = data['text']
-
-    res = controler.predict(data['model'], text)
-    if sum(res)==0:
-        return json.dumps({'render':render, 'res':res, 'log':False})
-    curTime = datetime.datetime.now()
-    diff = curTime - startTime
-    #setRender(diff)
-    return json.dumps({'render':render, 'res':res, 'log':True})
+    res = controler.predict(data['model'], data['text'])
+    return json.dumps(res)
 
 @app.route('/log', methods=['POST'])
 @cross_origin()
@@ -74,7 +49,6 @@ if __name__ == "__main__":
     args = parse_arg(sys.argv)
     controler = Controler(os.path.abspath('../model'))
     logger = Logger()
-    startTime = datetime.datetime.now()
 
     if args.debug:
         args.port+=1

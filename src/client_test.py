@@ -30,9 +30,7 @@ preditc_text = [
 'I am so sleepy and I just want to lie on bed.',              
 'I am drained out by the paper.',                             
 'I just can not do it anymore',                               
-'Iascsa sdsd dsdsds',                                         
-'kya kar rahi ho tum? aaj aana hai kya?',                     
-'kya yaar..I really hate this college. Kuch toh bhi hota hai!'
+'Vous êtes un gars mal',
 ]
 
 

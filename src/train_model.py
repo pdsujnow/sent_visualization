@@ -4,13 +4,16 @@
 import sys
 import os
 import csv
+import pickle
 import numpy as np
 from sklearn.svm import LinearSVC
+from classifier import CNN
 from model import Model
-from feature_extractor import W2VExtractor, CNNExtractor
+from feature_extractor import feature_fuse, W2VExtractor, CNNExtractor
 
-CORPUS_DIR = os.path.join('..', 'corpus')
-MODEL_DIR = os.path.join('..', 'model')
+MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
+CORPUS_DIR = os.path.join(MODULE_DIR, '..', 'corpus')
+MODEL_DIR = os.path.join(MODULE_DIR, '..', 'model')
 SVM_FEATURE_EXTRACTOR = [W2VExtractor]
 CNN_FEATURE_EXTRACTOR = [CNNExtractor]
 
@@ -45,7 +48,33 @@ def select_feature(feature_types):
 if __name__ == "__main__": 
     #Train classifiers
 
-    #from classifier.cnn import CNN
+    corpus = 'sanders'
+    corpus_f = os.path.join(CORPUS_DIR, corpus, 'parsed.csv')
+    sentences, labels = load_data_and_labels(corpus_f)
+
+    feature_extractors = select_feature(SVM_FEATURE_EXTRACTOR)
+    clf = LinearSVC()
+    OVO = True 
+    parameters = dict(C = np.logspace(-5,1, 8))
+    dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
+
+    #cnn_extractor = CNNExtractor()
+    #parameters = dict(vocabulary_size=cnn_extractor.vocabulary_size)
+    #OVO = False
+    #dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
+
+    #clf = CNN()
+
+    X, y = feature_fuse(feature_extractors, sentences, labels)
+    model = Model(clf, feature_extractors, OVO=OVO)
+    model.grid_search(X, y, parameters=parameters)
+
+    model.dump_to_file(dump_file)
+
+    for fe in feature_extractors:
+        del fe
+    del feature_extractors
+
 
     #corpus = 'LJ40k'
     #corpus_f = CORPUS_DIR+corpus+'/parsed.csv'
@@ -54,25 +83,3 @@ if __name__ == "__main__":
     #corpus = 'LJ40k'
     #corpus_f = CORPUS_DIR+corpus+'/reduced_parsed.csv'
     #sentences, labels = load_data_and_labels(corpus_f, col_label_name='sentiment')
-
-
-    corpus = 'sanders'
-    corpus_f = os.path.join(CORPUS_DIR, corpus, 'parsed.csv')
-    sentences, labels = load_data_and_labels(corpus_f)
-
-    #clf = LinearSVC()
-    #feature_extractors = select_feature(SVM_FEATURE_EXTRACTOR)
-    #parameters = dict(C = np.logspace(-5,1, 8))
-    #OVO = True #one_vs_one
-    #dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
-
-    clf = CNN()
-    feature_extractors = select_feature(CNN_FEATURE_EXTRACTOR)
-    parameters = dict()
-    OVO = False
-    dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
-
-    model = Model(clf, feature_extractors)
-    model.grid_search(sentences, labels, OVO=OVO, parameters=parameters)
-
-    model.dump_to_file(dump_file)
