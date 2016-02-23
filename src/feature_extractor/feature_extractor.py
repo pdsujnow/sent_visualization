@@ -107,13 +107,13 @@ class CNNExtractor(FeatureExtractor):
         #    text = [t.encode('utf8') for t in text]
         text = self.to_given_length(text, self.maxlen)
 
-        res = np.zeros((1,self.maxlen))
+        res = np.zeros(self.maxlen)
         for i, word in enumerate(text):
             if word in self.vocabulary:
-                res[0][i] = self.vocabulary[word]
+                res[i] = self.vocabulary[word]
             else:
-                res[0][i] = self.vocabulary[self.padding_word]
-        return  np.array(res)
+                res[i] = self.vocabulary[self.padding_word]
+        return res
 
     def to_given_length(self, sentence, length):
         sentence = sentence[:length]

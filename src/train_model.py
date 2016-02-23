@@ -7,15 +7,13 @@ import csv
 import pickle
 import numpy as np
 from sklearn.svm import LinearSVC
-from classifier import CNN
+from classifier import KerasClassifier, build_cnn
 from model import Model
 from feature_extractor import feature_fuse, W2VExtractor, CNNExtractor
 
 MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
 CORPUS_DIR = os.path.join(MODULE_DIR, '..', 'corpus')
 MODEL_DIR = os.path.join(MODULE_DIR, '..', 'model')
-SVM_FEATURE_EXTRACTOR = [W2VExtractor]
-CNN_FEATURE_EXTRACTOR = [CNNExtractor]
 
 def load_data_and_labels(file_name, exclude_labels=['irrelevant']):
     with open(file_name) as f:
@@ -52,20 +50,23 @@ if __name__ == "__main__":
     corpus_f = os.path.join(CORPUS_DIR, corpus, 'parsed.csv')
     sentences, labels = load_data_and_labels(corpus_f)
 
-    feature_extractors = select_feature(SVM_FEATURE_EXTRACTOR)
-    clf = LinearSVC()
-    OVO = True 
-    parameters = dict(C = np.logspace(-5,1, 8))
-    dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
+    #feature_extractors = select_feature([W2VExtractor])
+    #X, y = feature_fuse(feature_extractors, sentences, labels)
+    #clf = LinearSVC()
+    #OVO = True 
+    #parameters = dict(C = np.logspace(-5,1, 8))
+    #dump_file = os.path.join(MODEL_DIR, corpus+'_svm')
 
-    #cnn_extractor = CNNExtractor()
-    #parameters = dict(vocabulary_size=cnn_extractor.vocabulary_size)
-    #OVO = False
-    #dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
-
-    #clf = CNN()
-
+    feature_extractors = [CNNExtractor()]
     X, y = feature_fuse(feature_extractors, sentences, labels)
+    clf = KerasClassifier(build_fn = build_cnn,
+            vocabulary_size = feature_extractors[0].vocabulary_size,
+            maxlen=X.shape[1],
+            nb_class=len(feature_extractors[0].literal_labels))
+    OVO = False
+    parameters = dict( filter_length = [[2,3,4]])
+    dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
+
     model = Model(clf, feature_extractors, OVO=OVO)
     model.grid_search(X, y, parameters=parameters)
 
