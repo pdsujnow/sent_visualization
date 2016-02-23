@@ -42,12 +42,6 @@ class FeatureExtractor(object):
         self.literal_labels = literal_labels
         return X, y
 
-    def del_too_large(self):
-        pass
-
-    def init_too_large(self):
-        pass
-
     def extract(self, text):
         return self._extract(preprocess(text))
 
@@ -60,12 +54,12 @@ class FeatureExtractor(object):
 
 class W2VExtractor(FeatureExtractor):
     def __init__(self):
-        self.init_too_large()
+        self.post_load()
 
-    def del_too_large(self):
+    def pre_dump(self):
         del self.model
 
-    def init_too_large(self):
+    def post_load(self):
         self.model = Globve()#wordvector model
         #self.model = Word2Vec()#wordvector model
 

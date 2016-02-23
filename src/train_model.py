@@ -7,7 +7,7 @@ import csv
 import pickle
 import numpy as np
 from sklearn.svm import LinearSVC
-from classifier import KerasClassifier, build_cnn
+from classifier.cnn import CNN
 from model import Model
 from feature_extractor import feature_fuse, W2VExtractor, CNNExtractor
 
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     corpus_f = os.path.join(CORPUS_DIR, corpus, 'parsed.csv')
     sentences, labels = load_data_and_labels(corpus_f)
 
-    #feature_extractors = select_feature([W2VExtractor])
+    #feature_extractors = [W2VExtractor()]
     #X, y = feature_fuse(feature_extractors, sentences, labels)
     #clf = LinearSVC()
     #OVO = True 
@@ -59,17 +59,16 @@ if __name__ == "__main__":
 
     feature_extractors = [CNNExtractor()]
     X, y = feature_fuse(feature_extractors, sentences, labels)
-    clf = KerasClassifier(build_fn = build_cnn,
-            vocabulary_size = feature_extractors[0].vocabulary_size,
+    clf = CNN( vocabulary_size = feature_extractors[0].vocabulary_size,
             maxlen=X.shape[1],
             nb_class=len(feature_extractors[0].literal_labels))
     OVO = False
-    parameters = dict( filter_length = [[2,3,4]])
+    parameters = dict( filter_length = [[2,3,4]], nb_epoch=[1], verbose=[0])
     dump_file = os.path.join(MODEL_DIR, corpus+'_cnn')
 
-    model = Model(clf, feature_extractors, OVO=OVO)
-    model.grid_search(X, y, parameters=parameters)
 
+    model = Model(clf, feature_extractors, OVO=OVO)
+    model.grid_search(X, y,n_folds=2, parameters=parameters)
     model.dump_to_file(dump_file)
 
     for fe in feature_extractors:

@@ -25,13 +25,30 @@ class Model(object):
     def load_from_file(fname):
         with open(fname) as f:
             model = pickle.load(f)
+        for c in model.clf:
+            try:
+                c.post_load()
+            except AttributeError as e:
+                print "No pos_load for {}".format(c.__class__)
         for fe in model.feature_extractors:
-            fe.init_too_large()
+            try:
+                fe.post_load()
+            except AttributeError as e:
+                print "No pos_load for {}".format(fe.__class__)
         return model
 
     def dump_to_file(self, fname):
+        for c in self.clf:
+            print c.__class__
+            try:
+                c.pre_dump(fname)
+            except AttributeError as e:
+                print "No pre_dump for {}".format(c.__class__)
         for fe in self.feature_extractors:
-            fe.del_too_large()
+            try:
+                fe.pre_dump()
+            except AttributeError as e:
+                print "No pre_dump for {}".format(fe.__class__)
         with open(fname, 'w') as f:
             pickle.dump(self, f)
 
