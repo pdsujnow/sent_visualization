@@ -19,22 +19,22 @@
 Input:
 None
 Output:
-{'model1_name':['emotion_A', 'emotion_B', 'emotion_C'], 'model2_name':['emotion_D', 'emotion_E']}
+{"model1_name":["emotion_A", "emotion_B", "emotion_C"], "model2_name":["emotion_D", "emotion_E"]}
 ```
 
 2. (POST) /predict
+The output are the probability (or something similar) for each emotion belonging to the queried model name
 ```json
 Input:
-{'model':'model1_name', 'text': 'whatever text here'}
+{"model":"model1_name", "text": "whatever text here"}
 Output:
-{"res": [0.2, 0.3, 0.9]} //The probability (or something indicating the score of prediction) for each emotion belonging to the queried model name
-
+{"res": [0.2, 0.3, 0.9]} 
 ```
 
 3. (POST) /log
 ```json
 Input:
-{//whatever json}
+{"Whatever":"Whatever json object"}
 Output:
 None
 ```
