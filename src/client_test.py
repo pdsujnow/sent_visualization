@@ -34,9 +34,9 @@ preditc_text = [
 ]
 
 
-model = 'sanders_svm'
+#model = 'sanders_svm'
 #model = 'semeval2003_bow'
-#model = 'sanders_cnn'
+model = 'sanders_cnn'
 #model = 'LJ40k_bow'
 predict_d = [ {'model':model, 'text': t} for t in preditc_text ]
 
@@ -58,8 +58,8 @@ if __name__ == "__main__":
     emotions = np.array(json.loads(requests.get(url+'listmodel').text)[model])
     for p_d in predict_d:
         print p_d['text']
-        #print requests.post(url+'predict', data=json.dumps(p_d)).text
-        pred = json.loads(requests.post(url+'predict', data=json.dumps(p_d)).text)['res']
-        print emotions[np.argsort(np.array(pred))[::-1]]
+        print requests.post(url+'predict', data=json.dumps(p_d)).text
+        #pred = json.loads(requests.post(url+'predict', data=json.dumps(p_d)).text)['res']
+        #print emotions[np.argsort(np.array(pred))[::-1]]
 
     #print requests.post(url+'log', data=log_d).text

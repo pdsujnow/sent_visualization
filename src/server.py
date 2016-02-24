@@ -8,6 +8,8 @@ from flask import Flask
 from flask import request
 import json
 import os
+import logging
+logging.basicConfig(level=logging.INFO)
 
 from flask.ext.cors import cross_origin
 from controler import Controler, Logger

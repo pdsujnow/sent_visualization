@@ -86,7 +86,7 @@ class CNN(KerasClassifier):
 
     def post_load(self):
        with open(self.arch_file) as f:
-           self.model = model_from_json(f.read())
+           self.model = model_from_json(f.read(), custom_objects={"MyEmbedding": MyEmbedding})
        self.model.load_weights(self.weight_file)
 
     def pre_dump(self, dump_file):

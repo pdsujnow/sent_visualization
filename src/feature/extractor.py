@@ -37,8 +37,8 @@ class FeatureExtractor(object):
         self.pre_calculate(sentences)
 
         Xs = []
-        X = np.array([self._extract(s) for s in sentences])
-
+        X = np.array([self._extract(s).flatten() for s in sentences])
+ 
         self.literal_labels = literal_labels
         return X, y
 
@@ -101,12 +101,12 @@ class CNNExtractor(FeatureExtractor):
         #    text = [t.encode('utf8') for t in text]
         text = self.to_given_length(text, self.maxlen)
 
-        res = np.zeros(self.maxlen)
+        res = np.zeros((1, self.maxlen))
         for i, word in enumerate(text):
             if word in self.vocabulary:
-                res[i] = self.vocabulary[word]
+                res[0][i] = self.vocabulary[word]
             else:
-                res[i] = self.vocabulary[self.padding_word]
+                res[0][i] = self.vocabulary[self.padding_word]
         return res
 
     def to_given_length(self, sentence, length):

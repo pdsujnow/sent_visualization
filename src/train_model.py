@@ -9,7 +9,11 @@ import numpy as np
 from sklearn.svm import LinearSVC
 from classifier.cnn import CNN
 from model import Model
-from feature_extractor import feature_fuse, W2VExtractor, CNNExtractor
+from feature.extractor import feature_fuse, W2VExtractor, CNNExtractor
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+
 
 MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
 CORPUS_DIR = os.path.join(MODULE_DIR, '..', 'corpus')

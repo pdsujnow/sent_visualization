@@ -9,7 +9,8 @@ import warnings
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.cross_validation import StratifiedKFold
 from sklearn import grid_search
-from feature_extractor import feature_fuse
+from feature.extractor import feature_fuse
+import logging
 
 class Model(object):
     def __init__(self, clf, feature_extractors, OVO=False):
@@ -29,26 +30,25 @@ class Model(object):
             try:
                 c.post_load()
             except AttributeError as e:
-                print "No pos_load for {}".format(c.__class__)
+                logging.debug("No post_load for {}".format(c.__class__))
         for fe in model.feature_extractors:
             try:
                 fe.post_load()
             except AttributeError as e:
-                print "No pos_load for {}".format(fe.__class__)
+                logging.debug("No post_load for {}".format(fe.__class__))
         return model
 
     def dump_to_file(self, fname):
         for c in self.clf:
-            print c.__class__
             try:
                 c.pre_dump(fname)
             except AttributeError as e:
-                print "No pre_dump for {}".format(c.__class__)
+                logging.debug("No pre_dump for {}".format(c.__class__))
         for fe in self.feature_extractors:
             try:
                 fe.pre_dump()
             except AttributeError as e:
-                print "No pre_dump for {}".format(fe.__class__)
+                logging.debug("No pre_dump for {}".format(fe.__class__))
         with open(fname, 'w') as f:
             pickle.dump(self, f)
 
@@ -81,4 +81,10 @@ class Model(object):
         if not feature.any():
             return [0]*len(self.clf)
         
-        return [c.decision_function(feature)[0] for c in self.clf]
+        fn_list = dir(self.clf[0])
+        if 'predict_pboba' in fn_list:
+            return [c.predict_proba(feature)[0] for c in self.clf]
+        elif 'decision_function' in fn_list:
+            return [c.decision_function(feature)[0] for c in self.clf]
+        else:
+            return [c.predict(feature)[0] for c in self.clf]
