@@ -10,7 +10,7 @@
 
 ## Test Client& Server connection
 - For releasing, execute src/client_test.py
-- For releasing, execute src/client_test.py -d
+- For debugging, execute src/client_test.py -d
 
 # Server & Client Protocol
 1. (GET) /litsmodel
@@ -38,6 +38,3 @@ Input:
 Output:
 None
 ```
-
-
-
