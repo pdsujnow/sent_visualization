@@ -12,10 +12,11 @@ from sklearn import grid_search
 from feature.extractor import feature_fuse
 import logging
 
+
 class Model(object):
     def __init__(self, clf, feature_extractors, OVO=False):
         self.clf = clf
-        self.feature_extractors = feature_extractors if type(feature_extractors)==list else [feature_extractors]
+        self.feature_extractors = feature_extractors if type(feature_extractors) == list else [feature_extractors]
         self.OVO = OVO
 
     @property
@@ -52,25 +53,22 @@ class Model(object):
         with open(fname, 'w') as f:
             pickle.dump(self, f)
 
-    def grid_search(self, X, y,  n_folds=5, scoring='f1',parameters=None):
+    def grid_search(self, X, y, n_folds=5, scoring='f1', parameters=None, **kwargs):
 
-        with warnings.catch_warnings(): 
+        with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             clfs = []
             if self.OVO:
-                y = MultiLabelBinarizer().fit_transform(y)
+                y = MultiLabelBinarizer().fit_transform([[i] for i in y])
                 for i in range(y.shape[1]):
-                    clfs.append(self._grid_search(X, y[:,i], n_folds, scoring, parameters))
+                    clfs.append(self._grid_search(X, y[:, i], n_folds, scoring, parameters, **kwargs))
             else:
-                assert(sum([len(i) for i in y])== len(y)) #each instance should have only one label
-                y = np.array([i[0] for i in y], dtype=int)
-                clfs.append(self._grid_search(X, y, n_folds, scoring, parameters))
+                clfs.append(self._grid_search(X, y, n_folds, scoring, parameters, **kwargs))
             self.clf = clfs
 
-    def _grid_search(self, X, y, n_folds, scoring, parameters):
+    def _grid_search(self, X, y, n_folds, scoring, parameters, **kwargs):
         cv = StratifiedKFold(y, n_folds=n_folds, shuffle=True)
-        #clf = grid_search.GridSearchCV(self.clf, parameters, scoring='f1', n_jobs=1, cv=cv)
-        clf = grid_search.GridSearchCV(self.clf, parameters, scoring='f1', n_jobs=-1, cv=cv)
+        clf = grid_search.GridSearchCV(self.clf, parameters, scoring='f1', cv=cv, **kwargs)
         clf.fit(X, y)
 
         print clf.best_params_, clf.best_score_
@@ -79,8 +77,8 @@ class Model(object):
     def predict(self, text):
         feature = feature_fuse(self.feature_extractors, text)
         if not feature.any():
-            return [0]*len(self.clf)
-        
+            return [0] * len(self.clf)
+
         fn_list = dir(self.clf[0])
         if 'predict_pboba' in fn_list:
             return [c.predict_proba(feature)[0] for c in self.clf]
