@@ -12,31 +12,31 @@ from keras.layers.recurrent import LSTM
 from keras.layers.embeddings import Embedding
 from keras.layers.convolutional import Convolution1D, MaxPooling1D
 from keras.layers import containers
-import tensorflow as tf
-from keras import backend as K
-from keras.backend import tensorflow_backend as KTF
+# import tensorflow as tf
+# from keras import backend as K
+# from keras.backend import tensorflow_backend as KTF
+#
+#
+# class MaskEmbedding(Embedding):
+#
+#     def __init__(self, input_dim, output_dim, use_mask=True, **kwargs):
+#         self.use_mask = use_mask
+#         super(MaskEmbedding, self).__init__(input_dim, output_dim, **kwargs)
+#
+#     def get_output(self, train=False):
+#         X = self.get_input(train)
+#
+#         if self.use_mask:
+#             m = np.ones((self.input_dim, self.output_dim))
+#             m[0] = [0] * self.output_dim
+#             mask = tf.constant(m, dtype=self.W.dtype)
+#             outW = K.gather(self.W, X)
+#             outM = K.gather(mask, X)
+#             return outW * outM
+#         else:
+#             return K.gather(self.W, X)
 
-
-class MaskEmbedding(Embedding):
-
-    def __init__(self, input_dim, output_dim, use_mask=True, **kwargs):
-        self.use_mask = use_mask
-        super(MaskEmbedding, self).__init__(input_dim, output_dim, **kwargs)
-
-    def get_output(self, train=False):
-        X = self.get_input(train)
-
-        if self.use_mask:
-            m = np.ones((self.input_dim, self.output_dim))
-            m[0] = [0] * self.output_dim
-            mask = tf.constant(m, dtype=self.W.dtype)
-            outW = K.gather(self.W, X)
-            outM = K.gather(mask, X)
-            return outW * outM
-        else:
-            return K.gather(self.W, X)
-
-MyEmbedding = MaskEmbedding
+# MyEmbedding = MaskEmbedding
 
 
 class CNN(KerasClassifier):
@@ -53,8 +53,7 @@ class CNN(KerasClassifier):
 
         model = Sequential()
 
-        model.add(Embedding(vocabulary_size, embedding_dims,
-                            input_length=maxlen))
+        model.add(Embedding(vocabulary_size, embedding_dims, input_length=maxlen))
         # model.add(Dropout(drop_out_prob))
 
         model.add(self.convLayer(maxlen, embedding_dims,
@@ -68,7 +67,7 @@ class CNN(KerasClassifier):
         if nb_class == 2:
             model.add(Dense(1))
             model.add(Activation('sigmoid'))
-            model.compile(optimizer='rmsprop', loss='binary_crossentropy',
+            model.compile(optimizer='adadelta', loss='binary_crossentropy',
                           class_mode='binary')
         else:
             model.add(Dense(nb_class))
@@ -88,7 +87,8 @@ class CNN(KerasClassifier):
                                                  border_mode='valid',
                                                  activation='relu',
                                                  subsample_length=1,
-                                                 input_shape=(inp_dim, embedding_dims)),
+                                                 input_shape=(inp_dim, embedding_dims),
+                                                            ),
                                             MaxPooling1D(pool_length=2),
                                             Flatten()]),
                        name='Conv{}'.format(i), input='input')

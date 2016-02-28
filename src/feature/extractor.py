@@ -80,7 +80,7 @@ class W2VExtractor(FeatureExtractor):
 
 
 class CNNExtractor(FeatureExtractor):
-    def __init__(self, mincount=5):
+    def __init__(self, mincount=1):
         self.padding_word = "<PAD/>"
         self.mincount = mincount
 
@@ -101,7 +101,7 @@ class CNNExtractor(FeatureExtractor):
     def _extract(self, text):
         text = self.to_given_length(text, self.maxlen)
 
-        res = np.zeros((1, self.maxlen))
+        res = np.zeros((1, self.maxlen), dtype=int)
         for i, word in enumerate(text):
             if word in self.vocabulary:
                 res[0][i] = self.vocabulary[word]
@@ -129,7 +129,7 @@ class TfIdfExtractor(FeatureExtractor):
     def extract(self, text):
         self.d += 1
 
-    def build_vocab(self, sentences, mincount=10):
+    def build_vocab(self, sentences, mincount=1):
         # Build vocabulary
         word_counts = Counter(itertools.chain(*sentences))
         # Mapping from index to word

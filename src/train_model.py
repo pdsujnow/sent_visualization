@@ -41,6 +41,29 @@ if __name__ == "__main__":
 
     sentences, labels = list(corpus['sentence']), list(corpus['label'])
 
+    feature_extractors = [CNNExtractor(mincount=0)]
+    X, y = feature_fuse(feature_extractors, sentences, labels)
+    clf = CNN(vocabulary_size=feature_extractors[0].vocabulary_size,
+              nb_filters=100,
+              embedding_dims=300,
+              filter_length=[3, 4, 5],
+              drop_out_prob=0.5,
+              maxlen=X.shape[1],
+              nb_class=len(feature_extractors[0].literal_labels))
+
+    from sklearn.cross_validation import StratifiedKFold
+    from keras.utils.np_utils import to_categorical
+    cv = StratifiedKFold(y, n_folds=10, shuffle=True)
+    # y = to_categorical(y)
+    for train_ind, test_ind in cv:
+        X_train, X_test = X[train_ind], X[test_ind]
+        y_train, y_test = y[train_ind], y[test_ind]
+        clf.fit(X_train, y_train,
+                batch_size=50,
+                nb_epoch=20,
+                show_accuracy=True,
+                validation_data=(X_test, y_test))
+
     # feature_extractors = [W2VExtractor()]
     # X, y = feature_fuse(feature_extractors, sentences, labels)
     # clf = LinearSVC()
@@ -66,17 +89,3 @@ if __name__ == "__main__":
     #     del fe
     # del feature_extractors
 
-    feature_extractors = [CNNExtractor()]
-    X, y = feature_fuse(feature_extractors, sentences, labels)
-    clf = CNN(vocabulary_size=feature_extractors[0].vocabulary_size,
-            nb_filters=100,
-            embedding_dims=300,
-            drop_out_prob=0.5,
-            maxlen=X.shape[1],
-            nb_class=len(feature_extractors[0].literal_labels))
-
-    clf.fit(X, y,
-           batch_size=50,
-           nb_epoch=20,
-           show_accuracy=True,
-           validation_split=0.1)
