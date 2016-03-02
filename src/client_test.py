@@ -36,7 +36,8 @@ preditc_text = [
 
 #model = 'sanders_svm'
 #model = 'semeval2003_bow'
-model = 'sanders_cnn'
+#model = 'sanders_cnn'
+model = 'panglee_svm'
 #model = 'LJ40k_bow'
 predict_d = [ {'model':model, 'text': t} for t in preditc_text ]
 
