@@ -54,15 +54,18 @@ class FeatureExtractor(object):
 
 
 class W2VExtractor(FeatureExtractor):
-    def __init__(self):
+    def __init__(self, use_globve=False):
+        self.use_globve = use_globve
         self.post_load()
 
     def pre_dump(self):
         del self.model
 
     def post_load(self):
-        # self.model = Globve()  # wordvector model
-        self.model = Word2Vec()  # wordvector model
+        if self.use_globve:
+            self.model = Globve()  # wordvector model
+        else:
+            self.model = Word2Vec()  # wordvector model
 
     def _extract(self, text):
         X = np.zeros(300)
@@ -112,6 +115,11 @@ class CNNExtractor(FeatureExtractor):
     def to_given_length(self, sentence, length):
         sentence = sentence[:length]
         return sentence + [self.padding_word] * (length - len(sentence))
+
+    def reset_vocabulary_index(self, index):
+        for word in self.vocabulary:
+            orind = self.vocabulary[word]
+            self.vocabulary.update({word: index[orind]})
 
 
 # TfIdf Not done yet

@@ -53,7 +53,7 @@ class Model(object):
         with open(fname, 'w') as f:
             pickle.dump(self, f)
 
-    def grid_search(self, X, y, n_folds=5, scoring='f1', parameters=None, **kwargs):
+    def grid_search(self, X, y, n_folds=10, scoring='accuracy', parameters=None, **kwargs):
 
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
@@ -68,7 +68,7 @@ class Model(object):
 
     def _grid_search(self, X, y, n_folds, scoring, parameters, **kwargs):
         cv = StratifiedKFold(y, n_folds=n_folds, shuffle=True)
-        clf = grid_search.GridSearchCV(self.clf, parameters, scoring='f1', cv=cv, **kwargs)
+        clf = grid_search.GridSearchCV(self.clf, parameters, scoring=scoring, cv=cv, **kwargs)
         clf.fit(X, y)
 
         print clf.best_params_, clf.best_score_

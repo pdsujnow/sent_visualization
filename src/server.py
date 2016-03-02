@@ -15,15 +15,18 @@ from flask.ext.cors import cross_origin
 from controler import Controler, Logger
 
 app = Flask(__name__)
-#app.config['CORS_HEADERS'] = 'Content-Type'
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 def request2json(data):
     return json.loads(data.decode('utf8'))
 
+
 @app.route('/listmodel', methods=['GET'])
 def list_model():
+    print controler.list_model()
     return json.dumps(controler.list_model())
+
 
 @app.route('/predict', methods=['POST'])
 @cross_origin()
@@ -31,6 +34,7 @@ def predict():
     data = request2json(request.data)
     res = controler.predict(data['model'], data['text'])
     return json.dumps(res)
+
 
 @app.route('/log', methods=['POST'])
 @cross_origin()
@@ -41,9 +45,11 @@ def log():
 
 def parse_arg(argv):
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('-a', '--address', default='0.0.0.0', help='accesible address')
-    parser.add_argument('-p', '--port', default= 5125, type=int, help='port')
-    parser.add_argument('-d', '--debug', action='store_true', help='debug mode')
+    parser.add_argument('-a', '--address', default='0.0.0.0',
+                        help='accesible address')
+    parser.add_argument('-p', '--port', default=5125, type=int, help='port')
+    parser.add_argument(
+        '-d', '--debug', action='store_true', help='debug mode')
 
     return parser.parse_args(argv[1:])
 
@@ -53,8 +59,10 @@ if __name__ == "__main__":
     logger = Logger()
 
     if args.debug:
-        args.port+=1
-        app.run(args.address, args.port, debug='true', threaded=True, use_reloader=False)
+        args.port += 1
+        app.run(args.address, args.port, debug='true',
+                threaded=True, use_reloader=False)
     else:
         print "* Running on http://{}:{}/".format(args.address, args.port)
-        WSGIServer(app, multithreaded=True, bindAddress=(args.address, args.port)).run()
+        WSGIServer(app, multithreaded=True, bindAddress=(
+            args.address, args.port)).run()
