@@ -27,20 +27,46 @@ def list_model():
     print controler.list_model()
     return json.dumps(controler.list_model())
 
-
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 @cross_origin()
 def predict():
-    data = request2json(request.data)
-    res = controler.predict(data['model'], data['text'])
+    model = request.args['model']
+    text = request.args['text']
+    print text
+    res = controler.predict(model, text)
     return json.dumps(res)
 
-
-@app.route('/log', methods=['POST'])
+@app.route('/log', methods=['GET'])
 @cross_origin()
 def log():
-    data = request2json(request.data)
+    data = json.loads(request.args['data'])
     return json.dumps(logger.log(data))
+
+# @app.route('/log', methods=['POST'])
+# @cross_origin()
+# def log():
+#     data = request2json(request.data)
+#     return json.dumps(logger.log(data))
+
+# @app.route('/predict', methods=['POST'])
+# @cross_origin()
+# def predict():
+#     print '='*40
+#     print request
+#     print '='*40
+#     print request.data
+#     print '='*40
+#     data = request2json(request.data)
+#     print data
+#     res = controler.predict(data['model'], data['text'])
+#     return json.dumps(res)
+
+
+# @app.route('/log', methods=['POST'])
+# @cross_origin()
+# def log():
+#     data = request2json(request.data)
+#     return json.dumps(logger.log(data))
 
 
 def parse_arg(argv):
