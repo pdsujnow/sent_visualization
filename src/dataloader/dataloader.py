@@ -1,8 +1,8 @@
 import pandas
 import yaml
+import cPickle
 
 from os import path
-
 
 def load_from_file(category, fname, sent_label='sentence', cat_label='label'):
     """Load data from file
@@ -18,12 +18,16 @@ def load_from_file(category, fname, sent_label='sentence', cat_label='label'):
 
     """
     with open(fname) as f:
-        res = pandas.DataFrame({cat_label: category, sent_label: f.readlines()})
+        try:
+            res = cPickle.load(f)
+        except:
+            res = pandas.DataFrame({cat_label: category, sent_label: f.readlines()})
+
     return res
 
 
 def load(directory, spec_fname='export.yaml'):
-    assert(path.isdir(directory))
+    assert(path.isdir(directory)), '{} is not a directory'.format(directory)
     with open(path.join(directory, spec_fname)) as f:
         spec = yaml.load(f)
 

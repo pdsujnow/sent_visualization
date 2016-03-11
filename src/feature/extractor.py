@@ -83,7 +83,7 @@ class W2VExtractor(FeatureExtractor):
 
 
 class CNNExtractor(FeatureExtractor):
-    def __init__(self, mincount=1):
+    def __init__(self, mincount=0):
         self.padding_word = "<PAD/>"
         self.mincount = mincount
 
@@ -115,12 +115,6 @@ class CNNExtractor(FeatureExtractor):
     def to_given_length(self, sentence, length):
         sentence = sentence[:length]
         return sentence + [self.padding_word] * (length - len(sentence))
-
-    def reset_vocabulary_index(self, index):
-        for word in self.vocabulary:
-            orind = self.vocabulary[word]
-            self.vocabulary.update({word: index[orind]})
-
 
 # TfIdf Not done yet
 class TfIdfExtractor(FeatureExtractor):

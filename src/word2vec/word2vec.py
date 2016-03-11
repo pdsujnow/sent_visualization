@@ -5,6 +5,7 @@ model_path = '/corpus/google_word2vec_pretrained/google_word2vec_pretrained'
 
 
 class Word2Vec(object):
+    __metaclass__ = Singleton
 
     def __init__(self):
         self.model = W2V.load(model_path)

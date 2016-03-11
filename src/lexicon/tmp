@@ -1,0 +1,1220 @@
+
+<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://open
+graphprotocol.org/schema/ fb: http://www.facebook.com/2010/fbml d: http://dictionary.com/2011/
+dml">\n<head>\n<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>\n<base hre
+f="http://www.thesaurus.com/">\n<title>Anger Synonyms, Anger Antonyms | Thesaurus.com</title>\
+n<script type="text/javascript">var cookiesManager=function(){\'use strict\';var persistentVal
+ues=[];return{getCookieValue:function(name){var value=null,cookies=document.cookie,searchedCoo
+kie=cookies.indexOf(" "+name+"=");if(searchedCookie===-1){var checkFirstCookie=cookies.indexOf
+(name+"=");searchedCookie=checkFirstCookie==0?0:-1;}\nif(searchedCookie>-1){var startPositionO
+fValue=cookies.indexOf("=",searchedCookie)+1,endPositionOfValue=cookies.indexOf(";",searchedCo
+okie);if(endPositionOfValue===-1){endPositionOfValue=searchedCookie.length;}\nvalue=cookies.su
+bstring(startPositionOfValue,endPositionOfValue);}\nreturn value;},setCookie:function(name,val
+ue,hours,domain){var expires=\'\',domain=domain||UrlHelper.getCurrentDomain();if(hours!==undef
+ined){var now=new Date(),time=now.getTime();time+=(3600*hours)*1000;now.setTime(time);expires=
+\';expires=\'+now.toGMTString();}\ndocument.cookie=name+\'=\'+value+expires+\';path=/\'+\';dom
+ain=\'+domain;},getPersistentCookieValue:function(name){if(typeof persistentValues[name]===\'u
+ndefined\'){persistentValues[name]=this.getCookieValue(name);this.setCookie(name,null,-1);}\nr
+eturn persistentValues[name];}}}();</script><script type="text/javascript">var UrlHelper=funct
+ion(){var COOKIE_DOMAIN_THESAURUS=\'.thesaurus.com\';var COOKIE_DOMAIN_DICTIONARY=\'.dictionar
+y.com\';var COOKIE_DOMAIN_REFERENCE=\'.reference.com\';var domain=null;var currentURL=null;var
+ spanidsUrl=null;function getSpanidsUrl(bid,sid,currentDomain){var url=\'http://\';var source=
+\'\';if(currentDomain==COOKIE_DOMAIN_DICTIONARY){url+=\'spanids.reference.com/?\';source=\'d\'
+;}else if(currentDomain==COOKIE_DOMAIN_REFERENCE){url+=\'spanids.dictionary.com/?\';source=\'r
+\';}else{url+=\'spanids.dictionary.com/?\';source=\'t\';}\nurl+=\'bid=\'+bid+\'&asid=\'+sid+\'
+&bidnew=1&asidnew=1&source=\'+source+\'&site=app\';return url;}\nfunction getCurrentDomain(){v
+ar host=window.location.host;var value="";if(host.indexOf(COOKIE_DOMAIN_THESAURUS)>-1){value=C
+OOKIE_DOMAIN_THESAURUS;}else if(host.indexOf(COOKIE_DOMAIN_DICTIONARY)>-1){value=COOKIE_DOMAIN
+_DICTIONARY;}else if(host.indexOf(COOKIE_DOMAIN_REFERENCE)>-1){value=COOKIE_DOMAIN_REFERENCE;}
+\nreturn value;}\nreturn{getCurrentDomain:function(){if(domain===null){domain=getCurrentDomain
+();}\nreturn domain;},getCurrentDomainFromRequest:function(){return window.location.host;},get
+CurrentUrl:function(){if(currentURL===null){currentURL=window.location.protocol+"//"+window.lo
+cation.host+""+window.location.pathname;}\nreturn currentURL;},getSpanidsUrl:function(bid,sid,
+domain){if(spanidsUrl===null){spanidsUrl=getSpanidsUrl(bid,sid,domain);}\nreturn spanidsUrl;}}
+}();</script><script type="text/javascript">var BidSidGenerator=(function(){\'use strict\';var
+ COOKIE_NAME_BID=\'bid\',COOKIE_NAME_SID=\'sid\',COOKIE_NAME_SPANIDS=\'spanids\',COOKIE_BID_EX
+PIRES=17520,COOKIE_SID_EXPIRES=0.5,bidCookieValue=null,sidCookieValue=null,bidCookieCreated=fa
+lse,sidCookieCreated=false,spanIdsCookiePresent=false;function generateCookieValue(){var max=9
+99999,min=100000,rand=Math.floor(Math.random()*(max-min))+min,time=new Date().getTime();return
+ rand+"-"+time;}\nfunction processSpanIdsCookie(){var spanIdsValue=cookiesManager.getCookieVal
+ue(COOKIE_NAME_SPANIDS);if(spanIdsValue===\'1\'){cookiesManager.setCookie(COOKIE_NAME_SPANIDS,
+0,-1);spanIdsCookiePresent=true;}\nreturn false;}\nreturn{init:function(){bidCookieValue=cooki
+esManager.getCookieValue(COOKIE_NAME_BID);sidCookieValue=cookiesManager.getCookieValue(COOKIE_
+NAME_SID);if(bidCookieValue==null||bidCookieValue.length==0){bidCookieValue=generateCookieValu
+e();cookiesManager.setCookie(COOKIE_NAME_BID,bidCookieValue,COOKIE_BID_EXPIRES);bidCookieCreat
+ed=true;}\nif(sidCookieValue==null||sidCookieValue.length==0){sidCookieValue=generateCookieVal
+ue();sidCookieCreated=true;}\nprocessSpanIdsCookie();cookiesManager.setCookie(COOKIE_NAME_SID,
+sidCookieValue,COOKIE_SID_EXPIRES);},propagateCookies:function(){if(bidCookieCreated||sidCooki
+eCreated||spanIdsCookiePresent){var url=UrlHelper.getSpanidsUrl(bidCookieValue,sidCookieValue,
+UrlHelper.getCurrentDomain()),iFrame=\'<iframe id="spanids" style="width:1px;height:1px;margin
+-left:-1;position:absolute;border:none;" src="\'+url+\'"></iframe>\';document.write(iFrame);}}
+,touchSidCookie:function(){sidCookieValue=cookiesManager.getCookieValue(COOKIE_NAME_SID);if(si
+dCookieValue==null||sidCookieValue.length==0){sidCookieValue=generateCookieValue();sidCookieCr
+eated=true;}\ncookiesManager.setCookie(COOKIE_NAME_SID,sidCookieValue,COOKIE_SID_EXPIRES);},is
+SidCookieCreated:function(){return sidCookieCreated;},isSpanIdsCookiePresent:function(){return
+ spanIdsCookiePresent;}};}());BidSidGenerator.init();BidSidGenerator.propagateCookies();</scri
+pt>\n<script>var DARCI=DARCI||{},u="http://track.thesaurus.com/main.gif?ev=ps&qr=%25%25QUERY%2
+5%25&rf_qr=%25%25REFQUERY%25%25&pn=the&st=thes&ab=&dc=desktop",s=location.search.match(new Reg
+Exp(\'[\\?\\&]s=([^\\&]*)(\\&?)\',\'i\')),ms=(typeof ms===\'undefined\')?cookiesManager.getCoo
+kieValue(\'mseg\')||"":ms,refQuery=cookiesManager.getPersistentCookieValue(\'ReferrerQuery\'),
+query,orgQuery;DARCI.SearchBoxClickLinkId=\'205vpa\';orgQuery=typeof DARCI.OQR!==\'undefined\'
+?DARCI.OQR.getValue():null;query=orgQuery!==null?orgQuery:"anger";u=u.replace(\'%25%25QUERY%25
+%25\',query);if(s!=null&&s[1]){if(s[1]==\'t\'||s[1]==\'ts\'||s[1]==\'tn\'){var ev=u.indexOf(\'
+ev=\');if(ev!==-1){ev=ev+3;u=u.slice(0,ev)+\'c\'+u.slice(ev)+\'&cl=205vpa&sc=1\';u=u.replace(\
+'%25%25REFQUERY%25%25\',refQuery);}}}\nnew Image().src=u+"&ms="+ms+"&rf="+encodeURIComponent(d
+ocument.referrer)+"&cb="+Math.floor((Math.random()*899999999)+100000000);</script>\n<link rel=
+"dns-prefetch" href="//www.googletagmanager.com"/><link rel="dns-prefetch" href="//ox-d.ask.se
+rvedbyopenx.com"/><link rel="dns-prefetch" href="//edge.quantserve.com"/><link rel="dns-prefet
+ch" href="//c.amazon-adsystem.com"/><link rel="dns-prefetch" href="//partner.googleadservices.
+com"/><link rel="dns-prefetch" href="//aax.amazon-adsystem.com"/><link rel="dns-prefetch" href
+="//tpc.googlesyndication.com"/><link rel="dns-prefetch" href="//connect.facebook.net"/><link
+rel="dns-prefetch" href="//www.google-analytics.com"/><link rel="dns-prefetch" href="https://p
+latform.twitter.com"/><script type="text/javascript">var src=null;new Image().src=\'http://www
+.thesaurus.com/trc/img/serp/sprite-lowdpi-1c8ce.png\';new Image().src=\'http://www.thesaurus.c
+om/trc/img/topheavy_hdr_bg-49963.png\';</script><meta property="og:title" content="I found gre
+at synonyms for &quot;anger&quot; on the new Thesaurus.com!"/><meta property="og:site_name" co
+ntent="www.thesaurus.com"/><meta property="og:image" content="http://static.sfdict.com/thesclo
+ud/img/thesaurus_social_logo-208ba.png"/><meta property="fb:app_id" content="118269238218175"/
+><meta property="fb:admins" content="100000304287730,109125464873"/><meta name="msvalidate.01"
+ content="DF5542D7723770377E9ABFF59AC1DC97"/><meta name="description" content="Synonyms for an
+ger at Thesaurus.com with free online thesaurus, antonyms, and definitions. Dictionary and Wor
+d of the Day."/><meta name="keywords" content="anger,anger synonyms,anger antonyms,anger thesa
+urus"/><link rel="shortcut icon" href="http://static.sfdict.com/thescloud/favicon.ico"/><link
+rel="apple-touch-icon-precomposed" href="http://static.sfdict.com/thescloud/img/touch_icon.png
+"/><link rel="search" type="application/opensearchdescription+xml" title="Dictionary.com" href
+="http://www.thesaurus.com/opensearch_desc.xml"/><link rel="next" href="http://www.thesaurus.c
+om/browse/anger/2"/><link rel="canonical" href="http://www.thesaurus.com/browse/anger"/><link
+rel="stylesheet" href="http://www.thesaurus.com/trc/css/combinedSerpDesktop-de99b.css" type="t
+ext/css" media="all"/><script type="text/javascript">var _query="anger";var fby=fby||[];var se
+archURL="http://www.thesaurus.com/browse/%40%40queryText%40%40?s=t";var pageName="the";</scrip
+t>\n<script type="text/javascript">var UserController=function(){var USER_STATUS_LOGGED_IN=\'L
+\';var USER_STATUS_NOT_LOGGED=\'N\';var USER_UNDER_13=\'Y\';var USER_OVER_13=\'N\';var COOKIE_
+NAME_SESS=\'sess\';var COOKIE_NAME_FAV=\'fav\';var COOKIE_NAME_SUPERSESS=\'ss\';var PREMIUM_ST
+ATUS_VALUE=9;var FAV_COOKIE_PREMIUM_STATUS_KEY=0;var FAV_COOKIE_FAV_COUNT_KEY=1;var FAV_COOKIE
+_USER_UNDER_13_KEY=2;var isLoggedIn=null;var isPremium=null;var isSuperSess=null;var favNumber
+=null;var isUnder13=null;var displayAds=null;function checkIsUserUnder13(){if(isLoggedIn!==tru
+e){return false;}\nvar isUnder13=USER_OVER_13;var favCookieValue=cookiesManager.getCookieValue
+(COOKIE_NAME_FAV);if(favCookieValue!=null){favCookieValue=decodeURIComponent(favCookieValue);i
+sUnder13=favCookieValue.split(\'|\')[FAV_COOKIE_USER_UNDER_13_KEY];}\nreturn isUnder13===USER_
+UNDER_13;}\nfunction checkIsUserLoggedIn(){var userStatus=USER_STATUS_NOT_LOGGED;var sessCooki
+eValue=cookiesManager.getCookieValue(COOKIE_NAME_SESS);if(sessCookieValue!=null){userStatus=se
+ssCookieValue.charAt(0);}\nreturn userStatus===USER_STATUS_LOGGED_IN;}\nfunction checkIfUserIs
+Premium(){var premiumStatus=null;var favCookieValue=cookiesManager.getCookieValue(COOKIE_NAME_
+FAV);if(favCookieValue!=null){favCookieValue=decodeURIComponent(favCookieValue);premiumStatus=
+favCookieValue.split(\'|\')[FAV_COOKIE_PREMIUM_STATUS_KEY];}\nreturn premiumStatus==PREMIUM_ST
+ATUS_VALUE;}\nfunction getFavNum(){var count=0;var favCookieValue=cookiesManager.getCookieValu
+e(COOKIE_NAME_FAV);if(favCookieValue!=null){favCookieValue=decodeURIComponent(favCookieValue);
+count=favCookieValue.split(\'|\')[FAV_COOKIE_FAV_COUNT_KEY];}\nreturn count;}\nfunction checkI
+fUserHasSuperSession(){var superSessionCookieValue=cookiesManager.getCookieValue(COOKIE_NAME_S
+UPERSESS);if(superSessionCookieValue!==null){var xhr=createCORSRequest(\'GET\',\'http://app.di
+ctionary.com/supersession/check/\'+superSessionCookieValue);if(xhr){xhr.onload=function(){var
+responseData=xhr.responseText;var data=JSON.parse(responseData);if(data==null){}else{cookiesMa
+nager.setCookie("sess",data[\'sessionCookie\']);changeBodyClassNameForUser();}};xhr.send();}\n
+return true;}else{return false;}}\nfunction createCORSRequest(method,url){var xhr=new XMLHttpR
+equest();if("withCredentials"in xhr){xhr.open(method,url,true);}else if(typeof XDomainRequest!
+="undefined"){xhr=new XDomainRequest();xhr.open(method,url);}else{xhr=null;}\nreturn xhr;}\nfu
+nction changeBodyClassNameForUser(){if(isPremium)\ndocument.body.className+=\' premium\';if(is
+LoggedIn)\ndocument.body.className+=\' loggedin\';if(isUnder13)\ndocument.body.className+=\' i
+sUnder13\';}\nreturn{initHead:function(){isLoggedIn=checkIsUserLoggedIn();isPremium=checkIfUse
+rIsPremium();isUnder13=checkIsUserUnder13();},initBody:function(){changeBodyClassNameForUser()
+;if(isLoggedIn!==true){isSuperSess=checkIfUserHasSuperSession();}},isLoggedIn:function(){retur
+n isLoggedIn;},isPremium:function(){return isPremium},getFavNumber:function(){if(favNumber===n
+ull){favNumber=getFavNum();}\nreturn favNumber;},isUnder13:function(){return isUnder13;},shoul
+dDisplayAds:function(){if(displayAds===null){displayAds=!isPremium&&!checkIsUserUnder13();}\nr
+eturn displayAds;}}}();UserController.initHead();</script>\n<script type="text/javascript">"us
+e strict";var adStart=Date.now(),OX_dfp_ads=[["/23219321/iac.dict.thesrs.dw/results/serp/conte
+nt",["728x90","970x90","970x250"],"thesaurus_serp_atf_728x90",{\'pos\':\'top\',\'pos2\':\'728x
+90_1\',}],["/23219321/iac.dict.thesrs.dw/results/serp/content",["300x250","300x600"],"thesauru
+s_serp_atf_300x250",{\'pos\':\'top\',\'pos2\':\'300x250_1\',}],["/23219321/iac.dict.thesrs.dw/
+results/serp/content",["728x90"],"thesaurus_serp_btf_2",{\'pos\':\'bot\',\'pos2\':\'728x90_2\'
+,}],["/23219321/iac.dict.thesrs.dw/results/serp/content",["300x250"],"thesaurus_serp_btf_300x2
+52",{\'pos\':\'mid\',\'pos2\':\'300x250_2\',}],],attachScriptAsync,targetingComplete,oxDone,gp
+tCallIntiated=false,completedTargeting={},gptApp=gptApp||{},googletag=googletag||{},targetingE
+vtResponseTime=[];gptApp.ads=gptApp.ads||[];googletag.cmd=googletag.cmd||[];attachScriptAsync=
+function(scriptInfo){var tag=document.createElement("script"),p,node=document.getElementsByTag
+Name("script")[0];tag.async=true;for(p in scriptInfo){if(scriptInfo.hasOwnProperty(p)&&p!="src
+"){tag[p]=scriptInfo[p];}}\ntag.src=scriptInfo.src;node.parentNode.insertBefore(tag,node);};gp
+tApp.renderAds=function(){var len=gptApp.ads.length;for(var i=0;i<len;i++){gptApp.ads[i]();}\n
+gptApp.ads.push=function(fn){if("function"===typeof fn){setTimeout(fn,0);}};};targetingComplet
+e=function(event){completedTargeting[event]=true;if(!gptCallIntiated){targetingEvtResponseTime
+.push(event+"|"+(Date.now()-adStart));if((completedTargeting.lot&&completedTargeting.amz&&comp
+letedTargeting.ox)||event=="fallback"){gptCallIntiated=true;googletag.cmd.push(function(){goog
+letag.enableServices();googletag.pubads().setTargeting("perf",targetingEvtResponseTime);});gpt
+App.renderAds();}}};oxDone=function(events){googletag.cmd.push(function(){try{OX.dfp_bidder.se
+tOxTargeting(googletag.pubads().getSlots());}catch(e){}});targetingComplete("ox");};attachScri
+ptAsync({src:"//www.googletagservices.com/tag/js/gpt.js"});attachScriptAsync({src:"//c.amazon-
+adsystem.com/aax2/amzn_ads.js",onload:function(){try{amznads.getAdsCallback(\'3067\',function(
+){googletag.cmd.push(function(){amznads.setTargetingForGPTAsync(\'yip4\');});targetingComplete
+("amz");},1000);}catch(e){}}});attachScriptAsync({id:"LOTCC_4845",src:"//tags.crwdcntrl.net/c/
+4845/cc.js?ns=_cc4845",onload:function(){try{_cc4845.add("ctax","Sites^Dictionary^Desktop Site
+s^thes^PageName^the^^the");_cc4845.bcp();}catch(e){}}});attachScriptAsync({src:"//ad.crwdcntrl
+.net/5/c=4736/pe=y/var=ccauds",onload:function(){googletag.cmd.push(function(){var dartCC,lpid
+,ltpid,cci,audience;if(typeof(ccauds)!=\'undefined\'&&ccauds.Profile){dartCC=[];lpid=(typeof(c
+cauds.Profile.pid)!=\'undefined\')?ccauds.Profile.pid:"";ltpid=(typeof(ccauds.Profile.tpid)!=\
+'undefined\')?ccauds.Profile.tpid:"";audience=((ccauds.Profile.Audiences||{}).Audience)||[];fo
+r(cci=0;cci<audience.length;cci++){dartCC.push(audience[cci].abbr);}\ngoogletag.pubads().setTa
+rgeting("lpid",lpid).setTargeting("ltpid",ltpid).setTargeting("lseg",dartCC);}});targetingComp
+lete("lot");}});attachScriptAsync({src:"//ox-d.ask.servedbyopenx.com/w/1.0/jstag?nc=23219321-t
+hesaurus",onload:function(){setTimeout(function(){if(!(\'OX\'in window)){targetingComplete("ox
+");}},500);}});setTimeout(function(){targetingComplete("fallback");},1500);</script>\n<script>
+function getRefValue(referrer){if(referrer.indexOf(\'dictionary.com\')==-1&&referrer.indexOf(\
+'thesaurus.com\')==-1&&referrer.indexOf(\'reference.com\')==-1){return\'organic\';}\nreturn\'d
+irect\';}\nfunction getRPV(){return Math.floor((Math.random()*100)+1).toString();}\nfunction g
+etDCRefValue(){return encodeURIComponent(window.location.href);}\nfunction getDayofWeek(){retu
+rn new Date().getDay().toString();}\ngoogletag.slots={};googletag.slotsCount=4;googletag.rende
+redAdsCount=0;googletag.adsRenderedInfo=(function(){var renderedAds=[];return{set:function(nam
+e,size){renderedAds[name]={size:size};},get:function(name){return renderedAds[name];}}}());goo
+gletag.cmd.push(function(){googletag.slots["thesaurus_serp_atf_728x90"]=googletag.defineSlot("
+/23219321/iac.dict.thesrs.dw/results/serp/content",[[728,90],[970,90],[970,250]],"thesaurus_se
+rp_atf_728x90").addService(googletag.pubads()).setTargeting("pos","top").setTargeting("pos2","
+728x90_1").setTargeting("tx1","results").setTargeting("tx2","serp").setTargeting("ptype","cont
+ent");googletag.slots["thesaurus_serp_atf_300x250"]=googletag.defineSlot("/23219321/iac.dict.t
+hesrs.dw/results/serp/content",[[300,250],[300,600]],"thesaurus_serp_atf_300x250").addService(
+googletag.pubads()).setTargeting("pos","top").setTargeting("pos2","300x250_1").setTargeting("t
+x1","results").setTargeting("tx2","serp").setTargeting("ptype","content");googletag.slots["the
+saurus_serp_btf_2"]=googletag.defineSlot("/23219321/iac.dict.thesrs.dw/results/serp/content",[
+728,90],"thesaurus_serp_btf_2").addService(googletag.pubads()).setTargeting("pos","bot").setTa
+rgeting("pos2","728x90_2").setTargeting("tx1","results").setTargeting("tx2","serp").setTargeti
+ng("ptype","content");googletag.slots["thesaurus_serp_btf_300x252"]=googletag.defineSlot("/232
+19321/iac.dict.thesrs.dw/results/serp/content",[300,250],"thesaurus_serp_btf_300x252").addServ
+ice(googletag.pubads()).setTargeting("pos","mid").setTargeting("pos2","300x250_2").setTargetin
+g("tx1","results").setTargeting("tx2","serp").setTargeting("ptype","content");googletag.pubads
+().setTargeting("ref",getRefValue(document.referrer)).setTargeting("lang","en").setTargeting("
+rpv",getRPV()).setTargeting("dc_ref",getDCRefValue()).setTargeting("loc","US").setTargeting("l
+d","0").setTargeting("dow",getDayofWeek());var get_request_identifier=(function(){return Math.
+random().toString(36).substr(2)})(),get_modified_page_url=(function(){sep=window.location.sear
+ch.length>=0&&window.location.href.indexOf("?")!==-1?"&":"?";return window.location.href+sep+"
+rquid="+get_request_identifier})();googletag.pubads().setTargeting("rquid",get_request_identif
+ier);googletag.pubads().setTargeting("page_url",get_modified_page_url);googletag.pubads().setT
+argeting("kw","anger");var adtest=location.search.match(new RegExp("[\\?\\&]adtest=([^\\&]*)(\
+\&?)","i"));if(adtest!=null&&adtest[1]!=""){googletag.pubads().setTargeting("adtest",adtest[1]
+);}\ngoogletag.pubads().enableSingleRequest();googletag.pubads().enableAsyncRendering();google
+tag.adsLoaded=function(){return googletag.renderedAdsCount>=googletag.slotsCount;};googletag.p
+ubads().addEventListener(\'slotRenderEnded\',function(data){var slotKey;for(slotKey in googlet
+ag.slots){if(googletag.slots[slotKey]==data.slot){break;}}\ngoogletag.adsRenderedInfo.set(slot
+Key,data.size);googletag.renderedAdsCount+=1;if(googletag.adsLoaded()){if(document.createEvent
+){var event=new CustomEvent(\'gptAdsLoaded\');document.dispatchEvent(event);}else{var event=do
+cument.createEventObject();event.eventType="gptAdsLoaded";document.fireEvent("ongptAdsLoaded",
+event);}}});});</script>\n<script type=\'text/javascript\'>window.dataLayer=window.dataLayer||
+[];dataLayer.push({\'event\':\'pageview\',\'device\':\'Desktop\',\'pageName\':\'the\',\'LDid\'
+:\'0\',\'mseg\':cookiesManager.getCookieValue("mseg"),\'sessionId\':cookiesManager.getCookieVa
+lue("sid"),\'browserId\':cookiesManager.getCookieValue("bid")});</script><!--[if lt IE 9]><scr
+ipt type="text/javascript" src="http://static.sfdict.com/app/js/html5-04ab0.js" ></script><![e
+ndif]-->\n<script type="text/javascript">var _qevents=_qevents||[];(function(){var elem=docume
+nt.createElement(\'script\');elem.src=(document.location.protocol=="https:"?"https://secure":"
+http://edge")+".quantserve.com/quant.js";elem.async=true;elem.type="text/javascript";var scpt=
+document.getElementsByTagName(\'script\')[0];scpt.parentNode.insertBefore(elem,scpt);})();</sc
+ript>\n<script type="application/ld+json">\n{\n    "@context": "http://schema.org",\n    "@typ
+e": "WebPage",\n    "@id": "http://www.thesaurus.com/browse/anger",\n    "potentialAction":\n
+   { "@type": "ViewAction", "target": "android-app://com.dictionary/http/thesaurus.com/browse/
+anger" }\n}\n</script> </head>\n<body>\n<noscript>\n<iframe src="//www.googletagmanager.com/ns
+.html?id=GTM-PVMWP3" height="0" width="0" style="display:none;visibility:hidden">\n</iframe>\n
+</noscript>\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':new Date().ge
+tTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dat
+aLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=\'//www.googletagmanager.com/gtm.js?id=\'+i+dl;f.pa
+rentNode.insertBefore(j,f);})(window,document,\'script\',\'dataLayer\',\'GTM-PVMWP3\');</scrip
+t>\n<div id="fb-root"></div>\n<script type="text/javascript">UserController.initBody();</scrip
+t>\n<script type="text/javascript">function submitForm(url){var queryText=document.getElementB
+yId(\'q\').value||\'search\';queryText=encodeURIComponent(queryText);url=url.replace(\'%40%40q
+ueryText%40%40\',queryText);location.href=url;return false;}\nfunction prepareSearchBox(el){va
+r dataTerm=el.getAttribute(\'data-term\');var value=el.value;if(!(/(iPad|iPhone|iPod)/g.test(n
+avigator.userAgent))){el.focus();if(dataTerm==value){el.select();}}}</script>\n<nav class="ham
+-nav">\n<ul>\n<li class="ham-main-menu"><a href="http://dictionary.reference.com/" data-linkid
+="lxabec">Dictionary.com</a></li>\n<li>\n<ul class="ham-submenu">\n<li><a href="http://diction
+ary.reference.com/wordoftheday" data-linkid="1498ik">Word <i class="wotd-italic">of the</i> Da
+y</a></li>\n<li><a href="http://translate.reference.com/" data-linkid="au3zd1">Translate</a></
+li>\n<li><a href="http://dictionary.reference.com/fun" data-linkid="yp2k17">Games</a></li>\n<l
+i><a href="http://blog.dictionary.com/" data-linkid="t6ehki">Blog</a></li>\n</ul>\n</li>\n<li
+class="ham-main-menu">\n<a href="http://dictionary.reference.com/apps" data-linkid="jmrau8">Ap
+ps\n<span class="dicticon-header-apple"></span>\n<span class="dicticon-header-android"></span>
+\n</a>\n</li>\n<li class="ham-main-menu">\n<a href="http://app.dictionary.com/favorites">Favor
+ites\n<span class="dicticon-header-favourites-star"></span>\n<span class="ham-favourites-numbe
+r"></span>\n</a>\n</li>\n<li class="ham-main-menu user-logged-in"><a href="http://app.dictiona
+ry.com/logout?logindest=http%3A%2F%2Fwww.thesaurus.com%2Fbrowse%2Fanger">Log Out</a></li>\n<li
+ class="ham-main-menu user-logged-out"><a href="http://app.dictionary.com/login?source=header_
+core&amp;logindest=http%3A%2F%2Fwww.thesaurus.com%2Fbrowse%2Fanger">Log In</a></li>\n</ul>\n</
+nav>\n<button class="dicticon-hamburger-menu slide-element"></button>\n<header class="js-heade
+r thesaurus-header">\n<div class="header-nav-row">\n<ul class="header-main-nav">\n<li>\n<a hre
+f="http://dictionary.reference.com/" data-linkid="tqks0v">Dictionary.com</a>\n</li>\n<li class
+="nav-active">\n<a href="http://www.thesaurus.com/" data-linkid="qxnxzj">Thesaurus.com</a>\n</
+li>\n</ul>\n<ul class="header-login-nav">\n<li class="user-logged-in account"><a href="http://
+app.dictionary.com/users/settings">My Account</a></li>\n<li class="user-logged-in"><a href="ht
+tp://app.dictionary.com/logout?logindest=http%3A%2F%2Fwww.thesaurus.com%2Fbrowse%2Fanger">Log
+Out</a></li>\n<li class="user-logged-out"><a rel="nofollow" href="http://app.dictionary.com/lo
+gin?source=header_core&amp;logindest=http%3A%2F%2Fwww.thesaurus.com%2Fbrowse%2Fanger">Log In</
+a></li>\n</ul>\n<a href="http://dictionary.reference.com/apps" class="header-apps-links" data-
+linkid="dbvvdc"> <span class="dicticon-header-app-android"></span>\n<span class="dicticon-head
+er-app-ios"></span>\nTry Our Apps\n</a>\n</div>\n<div class="header-search-row">\n<div class="
+header-wrapper-row">\n<a href="http://www.thesaurus.com/" data-linkid="yg487x"> <img src="http
+://www.thesaurus.com/trc/img/tcom-logo-b30fc.png" alt=\'Thesaurus.com\'/>\n</a>\n<form id="mai
+n_search" class="header-search-form" action="http://www.thesaurus.com/search">\n<div class="he
+ader-search-wrapper">\n<div class="search-filter-nav">\n<span class="dicticon-filter"></span>\
+n<span class="filter-item-active" data-filter-action="http://www.thesaurus.com/browse/%40%40qu
+eryText%40%40">synonyms</span>\n</div>\n<input type="text" value="anger" autoComplete="off" au
+tocapitalize="off" autocorrect="off" name="q" class="search-input transparent-text" id="q" dat
+a-term="anger">\n<input type="hidden" name="s" value="t"/>\n<button type="submit" id="search-s
+ubmit" class="dicticon-search-submit" value=""></button>\n<ul class="filter-list filter-hidden
+">\n<li class="" data-filter="http://dictionary.reference.com/browse/%40%40queryText%40%40">de
+finitions</li>\n<li class="filter-hidden" data-filter="http://www.thesaurus.com/browse/%40%40q
+ueryText%40%40">synonyms</li>\n<li class="" data-filter="http://translate.reference.com/?query
+=%40%40queryText%40%40">translations</li>\n</ul>\n</div>\n</form>\n</div>\n</div>\n<div class=
+"social-follow-module">\n<ul class="social-follow-btns">\n<li>\n<div class="fb-like-wrapper">\
+n<div class="fb-like" data-href="https://www.facebook.com/dictionarycom" data-layout="button_c
+ount" data-action="like" data-show-faces="true" data-share="false"></div>\n</div>\n</li>\n<li>
+\n<a class="twitter-follow-button" href="https://twitter.com/dictionarycom" data-show-screen-n
+ame="false">Follow @dictionarycom</a>\n</li>\n<li>\n<span class="ig-follow" data-id="17031a6e9
+3" data-handle="igfbdotcom" data-count="true" data-size="medium" data-username="false"></span>
+\n</li>\n<li>\n<div class="g-follow" data-annotation="bubble" data-height="20" data-href="http
+s://plus.google.com/117428481782081853923" data-rel="publisher"></div>\n</li>\n</ul>\n<p>follo
+w Dictionary.com</p>\n</div></header>\n<script type="text/javascript">var DARCI=DARCI||{};DARC
+I.searchedTerm=typeof DARCI.OQR!==\'undefined\'?DARCI.OQR.getValue():null;DARCI.searchedTerm=D
+ARCI.searchedTerm!==null?DARCI.searchedTerm:\'anger\';document.getElementById(\'main_search\')
+.onsubmit=function(e,url){return submitForm(url||searchURL);}\nprepareSearchBox(document.getEl
+ementById(\'q\'));cookiesManager.setCookie(\'ReferrerQuery\',DARCI.searchedTerm);</script>\n<d
+iv id="container" class="container ">\n<div id="heading">\n<div id="fb-root"></div>\n<section
+id="breadcrumbs" class="breadcrumbs">\n<div class="holder" data-linkid=\'wd84go\'>\n</div>\n<d
+iv class="prev-breadcrumbs adrefresh-mousedown">-</div>\n<div class="next-breadcrumbs adrefres
+h-mousedown">+</div>\n<section id="favor">\n<a href="http://www.thesaurus.com/my-synonyms" dat
+a-linkid="kx52va">My Synonyms</a>\n<span>(<span class="count">0</span>)</span>\n</section>\n</
+section>\n<section class="promo-top">\n<div class="banner">\n<div id="thesaurus_serp_atf_728x9
+0"><script type="text/javascript">if(typeof UserController!=="undefined"&&!UserController.shou
+ldDisplayAds()){document.getElementById("thesaurus_serp_atf_728x90").parentNode.removeChild(do
+cument.getElementById("thesaurus_serp_atf_728x90"));}else{gptApp.ads.push(function(){googletag
+.cmd.push(function(){googletag.display("thesaurus_serp_atf_728x90");});});}</script></div> </d
+iv>\n</section>\n<div class="frame-holder">\n<section class="main-heading">\n<div class="part-
+of-speech">\n<div class="main">\n<h1>anger</h1>\n<div class="audio-wrapper cts-disabled">\n<au
+dio>\n<source src="http://static.sfdict.com/staticrep/dictaudio/lunawav/A04/A0473500.ogg" type
+="audio/ogg">\n<source src="http://static.sfdict.com/staticrep/dictaudio/A04/A0473500.mp3" typ
+e="audio/mpeg">\n</audio>\n<a class="speaker" href="http://static.sfdict.com/staticrep/dictaud
+io/A04/A0473500.mp3"></a>\n</div> <div id="headword-star" class="star">star</div>\n<a href="ht
+tp://dictionary.reference.com/browse/anger" class="def" target="_blank" data-linkid="k7mlp0">
+see definition of <span class="headword">anger</span></a>\n<div id="social-links"></div>\n<spa
+n class="hdfb"></span>\n<div class="hdg"><div class="g-plusone" data-size="medium" data-width=
+"300" data-href="http://www.thesaurus.com/browse/anger"></div></div>\n<div>\n<div class="fontS
+elector">\n&nbsp\n</div>\n<div class="tooltip">\n<div>\n<span>Font size</span>\n<div class="cl
+ose">\nX\n</div>\n<div class="fonts">\n<div class="percent_70">\nAa\n</div>\n<div class="perce
+nt_85">\nAa\n</div>\n<div class="percent_100 active">\nAa\n</div>\n<div class="percent_115">\n
+Aa\n</div>\n<div class="percent_130">\nAa\n</div>\n</div>\n</div>\n</div>\n</div>\n<div class=
+"part-of-speech-filter" data-linkid=\'dzkc96\'>\nshow\n<select id="part-of-speech-filter">\n<o
+ption value="http://www.thesaurus.com/browse/anger/">all</option>\n<option value="http://www.t
+hesaurus.com/browse/anger/noun">noun</option>\n<option value="http://www.thesaurus.com/browse/
+anger/verb">verb</option>\n</select>\n</div>\n</div>\n<div id="words-gallery" class="words-gal
+lery" style="display: none">\n<div class="mask">\n<ul>\n<li>\n<a href="#" data-complbuckets="3
+" data-explore="acrimony" data-syncount="49" data-thes-id="836" data-id="0" id="pos-tab-0" cla
+ss="pos-tab">\n<em class="txt">noun</em>\n<strong class="ttl">state of being mad, annoyed</str
+ong>\n</a>\n</li>\n<li>\n<a href="#" data-complbuckets="3" data-explore="aggravate" data-synco
+unt="55" data-thes-id="837" data-id="1" id="pos-tab-1" class="pos-tab">\n<em class="txt">verb<
+/em>\n<strong class="ttl">make someone mad; become mad</strong>\n</a>\n</li>\n</ul>\n</div>\n<
+span class="layer disabled"></span>\n<span class="layer-l disabled"></span>\n<a href="#" class
+="prev disabled adrefresh-mousedown">prev</a>\n<a href="#" class="next disabled adrefresh-mous
+edown">next</a>\n</div>\n</div>\n<div class="clear"></div>\n</section>\n<a href="http://www.th
+esaurus.com/" class="back-button" id="prev-gutter" data-linkid="jgq255"> </a>\n<a href="http:/
+/www.thesaurus.com/browse/acrimony" class="next-button" id="explore-gutter" data-linkid="huiaz
+c"> <strong class="text gutter-text ">\nacrimony </strong>\n</a>\n</div>\n</div>\n<div id="con
+tent" class="direct">\n<div class="main-content" data-linkid=\'nn1ov4\'>\n<div class="main-con
+tent-holder">\n<section class="gsl-ads">\n<div class="gsl_wrapper" id="gsl-main-content-holder
+-afterHeadword" data-afslinkid="5xfzw7" data-afsmodule="gslT" data-afclinkid="oq6zwg" data-afc
+modulen="afcT" data-ads="1" data-afccts=\'{"linkId":"oq6zwg","infix":"","domain":"thesaurus.co
+m","clkpage":"the","clkmod":"afcT","clksite":"thes","clkld":0,"ordinal":1}\' data-type=\'csa\'
+ data-mod=\'bot\' data-clicktrack=\'http://track.thesaurus.com/track/click?site=thes&pageName=
+the&ldid=0&module=gslT&linkIds=5xfzw7\'>\n</div>\n</section>\n<div class="sliders">\n<div clas
+s="slider-frame active box1">\n<strong class="ttl">Relevance</strong>\n<div class="tooltip">\n
+<div>\n<b>Relevance</b> ranks synonyms and suggests the best matches based on how closely a sy
+nonym\u2019s sense matches the sense you selected.\n</div>\n</div>\n<div class="slider-box sor
+t-slider">\n<div class="frame">\n<div class="slider-line ui-slider ui-slider-horizontal ui-wid
+get ui-widget-content ui-corner-all">\n<input type="hidden" class="min-val" value="0">\n<input
+ type="hidden" class="max-val" value="1">\n<input type="hidden" class="cur-val" value="0">\n<i
+nput type="hidden" class="step" value="1">\n<div class="ui-slider-range ui-widget-header ui-sl
+ider-range-min" style="width: 0%;"></div>\n<div class="ui-handle-helper-parent">\n<div class="
+ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></div>\n</div>\n</div>\n</d
+iv>\n</div>\n<strong class="ttl second">A-Z</strong>\n</div>\n<div class="slider-frame box2">\
+n<strong class="ttl">Complexity</strong>\n<div class="tooltip">\n<div>\n<b>Complexity</b> sort
+s synonyms based on their difficulty. Adjust it higher to choose from words that are more comp
+lex.\n</div>\n</div>\n<div class="slider-box filter-slider min" data-group="complexity">\n<div
+ class="frame">\n<div class="slider-line ui-slider ui-slider-horizontal ui-widget ui-widget-co
+ntent ui-corner-all">\n<input type="hidden" class="min-val" value="0">\n<input type="hidden" c
+lass="max-val" value="3">\n<input type="hidden" class="cur-val" value="0">\n<input type="hidde
+n" class="step" value="1">\n<div class="ui-handle-helper-parent">\n<div class="ui-slider-handl
+e ui-state-default ui-corner-all" style="left: 0%;"></div>\n</div>\n</div>\n</div>\n<div class
+="minus disabled">-</div>\n<div class="plus">+</div>\n<span class="filter-mask" style="positio
+n: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; z-index: 10; display: none;"></span
+>\n</div>\n</div>\n<div class="slider-frame box3">\n<strong class="ttl">Length</strong>\n<div
+class="tooltip">\n<div>\n<b>Length</b> ranks your synonyms based on character count.\n</div>\n
+</div>\n<div class="slider-box filter-slider min" data-group="length">\n<div class="frame">\n<
+div class="slider-line ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-al
+l">\n<input type="hidden" class="min-val" value="0">\n<input type="hidden" class="max-val" val
+ue="5">\n<input type="hidden" class="cur-val" value="0">\n<input type="hidden" class="step" va
+lue="1">\n<div class="ui-handle-helper-parent">\n<div class="ui-slider-handle ui-state-default
+ ui-corner-all" style="left: 0%;"></div>\n</div>\n</div>\n</div>\n<div class="minus disabled">
+-</div>\n<div class="plus">+</div>\n<span class="filter-mask" style="position: absolute; top:
+0px; left: 0px; bottom: 0px; right: 0px; z-index: 10; display: none;"></span>\n</div>\n</div>\
+n</div>\n<div class="clear"></div>\n<div class="synonyms_wrapper">\n<ul class="tabset">\n<li i
+d="list-visualization" class="lists active adrefresh-mousedown"><span>lists</span></li>\n<li i
+d="block-visualization" class="blocks adrefresh-mousedown"><span>blocks</span></li>\n</ul>\n<d
+iv class="form-block">\n<div class="words-form">\n<input type="checkbox" id="common_checkbox"
+class="jcf-hidden">\n<label for="common_checkbox" class="">Common</label>\n<div class="tooltip
+">\n<div>\n<b>Common</b> words appear frequently in written and spoken language across many ge
+nres from radio to academic journals.\n</div>\n</div>\n</div>\n<div class="words-form">\n<inpu
+t type="checkbox" id="informal_checkbox" class="jcf-hidden">\n<label for="informal_checkbox" c
+lass="">Informal</label>\n<div class="tooltip">\n<div>\n<b>Informal</b> words should be reserv
+ed for casual, colloquial communication.\n</div>\n</div>\n</div>\n</div>\n<div id="synonyms-0"
+ class="synonyms">\n<div class="heading-row synonyms-heading">\n<em class="txt">noun</em>\n<st
+rong class="ttl">state of being mad, annoyed</strong>\n</div>\n<div class="filters" id="filter
+s-0">\n<div class="heading-row">\n<h2>\nSynonyms <span>for anger</span> </h2>\n</div>\n<div cl
+ass="synonym-description">\n<em class="txt">noun</em>\n<strong class="ttl">state of being mad,
+ annoyed</strong>\n</div>\n<div class="relevancy-block">\n<div class="relevancy-list">\n<ul>\n
+<li><a href="http://www.thesaurus.com/browse/annoyance" data-id="1" data-category="{&quot;name
+&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="1" d
+ata-length="2"><span class="text">annoyance</span><span class="star inactive">star</span></a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/acrimony" data-id="2" data-category="{&quot
+;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity=
+"2" data-length="2"><span class="text">acrimony</span><span class="star inactive">star</span><
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/impatience" data-id="3" data-category="
+{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-compl
+exity="1" data-length="2"><span class="text">impatience</span><span class="star inactive">star
+</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/enmity" data-id="4" data-catego
+ry="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-c
+omplexity="2" data-length="1"><span class="text">enmity</span><span class="star inactive">star
+</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/rage" class="common-word" data-
+id="5" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcb
+b45&quot;}" data-complexity="1" data-length="1"><span class="text">rage</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/fury" data-id="
+6" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&
+quot;}" data-complexity="2" data-length="1"><span class="text">fury</span><span class="star in
+active">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/antagonism" data-id
+="7" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb4
+5&quot;}" data-complexity="2" data-length="2"><span class="text">antagonism</span><span class=
+"star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/violence" c
+lass="common-word" data-id="8" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot
+;color&quot;: &quot;#fcbb45&quot;}" data-complexity="1" data-length="2"><span class="text">vio
+lence</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesauru
+s.com/browse/resentment" data-id="9" data-category="{&quot;name&quot;: &quot;relevant-3&quot;,
+ &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="2"><span class="tex
+t">resentment</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.
+thesaurus.com/browse/animosity" data-id="10" data-category="{&quot;name&quot;: &quot;relevant-
+3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="2"><span cl
+ass="text">animosity</span><span class="star inactive">star</span></a></li>\n<li><a href="http
+://www.thesaurus.com/browse/ire" data-id="11" data-category="{&quot;name&quot;: &quot;relevant
+-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="1"><span c
+lass="text">ire</span><span class="star inactive">star</span></a></li>\n<li><a href="http://ww
+w.thesaurus.com/browse/passion" class="common-word" data-id="12" data-category="{&quot;name&qu
+ot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="1" data
+-length="2"><span class="text">passion</span><span class="star inactive">star</span></a></li>\
+n<li><a href="http://www.thesaurus.com/browse/temper" data-id="13" data-category="{&quot;name&
+quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="1" da
+ta-length="1"><span class="text">temper</span><span class="star inactive">star</span></a></li>
+\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/displeasure" data-id="14" data-cat
+egory="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" dat
+a-complexity="2" data-length="3"><span class="text">displeasure</span><span class="star inacti
+ve">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/irritation" data-id="15
+" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&q
+uot;}" data-complexity="1" data-length="2"><span class="text">irritation</span><span class="st
+ar inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/outrage" data-
+id="16" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fc
+bb45&quot;}" data-complexity="1" data-length="2"><span class="text">outrage</span><span class=
+"star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/hatred" dat
+a-id="17" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#
+fcbb45&quot;}" data-complexity="1" data-length="1"><span class="text">hatred</span><span class
+="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/exasperati
+on" data-id="18" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;:
+&quot;#fcbb45&quot;}" data-complexity="2" data-length="3"><span class="text">exasperation</spa
+n><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brow
+se/indignation" data-id="19" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;c
+olor&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="3"><span class="text">indig
+nation</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaur
+us.com/browse/tiff" data-id="20" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &qu
+ot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text">t
+iff</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.
+com/browse/irascibility" data-id="21" data-category="{&quot;name&quot;: &quot;relevant-2&quot;
+, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="3"><span class="te
+xt">irascibility</span><span class="star inactive">star</span></a></li>\n<li><a href="http://w
+ww.thesaurus.com/browse/umbrage" data-id="22" data-category="{&quot;name&quot;: &quot;relevant
+-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="2"><span c
+lass="text">umbrage</span><span class="star inactive">star</span></a></li>\n<li><a href="http:
+//www.thesaurus.com/browse/pique" data-id="23" data-category="{&quot;name&quot;: &quot;relevan
+t-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span
+class="text">pique</span><span class="star inactive">star</span></a></li>\n<li><a href="http:/
+/www.thesaurus.com/browse/rankling" data-id="24" data-category="{&quot;name&quot;: &quot;relev
+ant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="2"><spa
+n class="text">rankling</span><span class="star inactive">star</span></a></li>\n<li><a href="h
+ttp://www.thesaurus.com/browse/gall" data-id="25" data-category="{&quot;name&quot;: &quot;rele
+vant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="1" data-length="1"><sp
+an class="text">gall</span><span class="star inactive">star</span></a></li>\n<li><a href="http
+://www.thesaurus.com/browse/irritability" data-id="26" data-category="{&quot;name&quot;: &quot
+;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="3
+"><span class="text">irritability</span><span class="star inactive">star</span></a></li>\n</ul
+>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/choler" data-id="27" data-category="{&qu
+ot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexit
+y="2" data-length="1"><span class="text">choler</span><span class="star inactive">star</span><
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/distemper" data-id="28" data-category="
+{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-compl
+exity="2" data-length="2"><span class="text">distemper</span><span class="star inactive">star<
+/span></a></li>\n<li><a href="http://www.thesaurus.com/browse/storm" class="common-word" data-
+id="29" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fb
+d48e&quot;}" data-complexity="1" data-length="1"><span class="text">storm</span><span class="s
+tar inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/chagrin" data
+-id="30" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#f
+bd48e&quot;}" data-complexity="2" data-length="2"><span class="text">chagrin</span><span class
+="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/petulance"
+ data-id="31" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &qu
+ot;#fbd48e&quot;}" data-complexity="3" data-length="2"><span class="text">petulance</span><spa
+n class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/ste
+w" data-id="32" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &
+quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text">stew</span><span c
+lass="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/peevis
+hness" data-id="33" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot
+;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="3"><span class="text">peevishness</s
+pan><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/br
+owse/huff" data-id="34" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&
+quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text">huff</span
+><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brows
+e/tantrum" data-id="35" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&
+quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="2"><span class="text">tantrum</s
+pan><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/br
+owse/miff" data-id="36" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&
+quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="1"><span class="text">miff</span
+><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brows
+e/conniption" data-id="37" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;col
+or&quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="2"><span class="text">connipt
+ion</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.
+com/browse/soreness" data-id="38" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &q
+uot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="2"><span class="text">
+soreness</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesa
+urus.com/browse/vexation" data-id="39" data-category="{&quot;name&quot;: &quot;relevant-2&quot
+;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="1" data-length="2"><span class="t
+ext">vexation</span><span class="star inactive">star</span></a></li>\n</ul>\n<ul>\n<li><a href
+="http://www.thesaurus.com/browse/disapprobation" data-id="40" data-category="{&quot;name&quot
+;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-l
+ength="3"><span class="text">disapprobation</span><span class="star inactive">star</span></a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/dander" data-id="41" data-category="{&quot;
+name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="
+2" data-length="1"><span class="text">dander</span><span class="star inactive">star</span></a>
+</li>\n<li><a href="http://www.thesaurus.com/browse/blow%20up" data-id="42" data-category="{&q
+uot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexi
+ty="3" data-length="2"><span class="text">blow up</span><span class="star inactive">star</span
+></a></li>\n<li><a href="http://www.thesaurus.com/browse/mad" class="common-word" data-id="43"
+ data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quot;#fce8c4&qu
+ot;}" data-complexity="1" data-length="1"><span class="text">mad</span><span class="star inact
+ive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/infuriation" data-id="
+44" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="3" data-length="3"><span class="text">infuriation</span><span class=
+"star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/cat%20fit"
+data-id="45" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quo
+t;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="text">cat fit</span><span c
+lass="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/hissy%
+20fit" data-id="46" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot
+;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="text">hissy fit</spa
+n><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brow
+se/ill%20humor" data-id="47" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;c
+olor&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="text">ill h
+umor</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus
+.com/browse/ill%20temper" data-id="48" data-category="{&quot;name&quot;: &quot;relevant-1&quot
+;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="t
+ext">ill temper</span><span class="star inactive">star</span></a></li>\n<li><a href="http://ww
+w.thesaurus.com/browse/slow%20burn" data-id="49" data-category="{&quot;name&quot;: &quot;relev
+ant-1&quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><spa
+n class="text">slow burn</span><span class="star inactive">star</span></a></li>\n</ul>\n</div>
+\n</div>\n</div>\n<div id="filter-0"></div>\n<div class="synonyms-horizontal-divider"></div>\n
+<section class="container-info antonyms">\n<div class="heading-row">\n<h2>Antonyms <span>for a
+nger</span></h2>\n</div>\n<div class="list-holder">\n<ul class="list">\n<li><a href="http://ww
+w.thesaurus.com/browse/delight" class="common-word" data-id="49" data-category="{&quot;name&qu
+ot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" dat
+a-length="2"><span class="text">delight</span></a></li>\n<li><a href="http://www.thesaurus.com
+/browse/happiness" class="common-word" data-id="50" data-category="{&quot;name&quot;: &quot;re
+levant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="2">
+<span class="text">happiness</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/joy
+" class="common-word" data-id="51" data-category="{&quot;name&quot;: &quot;relevant--3&quot;,
+&quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="1" data-length="1"><span class="text
+">joy</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/good%20will" data-id="52"
+data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&qu
+ot;}" data-complexity="3" data-length="2"><span class="text">good will</span></a></li>\n<li><a
+ href="http://www.thesaurus.com/browse/glee" data-id="53" data-category="{&quot;name&quot;: &q
+uot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-lengt
+h="1"><span class="text">glee</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/ca
+lm" class="common-word" data-id="54" data-category="{&quot;name&quot;: &quot;relevant--3&quot;
+, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="1" data-length="1"><span class="te
+xt">calm</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/liking" class="common-w
+ord" data-id="55" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;
+: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="1"><span class="text">liking</span></
+a></li>\n</ul>\n<ul class="list">\n<li><a href="http://www.thesaurus.com/browse/calmness" data
+-id="56" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#
+c7c8ca&quot;}" data-complexity="1" data-length="2"><span class="text">calmness</span></a></li>
+\n<li><a href="http://www.thesaurus.com/browse/agreeability" data-id="57" data-category="{&quo
+t;name&quot;: &quot;relevant--1&quot;, &quot;color&quot;: &quot;#f1f2f2&quot;}" data-complexit
+y="3" data-length="3"><span class="text">agreeability</span></a></li>\n<li><a href="http://www
+.thesaurus.com/browse/contentment" data-id="58" data-category="{&quot;name&quot;: &quot;releva
+nt--1&quot;, &quot;color&quot;: &quot;#f1f2f2&quot;}" data-complexity="2" data-length="3"><spa
+n class="text">contentment</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/good%
+20nature" data-id="59" data-category="{&quot;name&quot;: &quot;relevant--1&quot;, &quot;color&
+quot;: &quot;#f1f2f2&quot;}" data-complexity="3" data-length="3"><span class="text">good natur
+e</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/pleasantness" data-id="60" dat
+a-category="{&quot;name&quot;: &quot;relevant--1&quot;, &quot;color&quot;: &quot;#f1f2f2&quot;
+}" data-complexity="3" data-length="3"><span class="text">pleasantness</span></a></li>\n<li><a
+ href="http://www.thesaurus.com/browse/pleasure" class="common-word" data-id="61" data-categor
+y="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-c
+omplexity="1" data-length="2"><span class="text">pleasure</span></a></li>\n<li><a href="http:/
+/www.thesaurus.com/browse/comfort" class="common-word" data-id="62" data-category="{&quot;name
+&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="1"
+data-length="2"><span class="text">comfort</span></a></li>\n</ul>\n<ul class="list">\n<li><a h
+ref="http://www.thesaurus.com/browse/kindness" data-id="63" data-category="{&quot;name&quot;:
+&quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-len
+gth="2"><span class="text">kindness</span></a></li>\n<li><a href="http://www.thesaurus.com/bro
+wse/ease" class="common-word" data-id="64" data-category="{&quot;name&quot;: &quot;relevant--3
+&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="1" data-length="1"><span cla
+ss="text">ease</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/love" class="comm
+on-word" data-id="65" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&q
+uot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="1"><span class="text">love</span>
+</a></li>\n<li><a href="http://www.thesaurus.com/browse/peace" class="common-word" data-id="66
+" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&
+quot;}" data-complexity="1" data-length="1"><span class="text">peace</span></a></li>\n<li><a h
+ref="http://www.thesaurus.com/browse/cheer" class="common-word" data-id="67" data-category="{&
+quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-comple
+xity="1" data-length="1"><span class="text">cheer</span></a></li>\n<li><a href="http://www.the
+saurus.com/browse/enjoyment" data-id="68" data-category="{&quot;name&quot;: &quot;relevant--1&
+quot;, &quot;color&quot;: &quot;#f1f2f2&quot;}" data-complexity="2" data-length="2"><span clas
+s="text">enjoyment</span></a></li>\n</ul>\n</div>\n<div class="citation">\n<div>\nRoget\'s 21s
+t Century Thesaurus, Third Edition Copyright \xa9 2013 by the Philip Lief Group.\n</div>\n<a c
+lass="underline" href="http://www.thesaurus.com/cite.html?qh=anger&ia=lexrog">Cite This Source
+</a>\n</div>\n</section>\n</div>\n<div id="synonyms-1" class="synonyms">\n<div class="heading-
+row synonyms-heading">\n<em class="txt">verb</em>\n<strong class="ttl">make someone mad; becom
+e mad</strong>\n</div>\n<div class="filters" id="filters-1">\n<div class="heading-row">\n<h2>\
+nSynonyms </h2>\n</div>\n<div class="synonym-description">\n<em class="txt">verb</em>\n<strong
+ class="ttl">make someone mad; become mad</strong>\n</div>\n<div class="relevancy-block">\n<di
+v class="relevancy-list">\n<ul>\n<li><a href="http://www.thesaurus.com/browse/annoy" data-id="
+1" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&
+quot;}" data-complexity="1" data-length="1"><span class="text">annoy</span><span class="star i
+nactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/inflame" data-id="
+2" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&
+quot;}" data-complexity="2" data-length="1"><span class="text">inflame</span><span class="star
+ inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/aggravate" data-
+id="3" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcb
+b45&quot;}" data-complexity="3" data-length="2"><span class="text">aggravate</span><span class
+="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/embitter"
+data-id="4" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot
+;#fcbb45&quot;}" data-complexity="3" data-length="1"><span class="text">embitter</span><span c
+lass="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/exaspe
+rate" data-id="5" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;:
+ &quot;#fcbb45&quot;}" data-complexity="3" data-length="2"><span class="text">exasperate</span
+><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brows
+e/displease" data-id="6" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color
+&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="2"><span class="text">displease
+</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com
+/browse/infuriate" data-id="7" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot
+;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data-length="2"><span class="text">inf
+uriate</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaur
+us.com/browse/excite" data-id="8" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &q
+uot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="1"><span class="text">
+excite</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaur
+us.com/browse/irritate" data-id="9" data-category="{&quot;name&quot;: &quot;relevant-3&quot;,
+&quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data-length="1"><span class="text
+">irritate</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.the
+saurus.com/browse/exacerbate" data-id="10" data-category="{&quot;name&quot;: &quot;relevant-3&
+quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data-length="2"><span clas
+s="text">exacerbate</span><span class="star inactive">star</span></a></li>\n<li><a href="http:
+//www.thesaurus.com/browse/enrage" data-id="11" data-category="{&quot;name&quot;: &quot;releva
+nt-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data-length="1"><span
+ class="text">enrage</span><span class="star inactive">star</span></a></li>\n<li><a href="http
+://www.thesaurus.com/browse/offend" data-id="12" data-category="{&quot;name&quot;: &quot;relev
+ant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2" data-length="1"><spa
+n class="text">offend</span><span class="star inactive">star</span></a></li>\n<li><a href="htt
+p://www.thesaurus.com/browse/rile" data-id="13" data-category="{&quot;name&quot;: &quot;releva
+nt-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data-length="1"><span
+ class="text">rile</span><span class="star inactive">star</span></a></li>\n<li><a href="http:/
+/www.thesaurus.com/browse/arouse" data-id="14" data-category="{&quot;name&quot;: &quot;relevan
+t-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="1" data-length="1"><span
+class="text">arouse</span><span class="star inactive">star</span></a></li>\n</ul>\n<ul>\n<li><
+a href="http://www.thesaurus.com/browse/antagonize" data-id="15" data-category="{&quot;name&qu
+ot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="3" data
+-length="2"><span class="text">antagonize</span><span class="star inactive">star</span></a></l
+i>\n<li><a href="http://www.thesaurus.com/browse/incense" data-id="16" data-category="{&quot;n
+ame&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity="2
+" data-length="1"><span class="text">incense</span><span class="star inactive">star</span></a>
+</li>\n<li><a href="http://www.thesaurus.com/browse/outrage" data-id="17" data-category="{&quo
+t;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&quot;}" data-complexity
+="2" data-length="1"><span class="text">outrage</span><span class="star inactive">star</span><
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/provoke" class="common-word" data-id="1
+8" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb45&
+quot;}" data-complexity="2" data-length="1"><span class="text">provoke</span><span class="star
+ inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/rankle" data-id=
+"19" data-category="{&quot;name&quot;: &quot;relevant-3&quot;, &quot;color&quot;: &quot;#fcbb4
+5&quot;}" data-complexity="3" data-length="1"><span class="text">rankle</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/bait" data-id="
+20" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="1" data-length="1"><span class="text">bait</span><span class="star i
+nactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/agitate" data-id="
+21" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="2" data-length="1"><span class="text">agitate</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/goad" data-id="
+22" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="2" data-length="1"><span class="text">goad</span><span class="star i
+nactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/umbrage" data-id="
+23" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="3" data-length="1"><span class="text">umbrage</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/pique" data-id=
+"24" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48
+e&quot;}" data-complexity="3" data-length="1"><span class="text">pique</span><span class="star
+ inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/seethe" data-id=
+"25" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48
+e&quot;}" data-complexity="3" data-length="1"><span class="text">seethe</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/gall" data-id="
+26" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e
+&quot;}" data-complexity="2" data-length="1"><span class="text">gall</span><span class="star i
+nactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/craze" class="info
+rmal-word" data-id="27" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&
+quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text">craze</spa
+n><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brow
+se/madden" data-id="28" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&
+quot;: &quot;#fbd48e&quot;}" data-complexity="3" data-length="1"><span class="text">madden</sp
+an><span class="star inactive">star</span></a></li>\n</ul>\n<ul>\n<li><a href="http://www.thes
+aurus.com/browse/vex" data-id="29" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &
+quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text"
+>vex</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus
+.com/browse/bristle" data-id="30" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &q
+uot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="2" data-length="1"><span class="text">
+bristle</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesau
+rus.com/browse/cross" class="common-word" data-id="31" data-category="{&quot;name&quot;: &quot
+;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="1" data-length="1
+"><span class="text">cross</span><span class="star inactive">star</span></a></li>\n<li><a href
+="http://www.thesaurus.com/browse/boil" class="common-word" data-id="32" data-category="{&quot
+;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity=
+"1" data-length="1"><span class="text">boil</span><span class="star inactive">star</span></a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/ruffle" data-id="33" data-category="{&quot;
+name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexity="
+2" data-length="1"><span class="text">ruffle</span><span class="star inactive">star</span></a>
+</li>\n<li><a href="http://www.thesaurus.com/browse/acerbate" data-id="34" data-category="{&qu
+ot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data-complexit
+y="3" data-length="1"><span class="text">acerbate</span><span class="star inactive">star</span
+></a></li>\n<li><a href="http://www.thesaurus.com/browse/burn" class="common-word" data-id="35
+" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&q
+uot;}" data-complexity="1" data-length="1"><span class="text">burn</span><span class="star ina
+ctive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/stew" data-id="36" d
+ata-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot
+;}" data-complexity="2" data-length="1"><span class="text">stew</span><span class="star inacti
+ve">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/tempt" data-id="37" dat
+a-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}
+" data-complexity="2" data-length="1"><span class="text">tempt</span><span class="star inactiv
+e">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/fret" data-id="38" data-
+category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}"
+data-complexity="1" data-length="1"><span class="text">fret</span><span class="star inactive">
+star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/chafe" data-id="39" data-ca
+tegory="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" da
+ta-complexity="2" data-length="1"><span class="text">chafe</span><span class="star inactive">s
+tar</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/affront" data-id="40" data-c
+ategory="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" d
+ata-complexity="2" data-length="1"><span class="text">affront</span><span class="star inactive
+">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/miff" data-id="41" data-c
+ategory="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" d
+ata-complexity="3" data-length="1"><span class="text">miff</span><span class="star inactive">s
+tar</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/rant" data-id="42" data-cate
+gory="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&quot;}" data
+-complexity="2" data-length="1"><span class="text">rant</span><span class="star inactive">star
+</span></a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/nettle" data-id="4
+3" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&
+quot;}" data-complexity="2" data-length="1"><span class="text">nettle</span><span class="star
+inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/rave" data-id="44
+" data-category="{&quot;name&quot;: &quot;relevant-2&quot;, &quot;color&quot;: &quot;#fbd48e&q
+uot;}" data-complexity="2" data-length="1"><span class="text">rave</span><span class="star ina
+ctive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/blow%20up" data-id="
+45" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quot;#fce8c4
+&quot;}" data-complexity="3" data-length="1"><span class="text">blow up</span><span class="sta
+r inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/egg%20on" data-
+id="46" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quot;#fc
+e8c4&quot;}" data-complexity="3" data-length="1"><span class="text">egg on</span><span class="
+star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/boil%20over"
+ data-id="47" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &qu
+ot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="text">boil over</span><spa
+n class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/bur
+n%20up" data-id="48" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quo
+t;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="1"><span class="text">burn up</span
+><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/brows
+e/get%20mad" data-id="49" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;colo
+r&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="1"><span class="text">get mad<
+/span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesaurus.com/
+browse/make%20sore" data-id="50" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &qu
+ot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span class="text">m
+ake sore</span><span class="star inactive">star</span></a></li>\n<li><a href="http://www.thesa
+urus.com/browse/raise%20hell" data-id="51" data-category="{&quot;name&quot;: &quot;relevant-1&
+quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="2"><span clas
+s="text">raise hell</span><span class="star inactive">star</span></a></li>\n<li><a href="http:
+//www.thesaurus.com/browse/steam%20up" data-id="52" data-category="{&quot;name&quot;: &quot;re
+levant-1&quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length="1"><
+span class="text">steam up</span><span class="star inactive">star</span></a></li>\n<li><a href
+="http://www.thesaurus.com/browse/stir%20up" data-id="53" data-category="{&quot;name&quot;: &q
+uot;relevant-1&quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-complexity="3" data-length
+="1"><span class="text">stir up</span><span class="star inactive">star</span></a></li>\n<li><a
+ href="http://www.thesaurus.com/browse/get%20on%20one%27s%20nerves" data-id="54" data-category
+="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;: &quot;#fce8c4&quot;}" data-com
+plexity="3" data-length="3"><span class="text">get on one\'s nerves</span><span class="star in
+active">star</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/lose%20one%27s%20te
+mper" data-id="55" data-category="{&quot;name&quot;: &quot;relevant-1&quot;, &quot;color&quot;
+: &quot;#fce8c4&quot;}" data-complexity="3" data-length="3"><span class="text">lose one\'s tem
+per</span><span class="star inactive">star</span></a></li>\n</ul>\n</div>\n</div>\n</div>\n<di
+v id="filter-1"></div>\n<div class="synonyms-horizontal-divider"></div>\n<section class="conta
+iner-info antonyms">\n<div class="heading-row">\n<h2>Antonyms </h2>\n</div>\n<div class="list-
+holder">\n<ul class="list">\n<li><a href="http://www.thesaurus.com/browse/aid" class="common-w
+ord" data-id="55" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;
+: &quot;#c7c8ca&quot;}" data-complexity="1" data-length="1"><span class="text">aid</span></a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/soothe" data-id="56" data-category="{&quot;
+name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity=
+"1" data-length="2"><span class="text">soothe</span></a></li>\n<li><a href="http://www.thesaur
+us.com/browse/alleviate" data-id="57" data-category="{&quot;name&quot;: &quot;relevant--3&quot
+;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="3"><span class="t
+ext">alleviate</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/appease" data-id=
+"58" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8
+ca&quot;}" data-complexity="2" data-length="2"><span class="text">appease</span></a></li>\n<li
+><a href="http://www.thesaurus.com/browse/pacify" data-id="59" data-category="{&quot;name&quot
+;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-
+length="2"><span class="text">pacify</span></a></li>\n<li><a href="http://www.thesaurus.com/br
+owse/placate" data-id="60" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;co
+lor&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="2"><span class="text">placat
+e</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/tranquilize" data-id="61" data
+-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}
+" data-complexity="3" data-length="3"><span class="text">tranquilize</span></a></li>\n<li><a h
+ref="http://www.thesaurus.com/browse/calm" class="common-word" data-id="62" data-category="{&q
+uot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complex
+ity="1" data-length="1"><span class="text">calm</span></a></li>\n</ul>\n<ul class="list">\n<li
+><a href="http://www.thesaurus.com/browse/comfort" class="common-word" data-id="63" data-categ
+ory="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data
+-complexity="1" data-length="2"><span class="text">comfort</span></a></li>\n<li><a href="http:
+//www.thesaurus.com/browse/delight" class="common-word" data-id="64" data-category="{&quot;nam
+e&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2"
+ data-length="2"><span class="text">delight</span></a></li>\n<li><a href="http://www.thesaurus
+.com/browse/lull" data-id="65" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quo
+t;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="1"><span class="text">lu
+ll</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/quiet" class="common-word" da
+ta-id="66" data-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot
+;#c7c8ca&quot;}" data-complexity="1" data-length="1"><span class="text">quiet</span></a></li>\
+n<li><a href="http://www.thesaurus.com/browse/assist" class="common-word" data-id="67" data-ca
+tegory="{&quot;name&quot;: &quot;relevant--2&quot;, &quot;color&quot;: &quot;#e6e7e8&quot;}" d
+ata-complexity="2" data-length="2"><span class="text">assist</span></a></li>\n<li><a href="htt
+p://www.thesaurus.com/browse/mollify" data-id="68" data-category="{&quot;name&quot;: &quot;rel
+evant--2&quot;, &quot;color&quot;: &quot;#e6e7e8&quot;}" data-complexity="2" data-length="2"><
+span class="text">mollify</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/forbea
+r" data-id="69" data-category="{&quot;name&quot;: &quot;relevant--1&quot;, &quot;color&quot;:
+&quot;#f1f2f2&quot;}" data-complexity="2" data-length="2"><span class="text">forbear</span></a
+></li>\n<li><a href="http://www.thesaurus.com/browse/make%20happy" data-id="70" data-category=
+"{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-com
+plexity="3" data-length="3"><span class="text">make happy</span></a></li>\n</ul>\n<ul class="l
+ist">\n<li><a href="http://www.thesaurus.com/browse/please" class="common-word" data-id="71" d
+ata-category="{&quot;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quo
+t;}" data-complexity="1" data-length="2"><span class="text">please</span></a></li>\n<li><a hre
+f="http://www.thesaurus.com/browse/help" class="common-word" data-id="72" data-category="{&quo
+t;name&quot;: &quot;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexit
+y="1" data-length="1"><span class="text">help</span></a></li>\n<li><a href="http://www.thesaur
+us.com/browse/compose" class="common-word" data-id="73" data-category="{&quot;name&quot;: &quo
+t;relevant--3&quot;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="1" data-length=
+"2"><span class="text">compose</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/b
+ore" class="common-word" data-id="74" data-category="{&quot;name&quot;: &quot;relevant--3&quot
+;, &quot;color&quot;: &quot;#c7c8ca&quot;}" data-complexity="2" data-length="1"><span class="t
+ext">bore</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/discourage" class="com
+mon-word" data-id="75" data-category="{&quot;name&quot;: &quot;relevant--2&quot;, &quot;color&
+quot;: &quot;#e6e7e8&quot;}" data-complexity="2" data-length="3"><span class="text">discourage
+</span></a></li>\n<li><a href="http://www.thesaurus.com/browse/be%20happy" data-id="76" data-c
+ategory="{&quot;name&quot;: &quot;relevant--2&quot;, &quot;color&quot;: &quot;#e6e7e8&quot;}"
+data-complexity="3" data-length="2"><span class="text">be happy</span></a></li>\n</ul>\n</div>
+\n<div class="citation">\n<div>\nRoget\'s 21st Century Thesaurus, Third Edition Copyright \xa9
+ 2013 by the Philip Lief Group.\n</div>\n<a class="underline" href="http://www.thesaurus.com/c
+ite.html?qh=anger&ia=lexrog">Cite This Source</a>\n</div>\n</section>\n</div>\n</div>\n<script
+ type="text/javascript">var synonyms=document.getElementsByClassName(\'synonyms\');for(var i i
+n synonyms){if(i>0){synonyms[i].style.display="none";}}</script>\n</div>\n</div>\n<div id="rel
+ated-words" class="box  oneClick-area">\n<div class="box-content-holder">\n<h2 class="oneClick
+-disabled">Other adjectives related to <strong>anger</strong></h2>\n<div data-linkid=\'nn1ov4\
+' data-ordinal=\'1\'>\n<ul>\n<li>\n<a href="http://www.thesaurus.com/browse/acrimonious" ">\na
+crimonious </a>\n</li>\n<li>\n<a href="http://www.thesaurus.com/browse/boiling" ">\nboiling </
+a>\n</li>\n<li>\n<a class="unclickable">\nconvulsed with rage </a>\n</li>\n<li>\n<a href="http
+://www.thesaurus.com/browse/fierce" ">\nfierce </a>\n</li>\n<li class="hide">\n<a class="uncli
+ckable">\nfoaming </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/fur
+ibund" ">\nfuribund </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/i
+ndignant" ">\nindignant </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/brow
+se/irate" ">\nirate </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/o
+ffended" ">\noffended </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse
+/raging" ">\nraging </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/s
+ore" ">\nsore </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/sulky"
+">\nsulky </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/up%20in%20a
+rms" ">\nup in arms </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/w
+axy" ">\nwaxy </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/wrathfu
+l" ">\nwrathful </a>\n</li>\n</ul>\n<ul>\n<li>\n<a href="http://www.thesaurus.com/browse/angry
+" ">\nangry </a>\n</li>\n<li>\n<a href="http://www.thesaurus.com/browse/boiling%20over" ">\nbo
+iling over </a>\n</li>\n<li>\n<a href="http://www.thesaurus.com/browse/cross" ">\ncross </a>\n
+</li>\n<li>\n<a href="http://www.thesaurus.com/browse/fiery" ">\nfiery </a>\n</li>\n<li class=
+"hide">\n<a href="http://www.thesaurus.com/browse/foaming%20at%20the%20mouth" ">\nfoaming at t
+he mouth </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/furious" ">\
+nfurious </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/infuriate" "
+>\ninfuriate </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/ireful"
+">\nireful </a>\n</li>\n<li class="hide">\n<a class="unclickable">\non one\'s high ropes </a>\
+n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/relentless" ">\nrelentless
+ </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/spleenful" ">\nsplee
+nful </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/surly" ">\nsurly
+ </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/violent" ">\nviolent
+ </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/wild" ">\nwild </a>\
+n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/wrought" ">\nwrought </a>\
+n</li>\n</ul>\n<ul>\n<li>\n<a class="unclickable">\nbegrumpled </a>\n</li>\n<li>\n<a href="htt
+p://www.thesaurus.com/browse/burning" ">\nburning </a>\n</li>\n<li>\n<a class="unclickable">\n
+diversivolent </a>\n</li>\n<li>\n<a class="unclickable">\nflushed with anger </a>\n</li>\n<li
+class="hide">\n<a href="http://www.thesaurus.com/browse/fractious" ">\nfractious </a>\n</li>\n
+<li class="hide">\n<a href="http://www.thesaurus.com/browse/glowering" ">\nglowering </a>\n</l
+i>\n<li class="hide">\n<a class="unclickable">\niracund </a>\n</li>\n<li class="hide">\n<a cla
+ss="unclickable">\nmad with rage </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus
+.com/browse/rabid" ">\nrabid </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com
+/browse/savage" ">\nsavage </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/b
+rowse/splenetic" ">\nsplenetic </a>\n</li>\n<li class="hide">\n<a class="unclickable">\nthrunc
+hed </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/virulent" ">\nvir
+ulent </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/worked%20up" ">
+\nworked up </a>\n</li>\n<li class="hide">\n<a class="unclickable">\nzowerswopped </a>\n</li>\
+n</ul>\n<ul>\n<li>\n<a href="http://www.thesaurus.com/browse/bitter" ">\nbitter </a>\n</li>\n<
+li>\n<a href="http://www.thesaurus.com/browse/cantankerous" ">\ncantankerous </a>\n</li>\n<li>
+\n<a class="unclickable">\nemport\xc3\xa9 </a>\n</li>\n<li>\n<a class="unclickable">\nflushed
+with rage </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/fuming" ">\
+nfuming </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/horn" ">\nhor
+n </a>\n</li>\n<li class="hide">\n<a class="unclickable">\nirascent </a>\n</li>\n<li class="hi
+de">\n<a class="unclickable">\nmadbrained </a>\n</li>\n<li class="hide">\n<a class="unclickabl
+e">\nrageful </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/set%20ag
+ainst" ">\nset against </a>\n</li>\n<li class="hide">\n<a class="unclickable">\nstomachous </a
+>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/umbrageous" ">\numbrageo
+us </a>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/warm" ">\nwarm </a
+>\n</li>\n<li class="hide">\n<a href="http://www.thesaurus.com/browse/wrath" ">\nwrath </a>\n<
+/li>\n</ul>\n</div>\n<span class="link-row">\n<a class="more" href="#" onclick="return false">
+\nEXPAND\n</a>\n</span>\n</div>\n</div>\n<div id="synonym_of_synonyms_0" class="box syn_of_syn
+s oneClick-area">\n<div class="box-content-holder">\n<h2 class="oneClick-disabled">More words
+related to <strong>anger</strong></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=\'1\'>\n<div
+class="subtitle">\n<a href="http://www.thesaurus.com/browse/affront">affront<a/> </div>\n<div
+class="def">verb. insult or involve in entanglement</div>\n<ul>\n<li><a href="http://www.thesa
+urus.com/browse/abuse" class="syn_of_syns">abuse</a></li>\n<li><a href="http://www.thesaurus.c
+om/browse/anger" class="syn_of_syns">anger</a></li>\n<li><a href="http://www.thesaurus.com/bro
+wse/annoy" class="syn_of_syns">annoy</a></li>\n<li><a href="http://www.thesaurus.com/browse/co
+nfront" class="syn_of_syns">confront</a></li>\n<li><a href="http://www.thesaurus.com/browse/cr
+iticize" class="syn_of_syns">criticize</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesauru
+s.com/browse/displease" class="syn_of_syns">displease</a></li>\n<li><a href="http://www.thesau
+rus.com/browse/dispraise" class="syn_of_syns">dispraise</a></li>\n<li><a href="http://www.thes
+aurus.com/browse/dump%20on" class="syn_of_syns">dump on</a></li>\n<li><a href="http://www.thes
+aurus.com/browse/encounter" class="syn_of_syns">encounter</a></li>\n<li><a href="http://www.th
+esaurus.com/browse/face" class="syn_of_syns">face</a></li>\n</ul>\n<ul>\n<li><a href="http://w
+ww.thesaurus.com/browse/give%20a%20zinger" class="syn_of_syns">give a zinger</a></li>\n<li><a
+href="http://www.thesaurus.com/browse/give%20the%20cold%20shoulder" class="syn_of_syns">give t
+he cold shoulder</a></li>\n<li><a href="http://www.thesaurus.com/browse/hit%20where%20one%20li
+ves" class="syn_of_syns">hit where one lives</a></li>\n<li><a href="http://www.thesaurus.com/b
+rowse/meet" class="syn_of_syns">meet</a></li>\n<li><a href="http://www.thesaurus.com/browse/of
+fend" class="syn_of_syns">offend</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/
+browse/outrage" class="syn_of_syns">outrage</a></li>\n<li><a href="http://www.thesaurus.com/br
+owse/pique" class="syn_of_syns">pique</a></li>\n<li><a href="http://www.thesaurus.com/browse/p
+rovoke" class="syn_of_syns">provoke</a></li>\n<li><a href="http://www.thesaurus.com/browse/put
+%20down" class="syn_of_syns">put down</a></li>\n<li><a href="http://www.thesaurus.com/browse/s
+lander" class="syn_of_syns">slander</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.c
+om/browse/slight" class="syn_of_syns">slight</a></li>\n<li><a href="http://www.thesaurus.com/b
+rowse/taunt" class="syn_of_syns">taunt</a></li>\n<li><a href="http://www.thesaurus.com/browse/
+vex" class="syn_of_syns">vex</a></li>\n</ul>\n<div class="link">\n</div>\n</div>\n</div>\n</di
+v>\n<div id="synonym_of_synonyms_1" class="box syn_of_syns oneClick-area">\n<div class="box-co
+ntent-holder">\n<h2 class="oneClick-disabled"></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=
+\'1\'>\n<div class="subtitle">\n<a href="http://www.thesaurus.com/browse/antagonize">antagoniz
+e<a/> </div>\n<div class="def">verb. cause problem; oppose</div>\n<ul>\n<li><a href="http://ww
+w.thesaurus.com/browse/alienate" class="syn_of_syns">alienate</a></li>\n<li><a href="http://ww
+w.thesaurus.com/browse/anger" class="syn_of_syns">anger</a></li>\n<li><a href="http://www.thes
+aurus.com/browse/annoy" class="syn_of_syns">annoy</a></li>\n</ul>\n<ul>\n<li><a href="http://w
+ww.thesaurus.com/browse/counteract" class="syn_of_syns">counteract</a></li>\n<li><a href="http
+://www.thesaurus.com/browse/estrange" class="syn_of_syns">estrange</a></li>\n<li><a href="http
+://www.thesaurus.com/browse/insult" class="syn_of_syns">insult</a></li>\n</ul>\n<ul>\n<li><a h
+ref="http://www.thesaurus.com/browse/irritate" class="syn_of_syns">irritate</a></li>\n<li><a h
+ref="http://www.thesaurus.com/browse/neutralize" class="syn_of_syns">neutralize</a></li>\n<li>
+<a href="http://www.thesaurus.com/browse/offend" class="syn_of_syns">offend</a></li>\n</ul>\n<
+ul>\n<li><a href="http://www.thesaurus.com/browse/repel" class="syn_of_syns">repel</a></li>\n<
+li><a href="http://www.thesaurus.com/browse/struggle" class="syn_of_syns">struggle</a></li>\n<
+li><a href="http://www.thesaurus.com/browse/work%20against" class="syn_of_syns">work against</
+a></li>\n</ul>\n<div class="link">\n</div>\n</div>\n</div>\n</div>\n<div id="synonym_of_synony
+ms_2" class="box syn_of_syns oneClick-area">\n<div class="box-content-holder">\n<h2 class="one
+Click-disabled"></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=\'1\'>\n<div class="subtitle">
+\n<a href="http://www.thesaurus.com/browse/bad%20blood">bad blood<a/> </div>\n<div class="def"
+>noun. bitterness of feeling</div>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/acrimon
+y" class="syn_of_syns">acrimony</a></li>\n<li><a href="http://www.thesaurus.com/browse/anger"
+class="syn_of_syns">anger</a></li>\n<li><a href="http://www.thesaurus.com/browse/animosity" cl
+ass="syn_of_syns">animosity</a></li>\n<li><a href="http://www.thesaurus.com/browse/animus" cla
+ss="syn_of_syns">animus</a></li>\n<li><a href="http://www.thesaurus.com/browse/antagonism" cla
+ss="syn_of_syns">antagonism</a></li>\n<li><a href="http://www.thesaurus.com/browse/antipathy"
+class="syn_of_syns">antipathy</a></li>\n<li><a href="http://www.thesaurus.com/browse/bad%20che
+mistry" class="syn_of_syns">bad chemistry</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesa
+urus.com/browse/bad%20feeling" class="syn_of_syns">bad feeling</a></li>\n<li><a href="http://w
+ww.thesaurus.com/browse/bad%20vibes" class="syn_of_syns">bad vibes</a></li>\n<li><a href="http
+://www.thesaurus.com/browse/bad%20will" class="syn_of_syns">bad will</a></li>\n<li><a href="ht
+tp://www.thesaurus.com/browse/bitterness" class="syn_of_syns">bitterness</a></li>\n<li><a href
+="http://www.thesaurus.com/browse/disaccord" class="syn_of_syns">disaccord</a></li>\n<li><a hr
+ef="http://www.thesaurus.com/browse/dislike" class="syn_of_syns">dislike</a></li>\n<li><a href
+="http://www.thesaurus.com/browse/distrust" class="syn_of_syns">distrust</a></li>\n</ul>\n<ul>
+\n<li><a href="http://www.thesaurus.com/browse/enmity" class="syn_of_syns">enmity</a></li>\n<l
+i><a href="http://www.thesaurus.com/browse/hard%20feelings" class="syn_of_syns">hard feelings<
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/hatred" class="syn_of_syns">hatred</a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/hostility" class="syn_of_syns">hostility</a
+></li>\n<li><a href="http://www.thesaurus.com/browse/ill%20will" class="syn_of_syns">ill will<
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/ill-disposedness" class="syn_of_syns">i
+ll-disposedness</a></li>\n<li><a href="http://www.thesaurus.com/browse/malevolence" class="syn
+_of_syns">malevolence</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/mali
+ce" class="syn_of_syns">malice</a></li>\n<li><a href="http://www.thesaurus.com/browse/mutual%2
+0hostility" class="syn_of_syns">mutual hostility</a></li>\n<li><a href="http://www.thesaurus.c
+om/browse/nastiness" class="syn_of_syns">nastiness</a></li>\n<li><a href="http://www.thesaurus
+.com/browse/odium" class="syn_of_syns">odium</a></li>\n<li><a href="http://www.thesaurus.com/b
+rowse/oppugnancy" class="syn_of_syns">oppugnancy</a></li>\n<li><a href="http://www.thesaurus.c
+om/browse/oppugnation" class="syn_of_syns">oppugnation</a></li>\n<li><a href="http://www.thesa
+urus.com/browse/personality%20conflict" class="syn_of_syns">personality conflict</a></li>\n</u
+l>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/rancor" class="syn_of_syns">rancor</a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/resentment" class="syn_of_syns">resentment<
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/unfriendliness" class="syn_of_syns">unf
+riendliness</a></li>\n<li><a href="http://www.thesaurus.com/browse/venom" class="syn_of_syns">
+venom</a></li>\n</ul>\n<div class="link">\n</div>\n</div>\n</div>\n</div>\n<div id="synonym_of
+_synonyms_3" class="box syn_of_syns oneClick-area">\n<div class="box-content-holder">\n<h2 cla
+ss="oneClick-disabled"></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=\'1\'>\n<div class="sub
+title">\n<a href="http://www.thesaurus.com/browse/bait">bait<a/> </div>\n<div class="def">verb
+. needle</div>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/anger" class="syn_of_syns">
+anger</a></li>\n<li><a href="http://www.thesaurus.com/browse/annoy" class="syn_of_syns">annoy<
+/a></li>\n<li><a href="http://www.thesaurus.com/browse/badger" class="syn_of_syns">badger</a><
+/li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/bother" class="syn_of_syns">bo
+ther</a></li>\n<li><a href="http://www.thesaurus.com/browse/gall" class="syn_of_syns">gall</a>
+</li>\n<li><a href="http://www.thesaurus.com/browse/harass" class="syn_of_syns">harass</a></li
+>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/heckle" class="syn_of_syns">heckl
+e</a></li>\n<li><a href="http://www.thesaurus.com/browse/hound" class="syn_of_syns">hound</a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/irk" class="syn_of_syns">irk</a></li>\n</ul
+>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/irritate" class="syn_of_syns">irritate</
+a></li>\n<li><a href="http://www.thesaurus.com/browse/nag" class="syn_of_syns">nag</a></li>\n<
+li><a href="http://www.thesaurus.com/browse/persecute" class="syn_of_syns">persecute</a></li>\
+n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/provoke" class="syn_of_syns">provok
+e</a></li>\n<li><a href="http://www.thesaurus.com/browse/tease" class="syn_of_syns">tease</a><
+/li>\n<li><a href="http://www.thesaurus.com/browse/torment" class="syn_of_syns">torment</a></l
+i>\n</ul>\n<div class="link">\n</div>\n</div>\n</div>\n</div>\n<div id="synonym_of_synonyms_4"
+ class="box syn_of_syns oneClick-area">\n<div class="box-content-holder">\n<h2 class="oneClick
+-disabled"></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=\'1\'>\n<div class="subtitle">\n<a
+href="http://www.thesaurus.com/browse/chafe">chafe<a/> </div>\n<div class="def">verb. annoy</d
+iv>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/abrade" class="syn_of_syns">abrade</a>
+</li>\n<li><a href="http://www.thesaurus.com/browse/anger" class="syn_of_syns">anger</a></li>\
+n<li><a href="http://www.thesaurus.com/browse/annoy" class="syn_of_syns">annoy</a></li>\n<li><
+a href="http://www.thesaurus.com/browse/bother" class="syn_of_syns">bother</a></li>\n<li><a hr
+ef="http://www.thesaurus.com/browse/exasperate" class="syn_of_syns">exasperate</a></li>\n<li><
+a href="http://www.thesaurus.com/browse/exercise" class="syn_of_syns">exercise</a></li>\n</ul>
+\n<ul>\n<li><a href="http://www.thesaurus.com/browse/fret" class="syn_of_syns">fret</a></li>\n
+<li><a href="http://www.thesaurus.com/browse/fume" class="syn_of_syns">fume</a></li>\n<li><a h
+ref="http://www.thesaurus.com/browse/gall" class="syn_of_syns">gall</a></li>\n<li><a href="htt
+p://www.thesaurus.com/browse/grate" class="syn_of_syns">grate</a></li>\n<li><a href="http://ww
+w.thesaurus.com/browse/harass" class="syn_of_syns">harass</a></li>\n<li><a href="http://www.th
+esaurus.com/browse/incense" class="syn_of_syns">incense</a></li>\n</ul>\n<ul>\n<li><a href="ht
+tp://www.thesaurus.com/browse/inflame" class="syn_of_syns">inflame</a></li>\n<li><a href="http
+://www.thesaurus.com/browse/irk" class="syn_of_syns">irk</a></li>\n<li><a href="http://www.the
+saurus.com/browse/irritate" class="syn_of_syns">irritate</a></li>\n<li><a href="http://www.the
+saurus.com/browse/itch" class="syn_of_syns">itch</a></li>\n<li><a href="http://www.thesaurus.c
+om/browse/offend" class="syn_of_syns">offend</a></li>\n<li><a href="http://www.thesaurus.com/b
+rowse/provoke" class="syn_of_syns">provoke</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thes
+aurus.com/browse/rage" class="syn_of_syns">rage</a></li>\n<li><a href="http://www.thesaurus.co
+m/browse/rasp" class="syn_of_syns">rasp</a></li>\n<li><a href="http://www.thesaurus.com/browse
+/rub" class="syn_of_syns">rub</a></li>\n<li><a href="http://www.thesaurus.com/browse/ruffle" c
+lass="syn_of_syns">ruffle</a></li>\n<li><a href="http://www.thesaurus.com/browse/scrape" class
+="syn_of_syns">scrape</a></li>\n<li><a href="http://www.thesaurus.com/browse/scratch" class="s
+yn_of_syns">scratch</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/vex" c
+lass="syn_of_syns">vex</a></li>\n<li><a href="http://www.thesaurus.com/browse/worry" class="sy
+n_of_syns">worry</a></li>\n</ul>\n<div class="link">\n</div>\n</div>\n</div>\n</div>\n<div id=
+"synonym_of_synonyms_5" class="box syn_of_syns oneClick-area">\n<div class="box-content-holder
+">\n<h2 class="oneClick-disabled"></h2>\n<div data-linkid=\'nn1ov4\' data-ordinal=\'1\'>\n<div
+ class="subtitle">\n<a href="http://www.thesaurus.com/browse/displease">displease<a/> </div>\n
+<div class="def">verb. make unhappy</div>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/
+aggravate" class="syn_of_syns">aggravate</a></li>\n<li><a href="http://www.thesaurus.com/brows
+e/anger" class="syn_of_syns">anger</a></li>\n<li><a href="http://www.thesaurus.com/browse/anno
+y" class="syn_of_syns">annoy</a></li>\n<li><a href="http://www.thesaurus.com/browse/antagonize
+" class="syn_of_syns">antagonize</a></li>\n<li><a href="http://www.thesaurus.com/browse/bother
+" class="syn_of_syns">bother</a></li>\n<li><a href="http://www.thesaurus.com/browse/cap" class
+="syn_of_syns">cap</a></li>\n<li><a href="http://www.thesaurus.com/browse/chagrin" class="syn_
+of_syns">chagrin</a></li>\n<li><a href="http://www.thesaurus.com/browse/cool" class="syn_of_sy
+ns">cool</a></li>\n<li><a href="http://www.thesaurus.com/browse/curdle" class="syn_of_syns">cu
+rdle</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/cut%20to%20the%20quic
+k" class="syn_of_syns">cut to the quick</a></li>\n<li><a href="http://www.thesaurus.com/browse
+/disappoint" class="syn_of_syns">disappoint</a></li>\n<li><a href="http://www.thesaurus.com/br
+owse/discontent" class="syn_of_syns">discontent</a></li>\n<li><a href="http://www.thesaurus.co
+m/browse/disgruntle" class="syn_of_syns">disgruntle</a></li>\n<li><a href="http://www.thesauru
+s.com/browse/disgust" class="syn_of_syns">disgust</a></li>\n<li><a href="http://www.thesaurus.
+com/browse/disoblige" class="syn_of_syns">disoblige</a></li>\n<li><a href="http://www.thesauru
+s.com/browse/dissatisfy" class="syn_of_syns">dissatisfy</a></li>\n<li><a href="http://www.thes
+aurus.com/browse/enrage" class="syn_of_syns">enrage</a></li>\n<li><a href="http://www.thesauru
+s.com/browse/exasperate" class="syn_of_syns">exasperate</a></li>\n</ul>\n<ul>\n<li><a href="ht
+tp://www.thesaurus.com/browse/fret" class="syn_of_syns">fret</a></li>\n<li><a href="http://www
+.thesaurus.com/browse/frustrate" class="syn_of_syns">frustrate</a></li>\n<li><a href="http://w
+ww.thesaurus.com/browse/gall" class="syn_of_syns">gall</a></li>\n<li><a href="http://www.thesa
+urus.com/browse/hurt" class="syn_of_syns">hurt</a></li>\n<li><a href="http://www.thesaurus.com
+/browse/incense" class="syn_of_syns">incense</a></li>\n<li><a href="http://www.thesaurus.com/b
+rowse/irk" class="syn_of_syns">irk</a></li>\n<li><a href="http://www.thesaurus.com/browse/irri
+tate" class="syn_of_syns">irritate</a></li>\n<li><a href="http://www.thesaurus.com/browse/nett
+le" class="syn_of_syns">nettle</a></li>\n<li><a href="http://www.thesaurus.com/browse/offend"
+class="syn_of_syns">offend</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse
+/perplex" class="syn_of_syns">perplex</a></li>\n<li><a href="http://www.thesaurus.com/browse/p
+ique" class="syn_of_syns">pique</a></li>\n<li><a href="http://www.thesaurus.com/browse/play%20
+dirty" class="syn_of_syns">play dirty</a></li>\n<li><a href="http://www.thesaurus.com/browse/p
+rovoke" class="syn_of_syns">provoke</a></li>\n<li><a href="http://www.thesaurus.com/browse/put
+%20out" class="syn_of_syns">put out</a></li>\n<li><a href="http://www.thesaurus.com/browse/rep
+el" class="syn_of_syns">repel</a></li>\n<li><a href="http://www.thesaurus.com/browse/revolt" c
+lass="syn_of_syns">revolt</a></li>\n<li><a href="http://www.thesaurus.com/browse/rile" class="
+syn_of_syns">rile</a></li>\n<li><a href="http://www.thesaurus.com/browse/roil" class="syn_of_s
+yns">roil</a></li>\n</ul>\n<ul>\n<li><a href="http://www.thesaurus.com/browse/sound" class="sy
+n_of_syns">sound</a></li>\n<li><a href="http://www.thesaurus.com/browse/turn%20off" class="syn
+_of_syns">turn off</a></li>\n<li><a href="http://www.thesaurus.com/browse/upset" class="syn_of
+_syns">upset</a></li>\n<li><a href="http://www.thesaurus.com/browse/vex" class="syn_of_syns">v
+ex</a></li>\n<li><a href="http://www.thesaurus.com/browse/wing" class="syn_of_syns">wing</a></
+li>\n<li><a href="http://www.thesaurus.com/browse/worry" class="syn_of_syns">worry</a></li>\n<
+li><a href="http://www.thesaurus.com/browse/zing" class="syn_of_syns">zing</a></li>\n</ul>\n<d
+iv class="link">\n</div>\n</div>\n</div>\n</div>\n<div class="citation">\n<div>\nRoget\'s 21st
+ Century Thesaurus, Third Edition Copyright \xa9 2013 by the Philip Lief Group.\n</div>\n<a hr
+ef="http://www.thesaurus.com/cite.html?qh=displease&ia=lexrog" class="underline" data-linkid="
+xjkd2s">Cite This Source</a>\n</div>\n<div id="paginator" data-linkid=\'2b1bcp\'>\n<div class=
+"active">\n<a href="http://www.thesaurus.com/browse/anger/1">\n1 </a>\n</div>\n<div>\n<a href=
+"http://www.thesaurus.com/browse/anger/2">\n2 </a>\n</div>\n<div>\n<a href="http://www.thesaur
+us.com/browse/anger/3">\n3 </a>\n</div>\n... <div class="last">\n<a href="http://www.thesaurus
+.com/browse/anger/8">\n8 </a>\n</div>\n<span>\n<a href="http://www.thesaurus.com/browse/anger/
+2">\nNEXT\n</a>\n</span>\n</div>\n<div class="bottom-border">&nbsp</div>\n<div class="ad">\n<d
+iv class="banner">\n<div id="thesaurus_serp_btf_2"><script type="text/javascript">if(typeof Us
+erController!=="undefined"&&!UserController.shouldDisplayAds()){document.getElementById("thesa
+urus_serp_btf_2").parentNode.removeChild(document.getElementById("thesaurus_serp_btf_2"));}els
+e{gptApp.ads.push(function(){googletag.cmd.push(function(){googletag.display("thesaurus_serp_b
+tf_2");});});}</script></div> </div>\n</div>\n</div>\n<div id="right-sidebar">\n<aside id="sid
+ebar" class="direct">\n<div class="heading-block">\n<h2>\n<strong>49</strong>\n<span>Synonyms
+found <span class="headword">for anger</span></span>\n</h2>\n</div>\n<div class="content-block
+">\n<div class="ad">\n<div class="banner">\n<div id="thesaurus_serp_atf_300x250"><script type=
+"text/javascript">if(typeof UserController!=="undefined"&&!UserController.shouldDisplayAds()){
+document.getElementById("thesaurus_serp_atf_300x250").parentNode.removeChild(document.getEleme
+ntById("thesaurus_serp_atf_300x250"));}else{gptApp.ads.push(function(){googletag.cmd.push(func
+tion(){googletag.display("thesaurus_serp_atf_300x250");});});}</script></div> </div>\n</div>\n
+<script type="text/javascript">if(UserController.shouldDisplayAds()){document.write(\'\');}</s
+cript>\n<div class="empty-box" data-cts=\'{"linkId":"nn1ov4","infix":"","domain":"dictionary.c
+om","clkpage":"the","clkmod":"1clk","clksite":"thes","clkld":0}\' data-href=\'http://dictionar
+y.reference.com/browse/\'>\n<div id="word-origin" class="box  oneClick-area">\n<div class="box
+-content-holder">\n<h2 class="oneClick-disabled">Word Origin & History</h2>\n<div>\n<p>\nanger
+ c.1200, from O.N. angra "to grieve, vex;" the noun is mid-13c., from O.N. angr "distress, gri
+ef, affliction," from P.Gmc. *angus (cf. O.E. enge "narrow, painful," M.Du. enghe, Goth. aggwu
+s "narrow"), from PIE base *angh- "stretch round, tight, painfully constricted, painful" (cf.
+Skt. amhu- "narrow," amhah "anguish;" Armenian anjuk "narrow;" Lith. ankstas "narrow;" Gk. ank
+hein "to squeeze," ankhone "a strangling;" L. angere "to throttle, torment;" O.Ir. cum-ang "st
+raitness, want"). In M.E., also of physical pain. </p>\n</div>\n</div>\n</div>\n</div>\n<div c
+lass="ad">\n<div class="banner">\n<div id="thesaurus_serp_btf_300x252"><script type="text/java
+script">if(typeof UserController!=="undefined"&&!UserController.shouldDisplayAds()){document.g
+etElementById("thesaurus_serp_btf_300x252").parentNode.removeChild(document.getElementById("th
+esaurus_serp_btf_300x252"));}else{gptApp.ads.push(function(){googletag.cmd.push(function(){goo
+gletag.display("thesaurus_serp_btf_300x252");});});}</script></div> </div>\n</div>\n<div class
+="empty-box" data-cts=\'{"linkId":"ixxth0","infix":"","domain":"dictionary.com","clkpage":"the
+","clkmod":"1clkesp","clksite":"thes","clkld":0}\' data-href=\'http://dictionary.reference.com
+/browse/\'>\n<div id="example-sentences" class="box  oneClick-area">\n<div class="box-content-
+holder">\n<h2 class="oneClick-disabled">Example Sentences <span>for anger</span></h2>\n<div>\n
+<p class="">\nBut great was Hatteras\'s <b>anger</b> at finding the way to the north closed! <
+/p>\n<p class="">\nThey dwarfed the cause of her <b>anger</b>; they left her calm and serene,
+a cousin to the Superwoman. </p>\n<p class="">\nThe <b>anger</b> had ebbed from Dan\'s brain,
+although his attitude had not relaxed. </p>\n<p class="">\nShe was quivering still with <b>ang
+er</b> and she did not answer him. </p>\n<p class="hide">\nAl\'s <b>anger</b> and contempt wer
+e so great that he had lost all sense of discretion. </p>\n<p class="hide">\nIt was Father Pat
+\'s voice, lacking breath, but deep with <b>anger</b>. </p>\n<p class="hide">\nChavignis digni
+ty, like his prudence, became lost in his <b>anger</b>. </p>\n<p class="hide">\nHe found the o
+ld man agitated, and almost crying with <b>anger</b> and vexation. </p>\n<p class="hide">\nWhe
+n she realized the significance of our words, she gave way to a frenzy of <b>anger</b>. </p>\n
+<p class="hide">\nCaptain Candage knew it, and that fact did not soften his <b>anger</b> in th
+e least. </p>\n</div>\n<span class="link-row">\n<a class="more" href="#" onclick="return false
+">\nEXPAND\n</a>\n</span>\n</div>\n</div>\n</div>\n</div>\n</aside>\n</div>\n<div class="clear
+"></div>\n</div>\n<div id="audioPlayerWrapper">\n<p id="audioplayer"></p>\n</div>\n<div>\n<div
+ id="gsl_init" data-type=\'csa\' data-bpc=\'1\' data-afsClient=\'aj-lexico-thes\' data-afsChan
+nel=\'channel-01+LD1\' data-afcClient=\'ca-aj-lexico-thes\' data-afcChannel=\'channel-01+LD1\'
+ data-numOfAds=\'1\' data-adtest=\'off\' data-afsQuery=\'anger\' data-afcQuery=\'anger\' data-
+impression=\'{"basePath":"http:\\/\\/track.thesaurus.com\\/track\\/impression2","attributes":{
+"site":"thes","pageName":"the","ldid":0}}\' data-customPage=\'{"width":"100%"}\' data-customSp
+ot=\'{"sitelinks":"true"}\'>\n</div>\n<div id="afcadcontainer"></div></div>\n<div id=\'bkpix\'
+></div>\n<div id=\'csPixel\'></div>\n<div id=\'neiPixel\'></div><footer class="footer-thin">\n
+<div class="footer-container" data-linkid=\'gy27eg\'>\n<div>\n<ul class="footer-navbar">\n<li
+class="footer-navbar-list">\n<a href="http://content.dictionary.com/">About</a>\n</li>\n<li cl
+ass="footer-navbar-list">\n<a href="http://dictionary.reference.com/help/terms.html">Terms</a>
+\n</li>\n<li class="footer-navbar-list">\n<a href="http://dictionary.reference.com/privacy">Pr
+ivacy</a>\n</li>\n<li class="footer-navbar-list">\n<a href="http://content.dictionary.com/abou
+t/careers">Careers</a>\n</li>\n<li class="footer-navbar-list">\n<a href="http://dictionary.ref
+erence.com/apps">Apps</a>\n</li>\n<li class="footer-navbar-list">\n<a href="http://content.dic
+tionary.com/about/contact">Contact Us</a>\n</li>\n</ul>\n<div class="footer-copyright">\n&copy
+;&nbsp;2016 Dictionary.com, LLC.\n</div>\n</div>\n</div>\n</footer>\n<script type="text/javasc
+ript" src="http://static.sfdict.com/app/js/jquery-1.11.3.min-25aa4.js"></script><script type="
+text/javascript" src="http://app.dictionary.com/js/advertisement.js"></script>\n<script>if(typ
+eof window.canRunAds===\'undefined\'){var img=new Image(),url=\'http://track.thesaurus.com/mai
+n.gif?ev=a&ms=%40%40MSEG%40%40&rf=%40%40REFERRER%40%40&cb=%40%40CACHEBUSTER%40%40&pn=the&st=th
+es&ab=&dc=desktop\';url=url.replace(\'%40%40REFERRER%40%40\',encodeURIComponent(document.refer
+rer)).replace(\'%40%40CACHEBUSTER%40%40\',Math.floor((Math.random()*899999999)+100000000)).rep
+lace(\'%40%40MSEG%40%40\',(cookiesManager.getCookieValue(\'mseg\')||\'\'));img.src=url;}</scri
+pt>\n<script type="text/javascript">if(typeof UserController==="undefined"||!UserController.is
+Under13()){_qevents.push({qacct:"p-51zXP5Cc9sxvQ"});}</script>\n<noscript>\n<div style="displa
+y: none;"><img src="//pixel.quantserve.com/pixel/p-51zXP5Cc9sxvQ.gif" height="1" width="1" alt
+="Quantcast"/></div>\n</noscript>\n<script>var BCT=(function(){\'use strict\';var webTrackURL=
+\'http://track.thesaurus.com/main.gif?ev=c&cl=%40%40LINKIDS%40%40&ci=%40%40ITEM%40%40&co=%40%4
+0ORDINAL%40%40&ms=%40%40MSEG%40%40&ds=%40%40DESTINATION%40%40&qr=%25%25QUERY%25%25&rf=%40%40RE
+FERRER%40%40&cb=%40%40CACHEBUSTER%40%40&pn=%40%40PAGENAME%40%40&st=thes&ab=&dc=desktop\',query
+,originalQuery;originalQuery=typeof DARCI.OQR!==\'undefined\'?DARCI.OQR.getValue():null;query=
+originalQuery!==null?originalQuery:"anger";webTrackURL=webTrackURL.replace(\'%25%25QUERY%25%25
+\',query);function getData($target){var ctsData,$closestLinkIDElement,data={};if($target.data(
+\'cts\')!==undefined){ctsData=$target.data(\'cts\');data.linkId=ctsData.linkId;data.item="";da
+ta.ordinal=ctsData.ordinal;}else{$closestLinkIDElement=$target.closest(\'[data-linkid]\');if(1
+===$closestLinkIDElement.length&&0===$target.closest(\'[data-type]\').length){data.linkId=$clo
+sestLinkIDElement.data(\'linkid\');data.item=getItem($target);data.ordinal=getOrdinal($target,
+$closestLinkIDElement);}}\nreturn data;}\nfunction getItem($target){var $closestWithItem=$targ
+et.closest(\'[data-item]\'),item=\'\';if(1===$closestWithItem.length){item=$target.text().trim
+();}\nreturn item;}\nfunction getOrdinal($target,$dataItem){var $closestWithOrdinal,value=\'\'
+;if($dataItem!==$target){$closestWithOrdinal=$target.closest(\'[data-ordinal]\');if(0!==$close
+stWithOrdinal.length){value=1;$closestWithOrdinal.find(\'a\').each(function(index,element){if(
+$target[0]===element){return false;}\nvalue+=1;});}}\nreturn value;}\nfunction getCommonData(d
+estination){var data={};data.cacheBuster=Math.floor((Math.random()*899999999)+100000000);data.
+pageName=pageName;data.mseg=getMsegValue();data.destination=encodeURIComponent(destination);re
+turn data;}\nfunction redirectToDest(location){window.location=location;}\nfunction getCookieB
+yName(name){var value=null,cookies=document.cookie,searchedCookie=cookies.indexOf(" "+name+"="
+);if(searchedCookie===-1){var checkFirstCookie=cookies.indexOf(name+"=");searchedCookie=checkF
+irstCookie===0?0:-1;}\nif(searchedCookie>-1){var startPositionOfValue=cookies.indexOf("=",sear
+chedCookie)+1,endPositionOfValue=cookies.indexOf(";",searchedCookie);if(endPositionOfValue===-
+1){endPositionOfValue=searchedCookie.length;}\nvalue=cookies.substring(startPositionOfValue,en
+dPositionOfValue);}\nreturn value;}\nfunction getMsegValue(){var msegVal;if(typeof cookiesMana
+ger!=="undefined"){msegVal=cookiesManager.getCookieValue("mseg");}else{msegVal=getCookieByName
+("mseg");}\nreturn msegVal||"";}\nfunction renderWebTrackURL(data,destination){var commonData=
+getCommonData(destination);return webTrackURL.replace(\'%40%40REFERRER%40%40\',encodeURICompon
+ent(document.referrer)).replace(\'%40%40LINKIDS%40%40\',data.linkId||"").replace(\'%40%40ITEM%
+40%40\',data.item||"").replace(\'%40%40ORDINAL%40%40\',data.ordinal||"").replace(\'%40%40CACHE
+BUSTER%40%40\',commonData.cacheBuster||"").replace(\'%40%40PAGENAME%40%40\',commonData.pageNam
+e||"").replace(\'%40%40MSEG%40%40\',commonData.mseg||"").replace(\'%40%40DESTINATION%40%40\',c
+ommonData.destination||"");}\nfunction logAndRedirect(data,destination){var logURL=renderWebTr
+ackURL(data,destination),image=new Image();var timeout=setTimeout(function(){redirectToDest(de
+stination);},2000);image.onload=image.onerror=function(){clearTimeout(timeout);redirectToDest(
+destination);};image.src=logURL;return false;}\nfunction attachHandler(){$(\'body\').on(\'clic
+k.bct\',\'a\',function(event){var $target=$(event.target).closest(\'a\'),destination=$target.a
+ttr(\'href\'),dataToLog;if(typeof destination==="undefined"){return true;}\nif($target.closest
+(\'.cts-disabled\').parents().length>$target.closest(\'.cts-enabled\').parents().length){retur
+n true;}\ndataToLog=getData($target);if(typeof dataToLog.linkId==="undefined"){return true;}\n
+event.preventDefault();if($target.hasClass(\'cts-clicked\')){return false;}\n$target.addClass(
+\'cts-clicked\');return logAndRedirect(dataToLog,destination);});}\nreturn{attachHandler:funct
+ion(){attachHandler();},redirect:function(ctsData,destinationHref,item){var data={};data.linkI
+d=ctsData.linkId||ctsData.linkid;data.item=item;data.ordinal=\'\';return logAndRedirect(data,d
+estinationHref);}};}());BCT.attachHandler();$(document).trigger(\'bctready\');</script>\n<scri
+pt type="text/javascript" src=" http://static.sfdict.com/app/js/require-3507e.js"></script>\n<
+script type="text/javascript">requirejs.config({baseUrl:"http://static.sfdict.com/thescloud/js
+",paths:{"appcore":"http:\\/\\/static.sfdict.com\\/app\\/js","options":"http:\\/\\/static.sfdi
+ct.com\\/app\\/js\\/options-b826f","jquery-ui":"http:\\/\\/static.sfdict.com\\/app\\/js\\/jque
+ry-ui-1.11.4.min-4b3e6","twitter":"https:\\/\\/platform.twitter.com\\/widgets","facebook":"htt
+p:\\/\\/connect.facebook.net\\/en_US\\/all","google-plus":"https:\\/\\/apis.google.com\\/js\\/
+platform","instagram":"https:\\/\\/x.instagramfollowbutton.com\\/follow","serp":"serp-25136"},
+shim:{"twitter":{"exports":"twttr"},"facebook":{"exports":"FB"},"google-plus":{"exports":"goog
+leplus"},"instagram":[]}});define(\'jquery\',[],function(){return window.jQuery;});define("run
+time-options",function(){return{"localURL":"http:\\/\\/www.thesaurus.com\\/","serpUrl":"http:\
+\/\\/www.thesaurus.com\\/browse\\/","logginRedirect":"http:\\/\\/app.dictionary.com\\/login\\/
+?logindest=","siteName":"thes","pageName":"the","pageType":"direct","adRefresh":{"initDelay":7
+,"subsDelay":20,"limit":"1"},"mobileCss":"http:\\/\\/static.sfdict.com\\/thescloud\\/css\\/mob
+ile-3a0a1.css","pageBorderWidth":1280,"POSElementNb":2,"iPadStylePath":"http:\\/\\/static.sfdi
+ct.com\\/thescloud\\/css\\/ipad-536d7.css","breadCrumbsLimit":30,"searchTerm":"anger","clientP
+latform":"Desktop","similarityBuckets":3,"lengthBuckets":3,"defaultView":"list","defaultSortin
+g":0,"defaultFontSize":100,"clickTrackMore":"http:\\/\\/track.thesaurus.com\\/track\\/clickCli
+ent?site=thes&pageName=&ldid=0&module=1clk&linkIds=nn1ov4","gspcDomain":".thesaurus.com","CTSP
+arams":{"infix":"","clkpage":"the","clksite":"thes","clkld":0},"webTrack":{"clickInner":"http:
+\\/\\/track.thesaurus.com\\/main.gif?ev=n&tg=%40%40TARGET%40%40&ar=%40%40ADREFRESH%40%40&ms=%4
+0%40MSEG%40%40&rf=%40%40REFERRER%40%40&cb=%40%40CACHEBUSTER%40%40&pn=%40%40PAGENAME%40%40&st=t
+hes&ab=&dc=desktop","impressions":"http:\\/\\/track.thesaurus.com\\/main.gif?ev=i&lk=%40%40IMP
+RESSIONLINKIDS%40%40&ms=%40%40MSEG%40%40&rf=%40%40REFERRER%40%40&cb=%40%40CACHEBUSTER%40%40&pn
+=%40%40PAGENAME%40%40&st=thes&ab=&dc=desktop","pageview":"http:\\/\\/track.thesaurus.com\\/mai
+n.gif?ev=p&ct=%40%40CONTENTTITLE%40%40&ms=%40%40MSEG%40%40&rf=%40%40REFERRER%40%40&cb=%40%40CA
+CHEBUSTER%40%40&pn=%40%40PAGENAME%40%40&st=thes&ab=&dc=desktop","click":"http:\\/\\/track.thes
+aurus.com\\/main.gif?ev=c&cl=%40%40LINKIDS%40%40&ci=%40%40ITEM%40%40&co=%40%40ORDINAL%40%40&ms
+=%40%40MSEG%40%40&ds=%40%40DESTINATION%40%40&qr=%25%25QUERY%25%25&rf=%40%40REFERRER%40%40&cb=%
+40%40CACHEBUSTER%40%40&pn=%40%40PAGENAME%40%40&st=thes&ab=&dc=desktop"},"trackFavorite":"{\\"b
+asePath\\":\\"http:\\\\\\/\\\\\\/track.thesaurus.com\\\\\\/track\\\\\\/favorite\\",\\"attribut
+es\\":{\\"site\\":\\"thes\\",\\"pageName\\":\\"the\\",\\"ldid\\":0}}","ctsDataConfuse":"{\\"li
+nkId\\":\\"1vq92f\\",\\"infix\\":\\"\\",\\"domain\\":\\"dictionary.com\\",\\"clkpage\\":\\"the
+\\",\\"clkmod\\":\\"confuse\\",\\"clksite\\":\\"thes\\",\\"clkld\\":0}","subscriptionURL":"htt
+p:\\/\\/app.thesaurus.com\\/api\\/ajaxmailer\\/subscription?pageName=the&siteName=thes&ld=0&ms
+eg=48&placement=center"};});require(["serp"])</script>\n<script>var ms=(typeof ms===\'undefine
+d\')?cookiesManager.getCookieValue(\'mseg\')||"":ms;new Image().src="http://track.thesaurus.co
+m/main.gif?ev=i&lk=huiazc&pn=the&st=thes&ab=&dc=desktop"+"&rf="+encodeURIComponent(document.re
+ferrer)+"&ms="+ms+"&cb="+Math.floor((Math.random()*899999999)+100000000);</script>\n</body>\n<
+/html>
