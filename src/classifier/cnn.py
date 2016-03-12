@@ -85,8 +85,10 @@ class CNNS(KerasClassifier):
         if nb_class == 2:
             model.add(Dense(1))
             model.add(Activation('sigmoid'))
+            print 'begin compile..'
             model.compile(optimizer='adadelta', loss='binary_crossentropy',
                           class_mode='binary')
+            print 'end compile'
         else:
             model.add(Dense(nb_class))
             model.add(Activation('softmax'))

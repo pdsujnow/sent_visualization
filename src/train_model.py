@@ -102,8 +102,8 @@ def transform_embedding(emb):
 if __name__ == "__main__":
     # Train classifiers
 
-    # corpus_name = 'panglee'
-    corpus_name = 'SST1'
+    corpus_name = 'panglee'
+    # corpus_name = 'SST1'
     corpus_dir = os.path.join(CORPUS_DIR, corpus_name)
 
     corpus = dataloader.load(corpus_dir)
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     if pretrained:
         logging.debug('loading embedding..')
         W = load_embedding(cnn_extractor.vocabulary,
-                           cache_file_name=corpus_name + '_emb.pkl')
+                           cache_file_name=os.path.join(CACHE_DIR, corpus_name + '_emb.pkl'))
         logging.debug('embedding loaded..')
     else:
         W = None
