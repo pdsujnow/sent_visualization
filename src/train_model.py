@@ -15,6 +15,7 @@ from word2vec.word2vec import Word2Vec
 import dataloader
 import pandas
 from feature.extractor import feature_fuse, W2VExtractor, CNNExtractor
+from keras.utils.np_utils import to_categorical
 
 import logging
 logging.basicConfig(level=logging.DEBUG)
@@ -109,12 +110,12 @@ if __name__ == "__main__":
     corpus = pandas.read_pickle(os.path.join(CORPUS_DIR, corpus_name, 'export.pkl'))
     sentences, labels = list(corpus['sentence']), list(corpus['label'])
     split = None if 'split' not in corpus.columns else corpus.split
-
     cnn_extractor = CNNExtractor(mincount=0)
     feature_extractors = [cnn_extractor]
     logging.debug('loading feature..')
     X, y = feature_fuse(feature_extractors, sentences, labels)
     logging.debug('feature loaded')
+
 
     pretrained = True
     transform = False
@@ -151,6 +152,8 @@ if __name__ == "__main__":
 
     if split is None:
         cv = StratifiedKFold(y, n_folds=10, shuffle=True)
+        if len(set(y))>2:
+            y = to_categorical(y)
         for train_ind, test_ind in cv:
             X_train, X_test = X[train_ind], X[test_ind]
             y_train, y_test = y[train_ind], y[test_ind]
@@ -160,6 +163,8 @@ if __name__ == "__main__":
                     show_accuracy=True,
                     validation_data=(X_test, y_test))
     else:
+        if len(set(y))>2:
+            y = to_categorical(y)
         train_ind, test_ind = split=='train', split=='test'
         X_train, X_test = X[train_ind], X[test_ind]
         y_train, y_test = y[train_ind], y[test_ind]

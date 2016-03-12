@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     # Get train, test
     train_df = phrase_df[phrase_df.split!='test']
-    train_df.loc[:, 'split'] = 1
+    train_df.split = 'train'
     test_df = phrase_df[phrase_df.split=='test']
 
     # Drop phrase that are substring of test sentences in the train set
