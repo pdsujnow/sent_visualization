@@ -13,6 +13,7 @@ from sklearn.cross_validation import StratifiedKFold
 from model import Model
 from word2vec.word2vec import Word2Vec
 import dataloader
+import pandas
 from feature.extractor import feature_fuse, W2VExtractor, CNNExtractor
 
 import logging
@@ -102,12 +103,12 @@ def transform_embedding(emb):
 if __name__ == "__main__":
     # Train classifiers
 
-    corpus_name = 'panglee'
-    # corpus_name = 'SST1'
-    corpus_dir = os.path.join(CORPUS_DIR, corpus_name)
+    # corpus_name = 'panglee'
+    corpus_name = 'SST1'
 
-    corpus = dataloader.load(corpus_dir)
+    corpus = pandas.read_pickle(os.path.join(CORPUS_DIR, corpus_name, 'export.pkl'))
     sentences, labels = list(corpus['sentence']), list(corpus['label'])
+    split = None if 'split' not in corpus.columns else corpus.split
 
     cnn_extractor = CNNExtractor(mincount=0)
     feature_extractors = [cnn_extractor]
@@ -132,10 +133,10 @@ if __name__ == "__main__":
 
     embedding_dims = W.shape[1] if W is not None else 300
 
-    layer=-1
+    layer=1
     # clf = MyCNN(
-    # clf = Multi_OneD_CNN(
-    clf = MyRegularCNN(
+    clf = Multi_OneD_CNN(
+    # clf = MyRegularCNN(
         vocabulary_size=cnn_extractor.vocabulary_size,
         nb_filter=300,
         layer=layer,
@@ -148,8 +149,18 @@ if __name__ == "__main__":
         nb_class=len(cnn_extractor.literal_labels),
         embedding_weights=W)
 
-    cv = StratifiedKFold(y, n_folds=10, shuffle=True)
-    for train_ind, test_ind in cv:
+    if split is None:
+        cv = StratifiedKFold(y, n_folds=10, shuffle=True)
+        for train_ind, test_ind in cv:
+            X_train, X_test = X[train_ind], X[test_ind]
+            y_train, y_test = y[train_ind], y[test_ind]
+            clf.fit(X_train, y_train,
+                    batch_size=50,
+                    nb_epoch=40,
+                    show_accuracy=True,
+                    validation_data=(X_test, y_test))
+    else:
+        train_ind, test_ind = split=='train', split=='test'
         X_train, X_test = X[train_ind], X[test_ind]
         y_train, y_test = y[train_ind], y[test_ind]
         clf.fit(X_train, y_train,

@@ -92,7 +92,11 @@ class CNNExtractor(FeatureExtractor):
         return len(self.vocabulary)
 
     def pre_calculate(self, sentences):
-        self.maxlen = max(len(x) for x in sentences)
+        maxlen = max(len(x) for x in sentences)
+        if maxlen % 2 == 1:
+            maxlen+=1
+
+        self.maxlen = maxlen
         pad_sentences = [self.to_given_length(s, self.maxlen) for s in sentences]
         word_counts = Counter(itertools.chain(*pad_sentences))
         # ind -> word

@@ -22,7 +22,6 @@ def load_from_file(category, fname, sent_label='sentence', cat_label='label'):
             res = cPickle.load(f)
         except:
             res = pandas.DataFrame({cat_label: category, sent_label: f.readlines()})
-
     return res
 
 
