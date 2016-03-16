@@ -13,11 +13,34 @@ from keras.layers.convolutional import Convolution1D, Convolution2D, MaxPooling1
 from keras.layers.core import Dense, Dropout, Activation, Flatten, Reshape, Permute, RepeatVector, Layer
 from keras.layers.recurrent import LSTM
 from keras.layers import containers
+from keras.regularizers import l2
 import theano
 from keras import backend as K
+from keras.constraints import MaxNorm
+from keras.callbacks import Callback
+from sklearn.metrics import accuracy_score
 
 import logging
 logging.basicConfig(level=logging.DEBUG)
+
+class RecordTest(Callback):
+    def __init__(self, X_test, y_test):
+        super(RecordTest, self).__init__()
+        self.X_test, self.y_test = X_test, y_test
+        self.best_val =0.
+        self.test_acc = 0
+
+    def on_epoch_end(self, epoch, logs={}):
+        current = logs.get('val_acc')
+        if current is None:
+            warnings.warn('Early stopping requires %s available!' %
+                          (self.monitor), RuntimeWarning)
+        if current > self.best_val:
+            self.best_val = current
+            pred = self.model.predict_classes(self.X_test, verbose=0)
+            acc = accuracy_score(self.y_test, pred)
+            print "update acc: {}".format(acc)
+            self.test_acc = acc
 
 class MyEmbedding(Embedding):
     def __init__(self, input_dim, output_dim, use_mask=True, **kwargs):
@@ -37,28 +60,28 @@ class MyEmbedding(Embedding):
         else:
             return K.gather(self.W, X)
 
+class ReNorm(Layer):
+    def get_output(self, train=False):
+        X = self.get_input(train)
+        return K.l2_normalize(X, axis=1)
 
 class CNNS(KerasClassifier):
-    def add_embedding(self, model, vocabulary_size, embedding_dims, maxlen, use_my_embedding, embedding_weights=None):
+    def add_embedding(self, model, vocabulary_size, embedding_dim, maxlen, use_my_embedding, embedding_weights=None):
 
         if embedding_weights is not None:
-            for i in range(embedding_weights.shape[0]):
-                if not embedding_weights[i].any():
-                    embedding_weights[i] = np.random.uniform(
-                        low=-0.05, high=0.05, size=(embedding_dims,))
             if use_my_embedding:
-                model.add(MyEmbedding(vocabulary_size, embedding_dims,
+                model.add(MyEmbedding(vocabulary_size, embedding_dim,
                                       input_length=maxlen, weights=[embedding_weights]))
             else:
-                model.add(Embedding(vocabulary_size, embedding_dims,
+                model.add(Embedding(vocabulary_size, embedding_dim,
                                     input_length=maxlen, weights=[embedding_weights]))
         else:
             if use_my_embedding:
                 model.add(MyEmbedding(vocabulary_size,
-                                      embedding_dims, input_length=maxlen))
+                                      embedding_dim, input_length=maxlen))
             else:
                 model.add(Embedding(vocabulary_size,
-                                    embedding_dims, input_length=maxlen))
+                                    embedding_dim, input_length=maxlen))
 
         padding_len = self.calc_padding_len(maxlen)
         if padding_len>0:
@@ -74,12 +97,18 @@ class CNNS(KerasClassifier):
             params.update({'embedding_weights': 'random'})
         print params
 
-    def add_full(self, model, hidden_dims, drop_out_prob, nb_class,):
+    def add_full(self, model, hidden_dim, drop_out_prob, nb_class,):
         model.add(Flatten())
-        model.add(Dense(hidden_dims))
-        model.add(Activation('relu'))
+        model.add(Dense(hidden_dim, W_constraint=MaxNorm(m=9, axis=1)))
+        # model.add(ReNorm())
+        # model.add(Activation('relu'))
         model.add(Dropout(drop_out_prob))
         # model.add(LSTM(70))
+
+        # model.add(Dense(hidden_dim, W_constraint=MaxNorm(9)))
+        # model.add(Dropout(0.5))
+        # model.add(Dense(2))
+        # model.add(Activation('softmax'))
 
         assert(nb_class > 1)
         if nb_class == 2:
@@ -124,8 +153,8 @@ class RNN(CNNS):
 
     def __call__(self,
                  vocabulary_size=5000,
-                 embedding_dims=300,
-                 hidden_dims=250,
+                 embedding_dim=300,
+                 hidden_dim=250,
                  nb_class=2,
                  drop_out_prob=0.5,
                  use_my_embedding=False,
@@ -133,32 +162,32 @@ class RNN(CNNS):
 
         self.log_params(locals())
         model = Sequential()
-        maxlen = self.add_embedding(model, vocabulary_size, embedding_dims,maxlen,
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
                                     use_my_embedding, embedding_weights)
 
-        self.add_full(model, hidden_dims, drop_out_prob, nb_class)
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
         return model
+
 
 class Multi_OneD_CNN(CNNS):
     def __call__(self,
                  vocabulary_size=5000,
                  maxlen=100,
-                 embedding_dims=300,
-                 nb_filter=300,
+                 embedding_dim=300,
                  filter_length=[3],
                  layer=-1,
-                 hidden_dims=250,
+                 hidden_dim=250,
                  nb_class=2,
                  drop_out_prob=0.5,
                  use_my_embedding=False,
                  embedding_weights=None):
 
-        filter_row = filter_length=filter_length[0]
-        filter_col = embedding_dims
-        nb_filter = embedding_dims
+        filter_row = filter_length[0]
+        filter_col = embedding_dim
+        nb_filter = embedding_dim
         self.log_params(locals())
         model = Sequential()
-        maxlen = self.add_embedding(model, vocabulary_size, embedding_dims,maxlen,
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
                                     use_my_embedding, embedding_weights)
 
         max_possible_layer = int(math.log(maxlen, 2))-1
@@ -187,7 +216,7 @@ class Multi_OneD_CNN(CNNS):
 
             if i == max_possible_layer-1:
                 logging.debug("Last layer added")
-                model.add(Reshape(1, 2, embedding_dims))
+                model.add(Reshape((1, 2, embedding_dim)))
                 model.add(Convolution2D(nb_filter=nb_filter,
                                         nb_row=2,
                                         nb_col=1,
@@ -196,17 +225,18 @@ class Multi_OneD_CNN(CNNS):
                                         dim_ordering='th',
                                         subsample=(1, 1)))
 
-        self.add_full(model, hidden_dims, drop_out_prob, nb_class)
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
         return model
+
 
 class MyCNN(CNNS):
     def __call__(self,
                  vocabulary_size=5000,
                  maxlen=100,
-                 embedding_dims=300,
+                 embedding_dim=300,
                  filter_length=[3],
                  layer=-1,
-                 hidden_dims=250,
+                 hidden_dim=250,
                  nb_class=2,
                  drop_out_prob=0.5,
                  use_my_embedding=False,
@@ -214,11 +244,11 @@ class MyCNN(CNNS):
 
         filter_row = filter_length[0]
         filter_col = 1
-        nb_filter = embedding_dims
+        nb_filter = embedding_dim
 
         self.log_params(locals())
         model = Sequential()
-        maxlen = self.add_embedding(model, vocabulary_size, embedding_dims,maxlen,
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
                                     use_my_embedding, embedding_weights)
 
         model.add(Permute((2, 1)))
@@ -255,7 +285,7 @@ class MyCNN(CNNS):
                                         dim_ordering='th',
                                         subsample=(1, 1)))
 
-        self.add_full(model, hidden_dims, drop_out_prob, nb_class)
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
         return model
 
 class Identity(Layer):
@@ -270,11 +300,11 @@ class MyRegularCNN(CNNS):
     def __call__(self,
                  vocabulary_size=5000,
                  maxlen=100,
-                 embedding_dims=300,
+                 embedding_dim=300,
                  filter_length=[3],
                  layer=-1,
                  skip=2,
-                 hidden_dims=250,
+                 hidden_dim=250,
                  nb_class=2,
                  drop_out_prob=0.5,
                  use_my_embedding=False,
@@ -282,11 +312,11 @@ class MyRegularCNN(CNNS):
 
         filter_row = filter_length[0]
         filter_col = 1
-        nb_filter = embedding_dims
+        nb_filter = embedding_dim
 
         self.log_params(locals())
         model = Sequential()
-        maxlen = self.add_embedding(model, vocabulary_size, embedding_dims,maxlen,
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
                                     use_my_embedding, embedding_weights)
 
         model.add(Permute((2, 1)))
@@ -337,5 +367,101 @@ class MyRegularCNN(CNNS):
                                         dim_ordering='th',
                                         subsample=(1, 1)))
 
-        self.add_full(model, hidden_dims, drop_out_prob, nb_class)
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
+        return model
+
+class Kim_CNN(CNNS):
+    def __call__(self,
+                 vocabulary_size=5000,
+                 maxlen=100,
+                 embedding_dim=300,
+                 nb_filter=300,
+                 filter_length=[3],
+                 layer=-1,
+                 hidden_dim=250,
+                 nb_class=2,
+                 drop_out_prob=0.5,
+                 use_my_embedding=False,
+                 embedding_weights=None):
+
+        self.log_params(locals())
+        model = Sequential()
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
+                                    use_my_embedding, embedding_weights)
+
+        model.add(self.convLayer(maxlen, embedding_dim,
+                                 nb_filter, filter_length))
+
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
+        return model
+
+    def convLayer(self, inp_dim, embedding_dim, nb_filter, filter_length):
+        c = containers.Graph()
+        c.add_input(name='input', input_shape=(inp_dim, embedding_dim))
+        inps = []
+        for i in filter_length:
+            c.add_node(containers.Sequential([Convolution1D(nb_filter=nb_filter,
+                                                            filter_length=i,
+                                                            border_mode='valid',
+                                                            activation='relu',
+                                                            subsample_length=1,
+                                                            input_shape=(inp_dim, embedding_dim),),
+                                              MaxPooling1D(pool_length=2),
+                                              Flatten()]),
+                       name='Conv{}'.format(i), input='input')
+            inps.append('Conv{}'.format(i))
+
+        if len(inps) == 1:
+            c.add_output('output', input=inps[0])
+        else:
+            c.add_output('output', inputs=inps)
+
+        return c
+
+class Good_Kim_CNN(CNNS):
+    def __call__(self,
+                 vocabulary_size=5000,
+                 maxlen=100,
+                 embedding_dim=300,
+                 nb_filter=300,
+                 filter_length=[3],
+                 layer=-1,
+                 hidden_dim=250,
+                 nb_class=2,
+                 drop_out_prob=0.5,
+                 use_my_embedding=False,
+                 embedding_weights=None):
+
+        self.log_params(locals())
+        model = Sequential()
+        maxlen = self.add_embedding(model, vocabulary_size, embedding_dim,maxlen,
+                                    use_my_embedding, embedding_weights)
+
+        model.add(Reshape((1, maxlen, embedding_dim)))
+
+        c = containers.Graph()
+        c.add_input(name='input', input_shape=(1, maxlen, embedding_dim))
+        inps = []
+        for filter_h in filter_length:
+            pool_size = (maxlen - filter_h + 1, 1)
+            c.add_node(containers.Sequential([Convolution2D(nb_filter=nb_filter,
+                                                            nb_row=filter_h,
+                                                            nb_col=embedding_dim,
+                                                            border_mode='valid',
+                                                            activation='relu',
+                                                            init='uniform',
+                                                            input_shape=(1, maxlen, embedding_dim)),
+                                              MaxPooling2D(pool_size=pool_size),
+                                              Flatten()]),
+                       name='Conv{}'.format(filter_h), input='input')
+            inps.append('Conv{}'.format(filter_h))
+
+        if len(inps) == 1:
+            c.add_output('output', input=inps[0])
+        else:
+            c.add_output('output', inputs=inps)
+
+        model.add(c)
+
+        self.add_full(model, hidden_dim, drop_out_prob, nb_class)
         return model

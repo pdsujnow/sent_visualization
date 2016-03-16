@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import argparse
 import os
-import csv
 import cPickle
 import numpy as np
 np.random.seed(0)
 from sklearn.svm import LinearSVC
-from classifier.cnn import MyCNN, Multi_OneD_CNN, MyRegularCNN
-from sklearn.cross_validation import StratifiedKFold
+from classifier.cnn import Good_Kim_CNN, Kim_CNN, MyCNN, Multi_OneD_CNN, MyRegularCNN, RecordTest
+from sklearn.cross_validation import StratifiedKFold, train_test_split
 from model import Model
 from word2vec.word2vec import Word2Vec
 import dataloader
@@ -44,7 +44,7 @@ def load_embedding(vocabulary, cache_file_name):
         with open(cache_file_name) as f:
             return cPickle.load(f)
     else:
-        res = np.zeros((len(vocabulary), 300))
+        res = np.random.uniform(low=-0.05, high=0.05, size=(len(vocabulary), 300))
         w2v = Word2Vec()
         for word in vocabulary.keys():
             if word in w2v:
@@ -101,52 +101,54 @@ def transform_embedding(emb):
 
     return transform(emb, axis)
 
+def parse_arg(argv):
+    parser = argparse.ArgumentParser(description='')
+    parser.add_argument('dataset', help='dataset name')
+    parser.add_argument('-e', '--epoch', type=int, default=20, help='number of epoch')
+    return parser.parse_args(argv[1:])
+
 if __name__ == "__main__":
-    # Train classifiers
+    args = parse_arg(sys.argv)
+    dataset = args.dataset
 
-    # corpus_name = 'panglee'
-    corpus_name = 'SST1'
-
-    corpus = pandas.read_pickle(os.path.join(CORPUS_DIR, corpus_name, 'export.pkl'))
+    corpus = pandas.read_pickle(os.path.join(CORPUS_DIR, dataset+'.pkl'))
     sentences, labels = list(corpus['sentence']), list(corpus['label'])
-    split = None if 'split' not in corpus.columns else corpus.split
-    cnn_extractor = CNNExtractor(mincount=0)
-    feature_extractors = [cnn_extractor]
+    if len(set(corpus.split.values))==1:
+        split = None
+    else:
+        split = corpus.split.values
+
     logging.debug('loading feature..')
-    X, y = feature_fuse(feature_extractors, sentences, labels)
+    cnn_extractor = CNNExtractor(mincount=0)
+    X, y = cnn_extractor.extract_train(sentences, labels)
     logging.debug('feature loaded')
 
-
     pretrained = True
-    transform = False
     if pretrained:
         logging.debug('loading embedding..')
         W = load_embedding(cnn_extractor.vocabulary,
-                           cache_file_name=os.path.join(CACHE_DIR, corpus_name + '_emb.pkl'))
+                           cache_file_name=os.path.join(CACHE_DIR, dataset + '_emb.pkl'))
         logging.debug('embedding loaded..')
     else:
         W = None
 
-    if transform:
-        logging.debug('Transforming embedding..')
-        W = transform_embedding(W)
-        logging.debug('Transforming done')
-
-    embedding_dims = W.shape[1] if W is not None else 300
+    embedding_dim = W.shape[1] if W is not None else 300
 
     layer=1
     # clf = MyCNN(
-    clf = Multi_OneD_CNN(
+    # clf = Multi_OneD_CNN(
+    # clf = Kim_CNN(
+    clf = Good_Kim_CNN(
     # clf = MyRegularCNN(
         vocabulary_size=cnn_extractor.vocabulary_size,
-        nb_filter=300,
+        nb_filter=100,
         layer=layer,
-        step=2,
-        embedding_dims=embedding_dims,
-        filter_length=[3],
+        hidden_dim=100,
+        embedding_dim=embedding_dim,
+        filter_length=[3, 4, 5],
         drop_out_prob=0.5,
         maxlen=X.shape[1],
-        use_my_embedding=False,
+        use_my_embedding=True,
         nb_class=len(cnn_extractor.literal_labels),
         embedding_weights=W)
 
@@ -157,20 +159,24 @@ if __name__ == "__main__":
         for train_ind, test_ind in cv:
             X_train, X_test = X[train_ind], X[test_ind]
             y_train, y_test = y[train_ind], y[test_ind]
+            X_train, X_dev, y_train, y_dev = train_test_split(X_train, y_train, test_size=0.1)
+            callback = RecordTest(X_test, y_test)
             clf.fit(X_train, y_train,
                     batch_size=50,
-                    nb_epoch=40,
+                    nb_epoch=args.epoch,
                     show_accuracy=True,
-                    validation_data=(X_test, y_test))
+                    validation_data=(X_dev, y_dev),
+                    callbacks=[callback])
     else:
         if len(set(y))>2:
             y = to_categorical(y)
-        train_ind, test_ind = split=='train', split=='test'
+        train_ind, test_ind = (split=='train', split=='test')
         X_train, X_test = X[train_ind], X[test_ind]
         y_train, y_test = y[train_ind], y[test_ind]
+        print y_train.shape, y_test.shape
         clf.fit(X_train, y_train,
                 batch_size=50,
-                nb_epoch=40,
+                nb_epoch=args.epoch,
                 show_accuracy=True,
                 validation_data=(X_test, y_test))
 
@@ -179,7 +185,7 @@ if __name__ == "__main__":
     # clf = LinearSVC()
     # OVO = True
     # parameters = dict(C=np.logspace(-5, 1, 8))
-    # dump_file = os.path.join(MODEL_DIR, corpus_name + '_svm')
+    # dump_file = os.path.join(MODEL_DIR, dataset + '_svm')
     # model = Model(clf, feature_extractors, OVO=OVO)
     # model.grid_search(X, y, parameters=parameters, n_jobs=-1)
 
@@ -187,13 +193,13 @@ if __name__ == "__main__":
     # X, y = feature_fuse(feature_extractors, sentences, labels)
     # clf = OneD_CNN(vocabulary_size=cnn_extractor.vocabulary_size,
     #           nb_filters=100,
-    #           embedding_dims=300,
+    #           embedding_dim=300,
     #           drop_out_prob=0.5,
     #           maxlen=X.shape[1],
     #           nb_class=len(cnn_extractor.literal_labels))
     # OVO = False
     # parameters = dict(batch_size=[50], nb_epoch=[20], show_accuracy=[True])
-    # dump_file = os.path.join(MODEL_DIR, corpus_name + '_cnn')
+    # dump_file = os.path.join(MODEL_DIR, dataset + '_cnn')
     # model = Model(clf, feature_extractors, OVO=OVO)
     # model.grid_search(X, y, parameters=parameters, n_jobs=1)
 

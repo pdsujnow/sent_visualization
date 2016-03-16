@@ -35,6 +35,7 @@ class FeatureExtractor(object):
         print "Labels: ", literal_labels
         y = np.array([literal_labels.index(l) for l in labels])
 
+        # sentences = [s.split(' ') for s in sentences]
         sentences = [preprocess(s) for s in sentences]
         self.pre_calculate(sentences)
 
