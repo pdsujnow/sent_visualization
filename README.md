@@ -1,3 +1,4 @@
+*Note: this repository is depreciated, please use this [repo](https://github.com/AcademiaSinicaNLPLab/emotion_push)*
 # Process
 
 ## Build Classifiers
